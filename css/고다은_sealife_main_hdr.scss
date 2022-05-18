@@ -119,11 +119,11 @@ $plh : #{'min(0.5rem, 20px)'};
             justify-content: space-between;
             li{
                 width: calc(100% / 2);
-                line-height: $lh2;
                 color: #fff;
                 cursor: pointer;
                 h4{
                     font-size: #{'min(1.8em, 18px)'};
+                    line-height: $lh2;
                 }
                 i{
                     line-height: $lh2;
@@ -196,7 +196,6 @@ $plh : #{'min(0.5rem, 20px)'};
                 li.menu{
                     height: #{'min(4rem, 160px)'};
                     h4{
-                    
                         font-size: #{'min(1.4em, 14px)'};
                         line-height: #{'min(0.825rem, 30px)'};
                         cursor: pointer;

@@ -139,7 +139,8 @@ $(function(){
                 transform : 'translateY(0px)'
             });
             bnrImg.eq(0).css({
-                opacity : 1
+                opacity : 1,
+                transform : 'translateY(0px)'
             });
             bnrImg.eq(1).css({
                 opacity : 1,
@@ -155,7 +156,8 @@ $(function(){
                 transform : 'translateY(-60px)'
             });
             bnrImg.eq(0).css({
-                opacity : 0
+                opacity : 0,
+                transform : 'translateY(-60px)'
             });
             bnrImg.eq(1).css({
                 opacity : 0,

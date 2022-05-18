@@ -20,7 +20,6 @@ $(function(){
              navWrap.addClass('show');
          });
 
-
          hdrLi.eq(0).hover(function(){
              hdrLi.eq(0).toggleClass('blue');
              nav.eq(0).css('display','flex');
@@ -39,7 +38,7 @@ $(function(){
              nav.eq(0).css('display','none');
              nav.eq(1).css('display','none');
          });
-     
+         
          navWrap.mouseleave(function(){
             mnTopWrap.removeClass('bg');
             mnTop.removeClass('on');
