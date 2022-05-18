@@ -1,0 +1,270 @@
+html{
+    font-size: 3vw;
+    body{
+        font-size: 0.7vw;
+        overflow-x: hidden;
+        font-family: 'Noto Sans KR', sans-serif;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+// 변수 선언
+
+@mixin Grid {
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+@mixin bg {
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+@mixin img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+$lh : #{'min(1rem, 40px)'};
+$lh2 : #{'min(2rem, 80px)'};
+$plh : #{'min(0.5rem, 20px)'};
+
+
+// 메뉴탑
+
+.mnTopWrap.bg{
+    background-color: #fff;
+}
+.mnTopWrap{
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: #{'min(1rem,40px)'};
+    z-index: 5;
+    transition: position 0.3s;
+    .mnTop{
+        @include Grid;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        .time{
+            display: flex;
+            line-height: $lh;
+            h4{
+                font-size: #{'min(1.6em,16px)'};
+                margin-left: #{'min(0.5rem,20px)'};
+            }
+            i{
+                line-height: $lh;
+                font-size: #{'min(2.5em,25px)'};
+            }
+        }
+        .icon{
+                i{
+                    line-height: $lh;
+                    font-size: #{'min(2.5em,25px)'};
+                    cursor: pointer;
+                }
+        }
+        &.on{
+            color: #0077b6;
+        }
+    }
+    &.fix{
+        background-color: #fff;
+        position: fixed;
+        width: 100%;
+        height: #{'min(1rem,40px)'};
+        transition: position 0.3s;
+        top: 0;
+        left: 0;
+        .mnTop{
+            color: #0077b6;
+        }
+    }
+}
+
+// 헤더
+
+.hdrWrap.bg{
+    background-color: #fff;
+}
+.hdrWrap{
+    position: relative;
+    z-index: 5;
+    height: #{'min(2rem,80px)'};
+    transition: position 0.3s;
+    header{
+        @include Grid;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+        h1{
+            line-height: $lh2;
+            font-size: #{'min(4.0em, 40px)'};
+            b{
+                cursor: pointer;
+            }
+            &.on{
+                color: #0077b6;
+            }
+        }
+        .nav{
+            width: calc(100% / 12 * 8);
+            display: flex;
+            justify-content: space-between;
+            li{
+                width: calc(100% / 2);
+                line-height: $lh2;
+                color: #fff;
+                cursor: pointer;
+                h4{
+                    font-size: #{'min(1.8em, 18px)'};
+                }
+                i{
+                    line-height: $lh2;
+                    font-size: #{'min(1.8em, 18px)'};
+                }
+                &:nth-last-child(1){
+                    text-align: right;
+                    opacity: 0;
+                    cursor: auto;
+                }
+                .tgle{
+                    color: #000;
+                }
+                .blue{
+                    color: #0077b6;
+                }
+            }
+        }    
+    }
+    &.fix{
+        background-color: #fff;
+        position: fixed;
+        width: 100%;
+        top: #{'min(1rem,40px)'};
+        left: 0;
+        z-index: 5;
+        transition: position 0.3s;
+        box-shadow: 0px 14px 14px rgba(0,0,0,0.1);
+        header{
+            h1{
+                color: #0077b6;
+            }
+           .nav li{
+                color: #000;
+           }
+        }
+    }
+}
+
+// 네비게이션
+
+.navWrap.show{
+     height: #{'min(7rem,280px)'};
+     z-index: 4;
+     top: #{'min(3rem,120px)'};
+     transition: all 0.6s;
+}
+.navWrap{
+    height: #{'min(7rem,280px)'};
+    overflow: hidden;
+    height: 0;
+    display: flex;
+    background-color: rgba(0,0,0,0.9) ;
+    transition: all 0.6s;
+    z-index: 10;
+    .navGroup{
+        @include Grid;
+        display: flex;
+        z-index: 2;
+        .nav{
+            width: 100%;
+            display: flex;
+            .subMn{
+                text-transform: uppercase;
+                li:nth-child(1){
+                    line-height: $lh2;
+                    font-size: #{'min(1.8em, 18px)'};
+                    padding-left: 0;
+                }
+                li.menu{
+                    height: #{'min(4rem, 160px)'};
+                    h4{
+                    
+                        font-size: #{'min(1.4em, 14px)'};
+                        line-height: #{'min(0.825rem, 30px)'};
+                        cursor: pointer;
+                        font-weight: 300;
+                    }
+                }
+            }
+            .subMn.sb1{
+                width: calc(100% / 12 * 3.5);
+                position: relative;
+                li.txt{
+                    z-index: 3;
+                    position: absolute;
+                    h3{
+                        text-transform: uppercase;
+                        font-size: #{'min(1.8em, 18px)'};
+                    }
+                    p{
+                        font-size: #{'min(1.4em,14px)'};
+                        line-height: #{'min(0.5rem,20px)'};
+                        font-weight: 300;
+                    }
+                    
+                }
+                .ovrGrid{
+                    height: #{'min(7rem,280px)'};
+                    width: calc(100vw - 1080px / 2 + 100%);
+                    min-width: calc(100vw - 80vw / 2 + 100%);
+                    margin-left: #{'min(calc((100vw - 1080px) / -2 ),calc((100vw - 80vw) / -2 ))'};
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    z-index: 0;
+                    background-image: url(./image/main/submenu_bg.svg);
+                    @include bg;
+                    &.show{
+                        height: #{'min(7rem,280px)'};
+                    }
+                }
+            }
+                .subMn:nth-child(1)~.subMn{
+                       width: calc(100% / 4.25);
+                       color: #fff;
+                       padding-left: #{'min(1.25rem,50px)'};
+                       text-transform: uppercase;
+                       border-right: 1px #ade8f4 solid;
+                       z-index: 2;
+                }
+        }
+        .nav:nth-child(2){
+            display: none;
+        }
+        .nav:nth-child(3){
+            display: none;
+        }
+    }
+    &.fix{
+        z-index: 10;
+        position: fixed;
+        width: 100%;
+        transition: height 0.6s;
+        top: #{'min(3rem,120px)'};
+    }
+}
+
+// 메뉴탑, 헤더, 네비게이션
+
+.hdr{
+    position: absolute;
+    width: 100%;
+}
