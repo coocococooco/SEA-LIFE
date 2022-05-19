@@ -1,0 +1,82 @@
+// 푸터
+
+// 기초셋팅
+
+html{
+    font-size: 3vw;
+    body{
+        font-size: 0.7vw;
+        overflow-x: hidden;
+        font-family: 'Noto Sans KR', sans-serif;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+// 변수 선언
+
+@mixin Grid {
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+@mixin bg {
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+@mixin img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+$lh : #{'min(1rem, 40px)'};
+$lh2 : #{'min(2rem, 80px)'};
+$plh : #{'min(0.5rem, 20px)'};
+
+
+
+.ftrWrap{
+    background-color: #1b1b1b;
+    footer{
+        @include Grid;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        padding: $lh 0;
+        h1{
+            font-size: #{'min(4.0em,40px)'};
+            text-transform: uppercase;
+            font-weight: bold;
+            line-height: #{'min(6rem,240px)'};
+        }
+        .ftrRight{
+            width: calc(100% / 12 * 8);
+            .nav{
+                width: calc(100% / 8 * 5);
+                display: flex;
+                justify-content: space-between;
+                li{
+                    font-size: #{'min(1.8em,18px)'};
+                    font-weight: lighter;
+                    cursor: pointer;
+                }
+            }
+            p{
+                margin-top: #{'min(1.5rem,60px)'};
+                color: #ccc;
+                font-size: #{'min(1.4em,14px)'};
+                font-weight: lighter;
+                line-height: $plh;
+            }
+            .sns{
+                margin-top: $lh;
+                i{
+                 font-size: #{'min(4.0em,40px)'};
+                 cursor: pointer;
+                }
+            }
+        }
+    }
+}

@@ -6,17 +6,17 @@ $(function(){
          var hdrWrap = $('.hdrWrap');
          var hdr = $('.hdrWrap>header');
          var hdrLi = $('.hdrWrap>header>.nav>li>h4');
-         var hdrh1 = $('.hdrWrap>header>h1');
+         var hdrh1 = $('.hdrWrap>header>a>h1');
          var navWrap =$('.navWrap');
          var nav = $('.navGroup>.nav');
          var mainWrap = $('.mainWrap');
             
          hdrWrap.hover(function(){
-             hdrLi.addClass('tgle');
              mnTopWrap.addClass('bg');
              mnTop.addClass('on');
              hdrWrap.addClass('bg');
              hdrh1.addClass('on');
+             hdrLi.addClass('tgle');
              navWrap.addClass('show');
          });
 
@@ -50,8 +50,8 @@ $(function(){
          });
      
          $(window).scroll(function(){
-                     var now = $(this).scrollTop();
-                     if(now >= 1){
+                     var scl = $(this).scrollTop();
+                     if(scl >= 1){
                          mnTopWrap.addClass('fix');
                          hdrWrap.addClass('fix');
                          navWrap.addClass('fix');
@@ -62,5 +62,35 @@ $(function(){
                      }
                  });
            });
+
+    $('.ftr').load('./inc/footer.html',function(){});
+
+    $('.toTop').load('./inc/toTop.html',function(){
+         // 변수 선언 
+         var toTop = $('.toTop');
+         var toTopBtm = $('.toTop>.btm');
+
+        $(window).scroll(function(){
+            var scl = $(this).scrollTop();
+            console.log(scl);
+
+            if(scl >= 559){
+                toTop.css({
+                    opacity : 1,
+                    top : '200px'
+                })
+            }else{
+                toTop.css({
+                    opacity : 0,
+                    top : '150px'
+                })
+            }
+        });
+        toTopBtm.click(function(){
+            $('html,body').stop().animate({
+                scrollTop : 0
+            });
+        });
+    });
        
 });

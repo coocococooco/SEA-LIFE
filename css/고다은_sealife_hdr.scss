@@ -103,14 +103,16 @@ $plh : #{'min(0.5rem, 20px)'};
         display: flex;
         justify-content: space-between;
         color: #fff;
-        h1{
-            line-height: $lh2;
-            font-size: #{'min(4.0em, 40px)'};
-            b{
-                cursor: pointer;
-            }
-            &.on{
-                color: #0077b6;
+        a{
+            h1{
+                line-height: $lh2;
+                font-size: #{'min(4.0em, 40px)'};
+                b{
+                    cursor: pointer;
+                }
+                &.on{
+                    color: #0077b6;
+                }
             }
         }
         .nav{
@@ -131,8 +133,11 @@ $plh : #{'min(0.5rem, 20px)'};
                 }
                 &:nth-last-child(1){
                     text-align: right;
-                    opacity: 0;
+                    opacity: 1;
                     cursor: auto;
+                    i{
+                        font-size: #{'min(4.0em, 40px)'};
+                    }
                 }
                 .tgle{
                     color: #000;
@@ -176,8 +181,9 @@ $plh : #{'min(0.5rem, 20px)'};
     overflow: hidden;
     height: 0;
     display: flex;
-    background-color: rgba(0,0,0,0.9) ;
+    background-color: rgba(0,0,0,0.8) ;
     transition: all 0.6s;
+    backdrop-filter: blur(5px);
     z-index: 10;
     .navGroup{
         @include Grid;
@@ -217,8 +223,7 @@ $plh : #{'min(0.5rem, 20px)'};
                         font-size: #{'min(1.4em,14px)'};
                         line-height: #{'min(0.5rem,20px)'};
                         font-weight: 300;
-                    }
-                    
+                    }     
                 }
                 .ovrGrid{
                     height: #{'min(7rem,280px)'};
