@@ -60,8 +60,23 @@ $(function(){
                          hdrWrap.removeClass('fix');
                          navWrap.removeClass('fix');
                      }
-                 });
-           });
+        });
+
+        // 라이트박스
+
+        var lightBoxAcoBtn = $('.lightBox>.inner>.aco>li>span>.i');
+        var lightBoxAco = $('.lightBox>.inner>.aco>li');
+
+        lightBoxAco.even().click(function(){
+            lightBoxAco.h('acoShow');
+            $(this).addClass('acoShow');
+            if(lightBoxAcoBtn.hasClass('xi-minus')){
+                lightBoxAcoBtn.removeClass('xi-minus').addClass('xi-plus');
+            }else{
+                lightBoxAcoBtn.removeClass('xi-plus').addClass('xi-minus');
+            }
+        });
+    });
 
     $('.ftr').load('./inc/footer.html',function(){});
 
@@ -76,11 +91,13 @@ $(function(){
 
             if(scl >= 559){
                 toTop.css({
+                    display : 'block',
                     opacity : 1,
-                    top : '200px'
+                    top : '250px'
                 })
             }else{
                 toTop.css({
+                    display : 'none',
                     opacity : 0,
                     top : '150px'
                 })

@@ -27,8 +27,9 @@ $plh : #{'min(0.5rem, 20px)'};
     width: #{'min(2.75rem,110px)'};
     height: #{'min(11rem,440px)'};
     text-align: center;
+    display: none;
     opacity: 0;
-    transition: all 0.3s;
+    transition: all 0.4s;
     .top{
         background-color: #0077b6;
         height: #{'min(1.25rem,50px)'};

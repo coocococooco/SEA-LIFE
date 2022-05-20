@@ -28,7 +28,7 @@
             <li class="sub03">
                 <h4>내부 & 공연안내</h4>
             </li>
-            <li class="sub04"><i class="xi-bars"></i></li>
+            <li class="sub04"><label for="sub"><i class="xi-bars"></i></label></li>
         </ul>
     </header>
 </div>
@@ -130,15 +130,25 @@
 
 <!-- 라이트 박스 -->
 
+<input type="checkbox" id="sub">
 <div class="lightBox">
     <div class="inner">
-        <div class="boxTop"></div>
-        <div class="boxTime"></div>
+        <div class="boxTop">
+            <div class="icon">
+                <i class="xi-search"></i>
+                <i class="xi-cart-o"></i> 
+            </div>
+            <label for="sub"><i class="xi-close"></i></label>
+        </div>
+        <div class="boxTime">
+            <i class="xi-clock-o"></i>
+            <h4>금일 운영시간 : 10 : 00 ~ 19 : 00  ( 마지막 입장 6시 )</h4>
+        </div>
         <ul class="aco">
             <li class="acoShow">
-                <h4>sea life 부산은</h4>
-                <span>-</span>
-            </li>
+                <h4><b>sea life</b> 부산은</h4>
+                <span><i class="xi-minus"></i></span>
+            </li> 
             <li>
                 <div class="menu m1">
                     <h4>회사소개</h4>
@@ -163,7 +173,7 @@
             </li>
             <li>
                 <h4>입장권 & 프로모션</h4>
-                <span>+</span>
+                <span><i class="xi-plus"></i></span>
             </li>
             <li>
                 <div class="menu m1">
@@ -180,7 +190,7 @@
             </li>
             <li>
                 <h4>내부 & 공연안내</h4>
-                <span>+</span>
+                <span><i class="xi-plus"></i></span>
             </li>
             <li>
                 <div class="menu m1">

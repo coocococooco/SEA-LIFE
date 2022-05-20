@@ -272,3 +272,127 @@ $plh : #{'min(0.5rem, 20px)'};
     position: absolute;
     width: 100%;
 }
+
+// 라이트박스
+
+input#sub{
+    display: none;
+}
+input#sub:checked+.lightBox{
+    width: 40vW;
+    top: 0;
+    right: 0;
+}
+.lightBox{
+    position: fixed;
+    width: 0vw;
+    height: 100vh;
+    background-color: #fff;
+    top: 0;
+    right: 0;
+    color: #000;
+    z-index: 11;
+    overflow: hidden;
+    transition: all 0.6s;
+    .inner{
+        width: 40vw;
+        .boxTop{
+            padding: 0 #{'min(0.75rem,30px)'};
+            background-color: #0077b6;
+            display: flex;
+            justify-content: space-between;
+            color: #fff;
+            .icon{
+                width: calc(100% / 7);
+                display: flex;
+                justify-content: space-between;
+                i{
+                    font-size: #{'min(0.75rem,30px)'};
+                    line-height: $lh2;
+                }
+            }
+            label{
+                i{
+                    font-size: #{'min(1rem,40px)'};
+                    line-height: $lh2;
+                }
+            }
+        }
+        .boxTime{
+            padding: 0 0 0 #{'min(0.75rem,30px)'};
+            display: flex;
+            color: #0077b6;
+            border-bottom: 1px solid #aaa;
+            i{
+                line-height: $lh;
+                font-size: #{'min(2.0em,20px)'};
+            }
+            h4{
+                line-height: $lh;
+                font-size: #{'min(1.4em,14px)'};
+                font-weight: 500;
+                margin-left: $plh;
+            }
+        }
+        .aco{
+            li:nth-child(odd){
+                border-bottom: 1px solid #aaa;
+                line-height: $lh;
+                display: flex;
+                justify-content: space-between;
+                padding: 0 #{'min(0.75rem,30px)'};
+                h4{
+                    font-size: #{'min(1.6em,16px)'};
+                    font-weight: 500;
+                    b{
+                        text-transform: uppercase;
+                        font-weight: bold;
+                    }
+                    &.cl{
+                        color: #0077b6;
+                    }
+                }
+                span{
+                    font-size: #{'min(3.0em,30px)'};
+                    color: #666666;
+                    cursor: pointer;
+                }
+                &.acoShow+li{
+                    height: #{'min(12.875rem,515px)'};
+                }
+                &:nth-child(1)~li{
+                    
+                    // border-bottom: 1px solid #aaa;
+                }
+            }
+            li:nth-child(even){
+                padding: 0 $lh2 0;
+                background-color: #eeeeee;
+                overflow: hidden;
+                height: 0;
+                transition: all 0.5s;
+                .menu{
+                    color: #666666;
+                    margin-top: #{'min(0.25rem,10px)'};
+                    h4{
+                        margin-left: #{'min(0.75rem,30px)'};
+                        cursor: pointer;
+                        &:nth-child(1){
+                            margin-left: 0;
+                            font-size: #{'min(1.6em,16px)'};
+                            font-weight: 500;
+                            line-height: $lh;
+                            cursor: auto;
+                        }
+                        font-size: #{'min(1.4em,14px)'};
+                        font-weight: 350;
+                        line-height: #{'min(0.75rem,30px)'};
+                        &:nth-child(1)~h4:hover{
+                            color: #0077b6;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
