@@ -1,5 +1,5 @@
 $(function(){
-// 메인
+    // 메인
     var slideGroup = $('.slideGroup');
     var mainbtn = $('.mainWrap>main>.texts>.btns>i');
     var wd = $(window).width();
