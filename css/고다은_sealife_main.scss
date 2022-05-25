@@ -83,8 +83,10 @@ $plh : #{'min(0.5rem, 20px)'};
          z-index: 1;
          left: 0;
          right: 0;
-         top: #{'min(10rem,400px)'};
+         top: 0;
          bottom: 0;
+         width: calc(100% / 12 * 6);
+         height: #{'min(4rem,160px)'};
          margin: auto;
          color: #fff;
          text-shadow: 3px 1px 5px rgba(0,0,0,0.5);
@@ -143,6 +145,7 @@ $plh : #{'min(0.5rem, 20px)'};
                 right: 0;
                 top: 0;
                 bottom: 0;
+                width: calc(100% / 8 * 6);
                 height: #{'min(3.5rem,140px)'};
                 .btns{
                     display: none;
@@ -684,6 +687,7 @@ $plh : #{'min(0.5rem, 20px)'};
                                 position: relative;
                                 cursor: pointer;
                                 .image{
+                                    transition: all 0.5s;
                                     @include img;
                                     height: #{'min(7.5rem,300px)'};
                                     @for $i from 1 through 3{
@@ -691,13 +695,13 @@ $plh : #{'min(0.5rem, 20px)'};
                                             background-image: url('./image/main/cnt02_artBtm_pic0#{$i}_close.jpg');
                                         }
                                     }
-                                    transition: all 0.4s;
                                     &.show{
                                         @for $i from 1 through 3{
                                             &.i#{$i}{
                                                 background-image: url('./image/main/cnt02_artBtm_pic0#{$i}.jpg');
                                             }
                                         }
+                                       opacity: 1;
                                     }
                                 }
                                 h3{

@@ -49,7 +49,6 @@ $(function(){
                hdrh1.removeClass('on');
                hdrLi.removeClass('tgle');
                navWrap.removeClass('show');
-
             });
          
             $(window).scroll(function(){
@@ -117,10 +116,9 @@ $(function(){
                  });
              });
          }else{
-            toTop.fadeOut(0);
+             toTop.fadeOut(0);
 
               // 라이트박스
-
 
               var lightBoxAco = $('.lightBox>.inner>.aco>li');
       

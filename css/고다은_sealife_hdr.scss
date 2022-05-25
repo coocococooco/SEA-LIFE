@@ -525,7 +525,7 @@ input#sub:checked+.lightBox{
             .aco{
                 li:nth-child(odd){
                     border-bottom: 1px solid #aaa;
-                    line-height: $lh2;
+                    line-height: #{'min(1.5rem,60px)'};
                     display: flex;
                     justify-content: space-between;
                     padding: 0 #{'min(0.75rem,30px)'};
