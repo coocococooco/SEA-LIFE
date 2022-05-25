@@ -90,6 +90,33 @@ $(function(){
                  lightBoxAco.removeClass('acoShow');
                  $(this).addClass('acoShow');
              });
+         }else{
+
+            // 헤더 픽스
+
+            $(window).scroll(function(){
+                var scl = $(this).scrollTop();
+                if(scl >= 1){
+                    mnTopWrap.addClass('fix');
+                    hdrWrap.addClass('fix');
+                    navWrap.addClass('fix');
+                }else{
+                    mnTopWrap.removeClass('fix');
+                    hdrWrap.removeClass('fix');
+                    navWrap.removeClass('fix');
+                }
+             });
+
+             // 라이트박스
+             lightBoxAco.removeClass('acoShow');
+
+             var lightBoxAco = $('.lightBox>.inner>.aco>li');
+     
+             lightBoxAco.even().click(function(a){
+                 lightBoxAco.removeClass('acoShow');
+                 $(this).addClass('acoShow');
+             });
+
          }
     });
 
