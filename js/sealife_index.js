@@ -21,6 +21,7 @@ $(function(){
     var pagingLi = $('.content.cnt02 .imgView>.paging>li');
     var imgGroup = $('.content.cnt02 .imgView>.imgGroup');
     var txtGroup = $('.content.cnt02 .imgView>.txtGroup');
+    var cnt02RightBtn = $('.content.cnt02 .imgView>.btns>i')
     var imgGroupLen = imgGroup.children().length;
     var i = 0;
 
@@ -54,10 +55,11 @@ $(function(){
         txtGroup.css({
             marginLeft : i * -100+'%'
         });
+   
+        clearInterval(pagAuto);
     };
 
     // 컨텐츠 02 artBtm
-    var artBtmh3 = $('.content.cnt02 section>.artBtm>.artView>.artGroup>article>h3');
     var artBtmart = $('.content.cnt02 section>.artBtm>.artView>.artGroup>article');
     var artBtmimg = $('.content.cnt02 section>.artBtm>.artView>.artGroup>article>.image');
 
@@ -109,14 +111,15 @@ $(function(){
     
         // artTop
 
-        setInterval(cnt02Left,3000);
+        var pagAuto = setInterval(cnt02Left,3000);
        
         pagingLi.click(pag);
+
     
         // artBtm
 
         artBtmart.each(function(a){
-            artBtmh3.eq(a).hover(function(){
+            artBtmart.eq(a).hover(function(){
                 artBtmart.eq(a).toggleClass('show');
                 artBtmimg.eq(a).toggleClass('show');
             });
@@ -205,20 +208,20 @@ $(function(){
          // 컨텐츠 02
     
              // artTop    
-             setInterval(cnt02Left,3000);
+             var pagAuto = setInterval(cnt02Left,3000);
          
              pagingLi.click(pag);
          
              // artBtm
              artBtmart.each(function(a){
-                 artBtmh3.eq(a).hover(function(){
+                artBtmart.eq(a).hover(function(){
                      artBtmart.eq(a).toggleClass('show');
                      artBtmimg.eq(a).toggleClass('show');
                  });
              });
          
              // 배너
-                 $(window).scroll(function(){
+             $(window).scroll(function(){
                  var scl = $(this).scrollTop();
                  if(scl >= 1800){
                      ovrGrid.eq(1).css({
@@ -291,7 +294,85 @@ $(function(){
                 cnt03BtmArt.eq(0).find('.texts').toggleClass('hov');
             });
     }else{
+         // 메인
+
+         clearInterval(auto);
+
+        //  컨텐츠 02 
         
+        // artTopRight
+        
+        imgGroup.find('.image:first').appendTo(imgGroup);
+
+        cnt02RightBtn.eq(0).click(function(){
+            i++;
+            i = i%imgGroupLen;
+            imgGroup.find('.image:first').appendTo(imgGroup);
+            txtGroup.css({
+                marginLeft : i * -100+'%'
+            });
+        });
+        cnt02RightBtn.eq(1).click(function(){
+            i--;
+            i=(imgGroupLen+i)%imgGroupLen;
+            imgGroup.find('.image:last').prependTo(imgGroup);
+            txtGroup.css({
+                marginLeft : i * -100+'%'
+            });
+        });
+
+        // artBtm
+
+        artBtmart.each(function(a){
+            artBtmart.eq(a).hover(function(){
+                 artBtmart.eq(a).toggleClass('show');
+                 artBtmimg.eq(a).toggleClass('show');
+             });
+         });
+    // 컨텐츠 03
+
+       // artTop
+            cnt03TopBtn.eq(1).css({
+                opacity : 0,
+                cursor : 'auto'
+            });
+
+            cnt03TopBtn.eq(0).click(function(){
+                i++;
+                if(i>=2){
+                    i=2
+                    cnt03TopBtn.eq(0).css({
+                        opacity : 0,
+                        cursor : 'auto'
+                    });
+                    cnt03TopBtn.eq(1).css({
+                        opacity : 1,
+                        cursor : 'pointer'
+                    });
+                }
+                cnt03TopArtGroup.css({
+                    marginLeft : i*-(100 / 2)+'%'
+                });
+            });
+
+            cnt03TopBtn.eq(1).click(function(){
+                i--;
+                if(i<=0){
+                    i=0
+                    cnt03TopBtn.eq(1).css({
+                        opacity : 0,
+                        cursor : 'auto'
+                    });
+                    cnt03TopBtn.eq(0).css({
+                        opacity : 1,
+                        cursor : 'pointer'
+                    });
+                }
+                cnt03TopArtGroup.css({
+                    marginLeft : i*-(100 / 2)+'%'
+                });
+            });
+
     }
 
 });

@@ -41,7 +41,13 @@ html{
     @include tab{
         font-size: 5vw;
         body{
-            font-size: 1.4vw;
+            font-size: 1.3vw;
+        }
+    }
+    @include mob{
+        font-size: 9vw;
+        body{
+            font-size: 2vw;
         }
     }
 }
@@ -78,6 +84,7 @@ $plh : #{'min(0.5rem, 20px)'};
          left: 0;
          right: 0;
          top: #{'min(10rem,400px)'};
+         bottom: 0;
          margin: auto;
          color: #fff;
          text-shadow: 3px 1px 5px rgba(0,0,0,0.5);
@@ -88,9 +95,13 @@ $plh : #{'min(0.5rem, 20px)'};
          }
          h2{
              font-size: #{'min(3.8em,36px)'};
+             br{
+                 display: none;
+             }
              b{
              font-size: #{'min(4.8em,48px)'};
              text-transform: uppercase;
+             font-weight: bolder;
              }
          }
          .btns{
@@ -130,7 +141,9 @@ $plh : #{'min(0.5rem, 20px)'};
                 z-index: 1;
                 left: 0;
                 right: 0;
-                top: #{'min(7rem,280px)'};
+                top: 0;
+                bottom: 0;
+                height: #{'min(3.5rem,140px)'};
                 .btns{
                     display: none;
                 }
@@ -143,6 +156,46 @@ $plh : #{'min(0.5rem, 20px)'};
                     .image{
                         height: #{'min(25rem,640px)'};
                         margin-left: #{'min(calc((100vw - 700px) / -2 ),calc((100vw - 90vw) / -2 ))'};
+                    }
+                }
+            }
+        }
+        @include mob{
+            @include Grid('mob');
+            .texts{
+                text-align: center;
+                position: absolute;
+                z-index: 1;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                height: #{'min(1.25rem,50px)'};
+                h3{
+                    display: none;
+                }
+                h2{
+                    font-size: #{'min(3.0em,30px)'};
+                    line-height: #{'min(0.9rem,36px)'};
+                    b{
+                        font-size: #{'min(3.0em,30px)'};   
+                    }
+                    br{
+                        display: block;
+                    }
+                }
+                .btns{
+                    display: none;
+                }
+            }
+            .slideVeiw{
+                height: #{'min(10rem,400px)'};
+                width: 100vw;
+                margin-left: #{'min(calc((100vw - 380px) / -2 ),calc((100vw - 90vw) / -2 ))'};
+                .slideGroup{
+                    .image{
+                        height: #{'min(10rem,400px)'};
+                        margin-left: #{'min(calc((100vw - 380px) / -2 ),calc((100vw - 90vw) / -2 ))'};
                     }
                 }
             }
@@ -201,6 +254,11 @@ $plh : #{'min(0.5rem, 20px)'};
                         width: 80%;
                     }
                 }
+            }
+        }
+        header{
+            @include tab{
+                display: none;
             }
         }
         section{
@@ -322,6 +380,42 @@ $plh : #{'min(0.5rem, 20px)'};
                 }
 
             }
+            @include mob{
+                width: 100vw;
+                section{
+                    article{
+                        display: block;
+                        &.a1{
+                            .image{
+                                width: calc(100% / 4 * 3);
+                                opacity: 1;
+                                height: #{'min(6rem,240px)'};
+                                transition: none;
+                            }
+                            .texts{
+                                @include Grid('mob');
+                                opacity: 1;
+                                transform: none;
+                                padding: $lh #{'min(0.25rem,10px)'} $plh #{'min(1.5rem,60px)'};
+                                h3{
+                                    font-size: #{'min(3.0em,36px)'};
+                                }
+                                p{
+                                    margin-top: #{'min(0.75rem,30px)'};
+                                    font-size: #{'min(1.6em,16px)'};
+                                }
+                                .btn{
+                                    margin-top: #{'min(0.75rem,30px)'};
+                                    width: calc(100% / 4 * 1.2);
+                                }
+                            }
+                        }
+                        &.a2{
+                            display: none;
+                        }
+                    }
+                }
+            }
         }
         &.cnt02{
             header{
@@ -371,7 +465,6 @@ $plh : #{'min(0.5rem, 20px)'};
                                 justify-content: space-between;
                                 margin-top: $plh;
                                 text-shadow: 3px 1px 5px rgba(0,0,0,0.5);
-        
                                 p{
                                     font-size: #{'min(1.6em,16px)'};
                                     line-height: $plh;
@@ -589,6 +682,7 @@ $plh : #{'min(0.5rem, 20px)'};
                             article{
                                 width: calc(100% / 3);
                                 position: relative;
+                                cursor: pointer;
                                 .image{
                                     @include img;
                                     height: #{'min(7.5rem,300px)'};
@@ -615,17 +709,12 @@ $plh : #{'min(0.5rem, 20px)'};
                                     line-height: #{'min(1.5rem,60px)'};
                                     text-align: center;
                                     font-weight: 400;
-                                    cursor: pointer;
                                 }
                                 i{
                                     display: none;
                                     font-size: #{'min(7.0em,70px)'};
                                     color: #fff;
                                     position: absolute;
-                                    left: 0;
-                                    margin: auto;
-                                    top: 50%;
-                                    bottom: 50%;
                                 }
                                 &.show{
                                     width: 150%;
@@ -652,9 +741,6 @@ $plh : #{'min(0.5rem, 20px)'};
                             height: #{'min(7.25rem,290px)'};
                             width: calc(100% / 8 * 4 - 10px);
                             .texts{
-                                h3{
-                                    font-size: #{'min()'};
-                                }
                                 height: #{'min(7.25rem,290px)'};
                                 padding: #{'min(3rem,120px)'} $lh #{'min(1.5rem,60px)'};
                                 text-align: center;
@@ -717,6 +803,120 @@ $plh : #{'min(0.5rem, 20px)'};
                         }
                         .artView{
                             width: 100%;
+                        }
+                    }
+                }
+            }
+            @include mob{
+                width: 100vw;
+                section{
+                    .artTop{
+                        display: block;
+                        .artLeft{
+                            width: 100%;
+                            .texts{
+                                padding: $lh2 $lh;
+                                h3{
+                                    font-size: #{'min(3.6em,36px)'};
+                                    text-shadow: 3px 1px 5px rgba(0,0,0,0.5);
+                                    line-height: $lh2;
+                                }
+                                .txt{
+                                    margin-top: 0;
+                                    width: 70%;
+                                    p{
+                                        font-size: #{'min(1.4em,14px)'};
+                                    }
+                                    i{
+                                        font-size: #{'min(3.0em,30px)'};
+                                    }
+                                }
+                            }
+                        }
+                        .artRight{
+                            margin-top: $lh;
+                            width: 100%;
+                            .imgView{
+                                .txtGroup{
+                                    .txt{
+                                        padding: 0 #{'min(0.75rem,30px)'} #{'min(0.37rem,15px)'};
+                                        h3{}
+                                        .texts{
+                                            .txtTop{
+                                                i{
+                                                    font-size: #{'min(1.4em,14px)'};
+                                                }
+                                                h5{
+                                                    font-size: #{'min(1.4em,14px)'};
+                                                }
+                                            }
+                                            .txtBtm{
+                                                i{
+                                                    font-size: #{'min(1.4em,14px)'};
+                                                    line-height: $plh;
+                                                }
+                                                h5{
+                                                    font-size: #{'min(1.4em,14px)'};
+                                                    line-height: $plh;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                .imgGroup{
+                                    position: relative;
+                                    .image{
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                    }
+                                }
+                                .paging{
+                                    display: none;
+                                }
+                                .btns{
+                                    width: 90%;
+                                    left: 0;
+                                    right: 0;
+                                    height: #{'min(2rem,80px)'};
+                                    i{
+                                        width: calc(100% / 4 * 0.6);
+                                        display: block;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .artBtm{
+                        .artView{
+                            .artGroup{
+                                article{
+                                    .image{}
+                                    h3{
+                                        opacity: 0;
+                                    }
+                                    i{
+                                        display: block;
+                                        width: calc(100% / 2);
+                                        height: #{'min(1.5rem,60px)'};
+                                        top: 0;
+                                        bottom: 0;
+                                        right: 0;
+                                        left: 0;
+                                        margin: auto;
+                                        text-align: center;
+                                    }
+                                    &.show{
+                                        width: 90%;
+                                        h3{
+                                            opacity: 1;
+                                        }
+                                        i{
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -808,8 +1008,14 @@ $plh : #{'min(0.5rem, 20px)'};
                                 }
                                 .texts{
                                     position: absolute;
-                                    top: #{'min(2.5rem,100px)'};
-                                    left: #{'min(2.5rem,100px)'};;
+                                    top: 0;
+                                    left: 0;
+                                    right: 0;
+                                    bottom: 0;
+                                    margin: auto;
+                                    width: calc(100% / 12 * 4);
+                                    text-align: center;
+                                    height: $lh2;
                                     opacity: 1;
                                     i{
                                         font-size: #{'min(8.0em,80px)'};
@@ -946,7 +1152,7 @@ $plh : #{'min(0.5rem, 20px)'};
                             transition: all 0.5s;
                             article{
                                 width: calc(100% / 4 - 20px);
-                                margin: 0 10px;
+                                margin: 0 #{'min(0.25rem,10px)'};
                                 height: #{'min(5rem,200px)'};
                                 cursor: pointer;
                                 .image{
@@ -971,9 +1177,6 @@ $plh : #{'min(0.5rem, 20px)'};
                                 &.a1{
                                     width: calc(100% / 2);
                                     float: left;
-                                    .texts{
-                                        left: #{'min(3.25rem,130px)'};
-                                    }
                                 }
                                 &.a2{
                                     width: calc(100% / 2);
@@ -986,6 +1189,9 @@ $plh : #{'min(0.5rem, 20px)'};
                                 &.a3{
                                     width: calc(100% / 2);
                                     float: right;
+                                    .image{
+                                            background-position: top;
+                                    }
                                 }
                             }
                             .artGroup{
@@ -1012,10 +1218,108 @@ $plh : #{'min(0.5rem, 20px)'};
                     }
                 }
             }
+            @include mob{       
+                section{
+                    .artTop{
+                        .artGroup{
+                            width: 200%;
+                            article{
+                                width: calc(100% / 4);
+                                margin: 0 #{'min(0.125rem,5px)'};
+                            }
+                        }
+                        .btns{
+                            i{
+                                width: calc(100% / 4 * 0.6);
+                            }
+                        }
+                    }
+                    .artBtm{
+                        margin-top: #{'min(1.25rem,50px)'};
+                        padding: #{'min(1.25rem,50px)'} 0 $lh;
+                        .inner{
+                            article{
+                                &.a1{
+                                    width: 100%;
+                                    float: none;
+                                }
+                                &.a2{
+                                    width: 100%;
+                                    float: none;
+                                    padding: $lh $plh;
+                                    height: #{'min(5rem,200px)'};
+                                    .texts{
+                                        padding: 0;
+                                        height: #{'min(3rem,120px)'};
+                                        .txtTop{
+                                            h3{
+                                                text-align: center;
+                                                br{
+                                                    display: none;
+                                                }
+                                            }
+                                            p{
+                                                display: none;
+                                            }
+                                        }
+                                        .txtBtm{
+                                            .txt{
+                                                width: calc(100% / 2);
+                                                float: left;
+                                                i{
+                                                    line-height: $plh;
+                                                }
+                                                h5{
+                                                    font-size: #{'min(1.4em,14px)'};
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                &.a3{
+                                    width: 100%;
+                                    border-top: 1px solid #eee;
+                                    float: none;
+                                    .image{
+                                        background-image: url(./image/main/cnt03_artBtm_map_pic02.jpg);
+                                    }
+                                }
+                            }
+                            .artGroup{
+                                width: 100%;
+                                float: none;
+                                article{
+                                    border-right: none;
+                                    .texts{
+                                        p{
+                                            font-size: #{'min(1.4em,14px)'};
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
         }
         &.cnt01{
             margin-top: 0;
+        }
+        @include mob{
+            margin-top: $lh;
+            .content{
+                &.cnt02{
+                    section{
+                        margin-top: $lh;
+                    }
+                }
+                &.cnt03{
+                    section{
+                        margin-top: $lh;
+                    }
+                }
+            }
         }
     }
 
@@ -1189,6 +1493,45 @@ $plh : #{'min(0.5rem, 20px)'};
             &.g3{
                 display: none;
             }
+        }
+    }
+    @include mob{
+        height: #{'min(2rem,80px)'};
+        margin-top: $lh;
+        .banner{
+            @include Grid('mob');
+            .texts{
+                width: 100%;
+                padding: #{'min(0.25rem,10px)'}  ;
+                height: #{'min(2rem,80px)'};
+                margin: 0;
+                display: flex;
+                justify-content: space-between;
+                h5{
+                    display: none;
+                }
+                h2{
+                    margin-top: #{'min(0.25rem,10px)'};
+                    font-size: #{'min(1.8em,18px)'};
+                    line-height: $plh;
+                    text-align: left;
+                    span{
+                        font-size: #{'min(1.4em,14px)'};
+                    }
+                    b{
+                        font-size: #{'min(1.8em,18px)'};
+                    }
+                }
+                .btn{
+                    width: calc(100% / 4 );
+                    margin: 0;
+                    height: $lh;
+                    margin-top: #{'min(0.25rem,10px)'};
+                }
+            }
+        }
+        .ovrGrid{
+            display: none;
         }
     }
 }

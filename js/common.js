@@ -83,7 +83,8 @@ $(function(){
              });
 
              // 라이트박스
-     
+             lightBoxAco.removeClass('acoShow');
+
              var lightBoxAco = $('.lightBox>.inner>.aco>li');
      
              lightBoxAco.even().click(function(a){
@@ -117,6 +118,16 @@ $(function(){
              });
          }else{
             toTop.fadeOut(0);
+
+              // 라이트박스
+
+
+              var lightBoxAco = $('.lightBox>.inner>.aco>li');
+      
+              lightBoxAco.even().click(function(a){
+                  lightBoxAco.removeClass('acoShow');
+                  $(this).addClass('acoShow');
+              });
          }
     });
        
