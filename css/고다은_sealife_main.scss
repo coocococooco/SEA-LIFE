@@ -695,14 +695,6 @@ $plh : #{'min(0.5rem, 20px)'};
                                             background-image: url('./image/main/cnt02_artBtm_pic0#{$i}_close.jpg');
                                         }
                                     }
-                                    &.show{
-                                        @for $i from 1 through 3{
-                                            &.i#{$i}{
-                                                background-image: url('./image/main/cnt02_artBtm_pic0#{$i}.jpg');
-                                            }
-                                        }
-                                       opacity: 1;
-                                    }
                                 }
                                 h3{
                                     position: absolute;
@@ -720,8 +712,16 @@ $plh : #{'min(0.5rem, 20px)'};
                                     color: #fff;
                                     position: absolute;
                                 }
-                                &.show{
+                                &:hover{
                                     width: 150%;
+                                    .image{
+                                         @for $i from 1 through 3{
+                                             &.i#{$i}{
+                                                 background-image: url('./image/main/cnt02_artBtm_pic0#{$i}.jpg');
+                                             }
+                                         }
+                                        opacity: 1;
+                                    }
                                 }
                             }
                         }
@@ -910,14 +910,14 @@ $plh : #{'min(0.5rem, 20px)'};
                                         margin: auto;
                                         text-align: center;
                                     }
-                                    &.show{
+                                    &:hover{
                                         width: 90%;
-                                        h3{
-                                            opacity: 1;
-                                        }
-                                        i{
-                                            display: none;
-                                        }
+                                            h3{
+                                                opacity: 1;
+                                            }
+                                            i{
+                                                display: none;
+                                            }
                                     }
                                 }
                             }
@@ -1006,9 +1006,6 @@ $plh : #{'min(0.5rem, 20px)'};
                                     background-position: right;
                                     height: #{'min(7rem,280px)'};
                                     background-image: url(./image/main/cnt03_artBtm_youtube_pic02.jpg);
-                                    &.hov{
-                                        background-image: url(./image/main/cnt03_artBtm_youtube_pic01.jpg);
-                                    }
                                 }
                                 .texts{
                                     position: absolute;
@@ -1025,7 +1022,13 @@ $plh : #{'min(0.5rem, 20px)'};
                                         font-size: #{'min(8.0em,80px)'};
                                         color: #fff;
                                     }
-                                    &.hov{
+                                }
+                                &:hover{
+                                    .image{
+                                        background-image: url(./image/main/cnt03_artBtm_youtube_pic01.jpg);
+                                        opacity: 1;
+                                    }
+                                    .texts{
                                         opacity: 0;
                                     }
                                 }
@@ -1297,6 +1300,12 @@ $plh : #{'min(0.5rem, 20px)'};
                                     .texts{
                                         p{
                                             font-size: #{'min(1.4em,14px)'};
+                                        }
+                                    }
+                                    .icon{
+                                        .shape{
+                                            width: calc(100% / 3.5);
+                                            height: #{'min(0.375rem,15px)'};
                                         }
                                     }
                                 }

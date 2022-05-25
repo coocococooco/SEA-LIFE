@@ -114,16 +114,6 @@ $(function(){
         var pagAuto = setInterval(cnt02Left,3000);
        
         pagingLi.click(pag);
-
-    
-        // artBtm
-
-        artBtmart.each(function(a){
-            artBtmart.eq(a).hover(function(){
-                artBtmart.eq(a).toggleClass('show');
-                artBtmimg.eq(a).toggleClass('show');
-            });
-        });
     
         // 배너
     
@@ -167,13 +157,6 @@ $(function(){
             }
         });
     
-        // 컨텐츠 03
-    
-        cnt03BtmArt.eq(0).hover(function(){
-            cnt03BtmArt.eq(0).find('.image').toggleClass('hov');
-            cnt03BtmArt.eq(0).find('.texts').toggleClass('hov');
-        });
-
     }else if(wd >= 420 && wd < 1024){
          
         // 메인
@@ -211,15 +194,7 @@ $(function(){
              var pagAuto = setInterval(cnt02Left,3000);
          
              pagingLi.click(pag);
-         
-             // artBtm
-             artBtmart.each(function(a){
-                artBtmart.eq(a).hover(function(){
-                     artBtmart.eq(a).toggleClass('show');
-                     artBtmimg.eq(a).toggleClass('show');
-                 });
-             });
-         
+
              // 배너
              $(window).scroll(function(){
                  var scl = $(this).scrollTop();
@@ -288,11 +263,6 @@ $(function(){
                 });
             });
 
-            // artBtm
-            cnt03BtmArt.eq(0).hover(function(){
-                cnt03BtmArt.eq(0).find('.image').toggleClass('hov');
-                cnt03BtmArt.eq(0).find('.texts').toggleClass('hov');
-            });
     }else{
          // 메인
 
@@ -321,14 +291,6 @@ $(function(){
             });
         });
 
-        // artBtm
-
-        artBtmart.each(function(a){
-            artBtmart.eq(a).hover(function(){
-                 artBtmart.eq(a).toggleClass('show');
-                 artBtmimg.eq(a).toggleClass('show');
-             });
-         });
     // 컨텐츠 03
 
        // artTop
@@ -372,7 +334,6 @@ $(function(){
                     marginLeft : i*-(100 / 2)+'%'
                 });
             });
-
     }
 
 });
