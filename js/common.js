@@ -80,7 +80,6 @@ $(function(){
              });
 
              // 라이트박스
-             lightBoxAco.removeClass('acoShow');
      
              lightBoxAco.even().click(function(a){
                  lightBoxAco.removeClass('acoShow');
@@ -104,7 +103,6 @@ $(function(){
              });
 
              // 라이트박스
-             lightBoxAco.removeClass('acoShow');
      
              lightBoxAco.even().click(function(a){
                  lightBoxAco.removeClass('acoShow');
@@ -138,13 +136,6 @@ $(function(){
              });
          }else{
              toTop.fadeOut(0);
-
-              // 라이트박스
-      
-              lightBoxAco.even().click(function(a){
-                  lightBoxAco.removeClass('acoShow');
-                  $(this).addClass('acoShow');
-              });
          }
     });
        

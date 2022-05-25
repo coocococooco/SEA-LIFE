@@ -59,19 +59,13 @@ $(function(){
         clearInterval(pagAuto);
     };
 
-    // 컨텐츠 02 artBtm
-    var artBtmart = $('.content.cnt02 section>.artBtm>.artView>.artGroup>article');
-    var artBtmimg = $('.content.cnt02 section>.artBtm>.artView>.artGroup>article>.image');
-
     // 컨텐츠 03
     var cnt03TopArtGroup = $('.content.cnt03>section>.artTop>.artGroup');
     var cnt03TopBtn = $('.content.cnt03>section>.artTop>.btns>i');
-    var cnt03BtmArt = $('.content.cnt03>section>.artBtm>.inner>article');
 
     // 배너
     var ovrGrid = $('.bnrWrap>.ovrGrid');
     var bnrImg = $('.bnrWrap>.banner>.imgGroup>.image');
-
 
     if(wd >= 1024){
         // 메인
