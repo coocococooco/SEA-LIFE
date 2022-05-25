@@ -21,7 +21,7 @@ $(function(){
     var pagingLi = $('.content.cnt02 .imgView>.paging>li');
     var imgGroup = $('.content.cnt02 .imgView>.imgGroup');
     var txtGroup = $('.content.cnt02 .imgView>.txtGroup');
-    var cnt02RightBtn = $('.content.cnt02 .imgView>.btns>i')
+    var cnt02RightBtn = $('.content.cnt02 .imgView>.btns>i');
     var imgGroupLen = imgGroup.children().length;
     var i = 0;
 
@@ -76,7 +76,7 @@ $(function(){
     if(wd >= 1024){
         // 메인
         mainbtn.eq(1).click(function(){
-            clearInterval(auto)
+            clearInterval(auto);
         });
         mainbtn.eq(0).click(function(){
             auto = setInterval(left,3000);
@@ -91,19 +91,19 @@ $(function(){
                 $('.content.cnt01>section>article>.image').css({
                     opacity : 1,
                     transform : 'translateX(0px)'
-                })
+                });
                 $('.content.cnt01>section>article>.texts').css({
                     opacity : 1,
                     transform : 'translateY(0px)'
-                })
+                });
             }else if(scl <= 580){
                 $('.content.cnt01>section>article>.image').css({
                     opacity : 0,
-                })
+                });
                 $('.content.cnt01>section>article>.texts').css({
                     opacity : 0,
                     transform : 'translateY(60px)'
-                })
+                });
             }
         });
     
@@ -172,19 +172,19 @@ $(function(){
                   $('.content.cnt01>section>article>.image').css({
                       opacity : 1,
                       transform : 'translateX(0px)'
-                  })
+                  });
                   $('.content.cnt01>section>article>.texts').css({
                       opacity : 1,
                       transform : 'translateY(0px)'
-                  })
+                  });
               }else if(scl <= 350){
                   $('.content.cnt01>section>article>.image').css({
                       opacity : 0,
-                  })
+                  });
                   $('.content.cnt01>section>article>.texts').css({
                       opacity : 0,
                       transform : 'translateY(60px)'
-                  })
+                  });
               }
           });
 
@@ -194,30 +194,6 @@ $(function(){
              var pagAuto = setInterval(cnt02Left,3000);
          
              pagingLi.click(pag);
-
-             // 배너
-             $(window).scroll(function(){
-                 var scl = $(this).scrollTop();
-                 if(scl >= 1800){
-                     ovrGrid.eq(1).css({
-                         opacity : 1,
-                         transform : 'translateY(0px)'
-                     });
-                     bnrImg.eq(0).css({
-                         opacity : 1,
-                         transform : 'translateY(0px)'
-                     });
-                 }else{
-                     ovrGrid.eq(1).css({
-                         opacity : 0,
-                         transform : 'translateY(30px)'
-                     });
-                     bnrImg.eq(0).css({
-                         opacity : 0,
-                         transform : 'translateY(60px)'
-                     });
-                 }
-             }); 
 
          // 컨텐츠 03
 

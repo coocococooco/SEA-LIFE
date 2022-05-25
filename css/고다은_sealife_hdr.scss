@@ -149,6 +149,9 @@ $plh : #{'min(0.5rem, 20px)'};
                 h4{
                     font-size: #{'min(1.8em, 18px)'};
                     line-height: $lh2;
+                    &:hover{
+                        color: #0077b6;
+                    }
                 }
                 i{
                     line-height: $lh2;
@@ -164,9 +167,6 @@ $plh : #{'min(0.5rem, 20px)'};
                 }
                 .tgle{
                     color: #000;
-                }
-                .blue{
-                    color: #0077b6;
                 }
             }
         }
@@ -243,6 +243,9 @@ $plh : #{'min(0.5rem, 20px)'};
            }
         }
         @include tab{
+            top: 0;
+        }
+        @include mob{
             top: 0;
         }
     }

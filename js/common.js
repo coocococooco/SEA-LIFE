@@ -10,6 +10,7 @@ $(function(){
          var hdrh1 = $('.hdrWrap>header>a>h1');
          var navWrap =$('.navWrap');
          var nav = $('.navGroup>.nav');
+         var lightBoxAco = $('.lightBox>.inner>.aco>li');
             
          if(wd >= 1024){
             hdrWrap.hover(function(){
@@ -22,21 +23,18 @@ $(function(){
             });
 
             hdrLi.eq(0).hover(function(){
-                hdrLi.eq(0).toggleClass('blue');
                 nav.eq(0).css('display','flex');
                 nav.eq(1).css('display','none');
                 nav.eq(2).css('display','none');
             });
 
             hdrLi.eq(1).hover(function(){
-                hdrLi.eq(1).toggleClass('blue');
                 nav.eq(1).css('display','flex');
                 nav.eq(0).css('display','none');
                 nav.eq(2).css('display','none');
             });
 
             hdrLi.eq(2).hover(function(){
-                hdrLi.eq(2).toggleClass('blue');
                 nav.eq(2).css('display','flex');
                 nav.eq(0).css('display','none');
                 nav.eq(1).css('display','none');
@@ -83,8 +81,6 @@ $(function(){
 
              // 라이트박스
              lightBoxAco.removeClass('acoShow');
-
-             var lightBoxAco = $('.lightBox>.inner>.aco>li');
      
              lightBoxAco.even().click(function(a){
                  lightBoxAco.removeClass('acoShow');
@@ -109,8 +105,6 @@ $(function(){
 
              // 라이트박스
              lightBoxAco.removeClass('acoShow');
-
-             var lightBoxAco = $('.lightBox>.inner>.aco>li');
      
              lightBoxAco.even().click(function(a){
                  lightBoxAco.removeClass('acoShow');
@@ -146,8 +140,6 @@ $(function(){
              toTop.fadeOut(0);
 
               // 라이트박스
-
-              var lightBoxAco = $('.lightBox>.inner>.aco>li');
       
               lightBoxAco.even().click(function(a){
                   lightBoxAco.removeClass('acoShow');

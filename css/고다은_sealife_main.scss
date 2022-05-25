@@ -1336,7 +1336,6 @@ $plh : #{'min(0.5rem, 20px)'};
         }
     }
 
-
 // 배너
 
 .bnrWrap{
@@ -1485,7 +1484,8 @@ $plh : #{'min(0.5rem, 20px)'};
             .imgGroup{
                 .image{
                     &.i1{
-                        top: #{'min(-2rem,-80px)'};
+                        opacity: 1;
+                        top: #{'min(-1rem,-40px)'};
                         left: #{'min(11rem,440px)'};
                     }
                     &.i2{
@@ -1496,6 +1496,7 @@ $plh : #{'min(0.5rem, 20px)'};
         }
         .ovrGrid{
             &.g2{
+                opacity: 1;
                 height: #{'min(10rem,400px)'};
                 background-image: url(./image/main/bnr_pic02_tab.png);
                 transform: translateY(30px);
