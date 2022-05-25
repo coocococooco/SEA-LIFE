@@ -1,21 +1,32 @@
-html{
-    font-size: 3vw;
-    body{
-        font-size: 0.7vw;
-        overflow-x: hidden;
-        font-family: 'Noto Sans KR', sans-serif;
-        position: relative;
-        z-index: 1;
+// 변수 선언
+
+@mixin Grid($dev){
+    @if($dev == 'pc'){
+        width: 80%;
+        max-width: 1080px;
+    }
+    @else if($dev == 'tab'){
+        width: 90%;
+        max-width: 700px;
+    }
+    @else{
+        width: 90%;
+    }
+    margin: 0 auto;
+}
+
+@mixin tab {
+    @media (max-width : 1024px) and (min-width : 0px) {
+        @content;
     }
 }
 
-// 변수 선언
-
-@mixin Grid {
-    width: 80%;
-    max-width: 1080px;
-    margin: 0 auto;
+@mixin mob {
+    @media (max-width : 420px) and (min-width : 0px) {
+        @content;
+    }
 }
+
 @mixin bg {
     background-position: right;
     background-size: contain;
@@ -46,7 +57,7 @@ $plh : #{'min(0.5rem, 20px)'};
     z-index: 5;
     transition: position 0.3s;
     .mnTop{
-        @include Grid;
+        @include Grid('pc');
         color: #fff;
         display: flex;
         justify-content: space-between;
@@ -72,6 +83,9 @@ $plh : #{'min(0.5rem, 20px)'};
         &.on{
             color: #0077b6;
         }
+        @include mob{
+            @include Grid('mob');
+        }
     }
     &.fix{
         background-color: #fff;
@@ -84,6 +98,10 @@ $plh : #{'min(0.5rem, 20px)'};
         .mnTop{
             color: #0077b6;
         }
+    }
+    @include tab{
+        @include Grid('tab');
+        display: none;
     }
 }
 
@@ -98,17 +116,21 @@ $plh : #{'min(0.5rem, 20px)'};
     height: #{'min(2rem,80px)'};
     transition: position 0.3s;
     header{
-        @include Grid;
+        @include Grid('pc');
         text-transform: uppercase;
         display: flex;
         justify-content: space-between;
         color: #fff;
+        line-height: $lh2;
         a{
+            height: $lh2;
             h1{
                 line-height: $lh2;
                 font-size: #{'min(4.0em, 40px)'};
+                font-weight: bolder;
                 b{
                     cursor: pointer;
+                    font-weight: bolder;
                 }
                 &.on{
                     color: #0077b6;
@@ -123,6 +145,7 @@ $plh : #{'min(0.5rem, 20px)'};
                 width: calc(100% / 2);
                 color: #fff;
                 cursor: pointer;
+                height: $lh2;
                 h4{
                     font-size: #{'min(1.8em, 18px)'};
                     line-height: $lh2;
@@ -133,7 +156,7 @@ $plh : #{'min(0.5rem, 20px)'};
                 }
                 &:nth-last-child(1){
                     text-align: right;
-                    opacity: 1;
+                    opacity: 0;
                     cursor: auto;
                     i{
                         font-size: #{'min(4.0em, 40px)'};
@@ -146,8 +169,52 @@ $plh : #{'min(0.5rem, 20px)'};
                     color: #0077b6;
                 }
             }
-        }    
+        }
     }
+    @include tab{
+         background-color: #fff;
+         header{
+                @include Grid('tab');
+                a{
+                    h1{
+                        color: #0077b6;
+                        line-height: $lh2;
+                        font-size: #{'min(4.0em, 40px)'};
+                        b{
+                            cursor: pointer;
+                            font-weight: bolder;
+                        }
+                    }
+                }
+                .nav{
+                    width: calc(100% / 8);
+                    flex-direction: row-reverse;
+                    li{
+                        &:nth-child(1){
+                            display: none;
+                        }
+                        &:nth-child(2){
+                            display: none;
+                        }
+                        &:nth-child(3){
+                            display: none;
+                        }
+                        &:nth-last-child(1){
+                            text-align: right;
+                            opacity: 1;
+                            color: #000;
+                            label{
+                                line-height: $lh2;
+                                i{
+                                    font-size: #{'min(4.0em, 40px)'};
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+            }    
+    }    
     &.fix{
         background-color: #fff;
         position: fixed;
@@ -165,6 +232,9 @@ $plh : #{'min(0.5rem, 20px)'};
                 color: #000;
            }
         }
+        @include tab{
+            top: 0;
+        }
     }
 }
 
@@ -174,7 +244,6 @@ $plh : #{'min(0.5rem, 20px)'};
      height: #{'min(7rem,280px)'};
      z-index: 4;
      top: #{'min(3rem,120px)'};
-     transition: all 0.6s;
 }
 .navWrap{
     height: #{'min(7rem,280px)'};
@@ -186,7 +255,7 @@ $plh : #{'min(0.5rem, 20px)'};
     backdrop-filter: blur(5px);
     z-index: 10;
     .navGroup{
-        @include Grid;
+        @include Grid('pc');
         display: flex;
         z-index: 2;
         .nav{
@@ -206,6 +275,9 @@ $plh : #{'min(0.5rem, 20px)'};
                         line-height: #{'min(0.825rem, 30px)'};
                         cursor: pointer;
                         font-weight: 300;
+                        &:hover{
+                            color: #ade8f4;
+                        }
                     }
                 }
             }
@@ -264,6 +336,9 @@ $plh : #{'min(0.5rem, 20px)'};
         transition: height 0.6s;
         top: #{'min(3rem,120px)'};
     }
+    @include tab{
+        display: none;
+    }
 }
 
 // 메뉴탑, 헤더, 네비게이션
@@ -279,11 +354,12 @@ input#sub{
     display: none;
 }
 input#sub:checked+.lightBox{
-    width: 40vW;
+    width: 50vW;
     top: 0;
     right: 0;
 }
 .lightBox{
+    display: none;
     position: fixed;
     width: 0vw;
     height: 100vh;
@@ -295,7 +371,7 @@ input#sub:checked+.lightBox{
     overflow: hidden;
     transition: all 0.6s;
     .inner{
-        width: 40vw;
+        width: 50vw;
         .boxTop{
             padding: 0 #{'min(0.75rem,30px)'};
             background-color: #0077b6;
@@ -303,18 +379,20 @@ input#sub:checked+.lightBox{
             justify-content: space-between;
             color: #fff;
             .icon{
-                width: calc(100% / 7);
+                width: calc(100% / 5);
                 display: flex;
                 justify-content: space-between;
                 i{
                     font-size: #{'min(0.75rem,30px)'};
                     line-height: $lh2;
+                    cursor: pointer;
                 }
             }
             label{
                 i{
                     font-size: #{'min(1rem,40px)'};
                     line-height: $lh2;
+                    cursor: pointer;
                 }
             }
         }
@@ -331,7 +409,7 @@ input#sub:checked+.lightBox{
                 line-height: $lh;
                 font-size: #{'min(1.4em,14px)'};
                 font-weight: 500;
-                margin-left: $plh;
+                margin-left: #{'min(0.25rem,10px)'};
             }
         }
         .aco{
@@ -352,17 +430,33 @@ input#sub:checked+.lightBox{
                         color: #0077b6;
                     }
                 }
-                span{
-                    font-size: #{'min(3.0em,30px)'};
-                    color: #666666;
-                    cursor: pointer;
+                .sp{
+                    position: relative;
+                    width: calc(100% / 12);
+                    span{
+                        font-size: #{'min(3.0em,30px)'};
+                        color: #666666;
+                        cursor: pointer;
+                        position: absolute;
+                        &:nth-child(2){
+                            display: none;
+                        }
+                    }
                 }
                 &.acoShow+li{
                     height: #{'min(12.875rem,515px)'};
                 }
-                &:nth-child(1)~li{
-                    
-                    // border-bottom: 1px solid #aaa;
+                &.acoShow{
+                    .sp{
+                        span{
+                            &:nth-child(1){
+                                display: none;
+                            }
+                            &:nth-child(2){
+                                display: block;
+                            }
+                        }
+                    }
                 }
             }
             li:nth-child(even){
@@ -376,6 +470,8 @@ input#sub:checked+.lightBox{
                     margin-top: #{'min(0.25rem,10px)'};
                     h4{
                         margin-left: #{'min(0.75rem,30px)'};
+                        color: #000;
+                        text-transform: uppercase;
                         cursor: pointer;
                         &:nth-child(1){
                             margin-left: 0;
@@ -394,5 +490,8 @@ input#sub:checked+.lightBox{
                 }
             }
         }
+    }
+    @include tab{
+            display: block;
     }
 }

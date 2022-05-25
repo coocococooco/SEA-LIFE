@@ -1,4 +1,33 @@
-// 기초셋팅
+// 변수 선언
+
+@mixin Grid($dev){
+    @if($dev == 'pc'){
+        width: 80%;
+        max-width: 1080px;
+    }
+    @else if($dev == 'tab'){
+        width: 90%;
+        max-width: 700px;
+    }
+    @else{
+        width: 90%;
+    }
+    margin: 0 auto;
+}
+
+@mixin tab {
+    @media (max-width : 1024px) and (min-width : 0px) {
+        @content;
+    }
+}
+
+@mixin mob {
+    @media (max-width : 420px) and (min-width : 0px) {
+        @content;
+    }
+}
+
+// 기초세팅
 
 html{
     font-size: 3vw;
@@ -9,15 +38,14 @@ html{
         position: relative;
         z-index: 1;
     }
+    @include tab{
+        font-size: 5vw;
+        body{
+            font-size: 1.4vw;
+        }
+    }
 }
 
-// 변수 선언
-
-@mixin Grid {
-    width: 80%;
-    max-width: 1080px;
-    margin: 0 auto;
-}
 @mixin bg {
     background-position: right;
     background-size: contain;
@@ -33,22 +61,6 @@ $lh : #{'min(1rem, 40px)'};
 $lh2 : #{'min(2rem, 80px)'};
 $plh : #{'min(0.5rem, 20px)'};
 
-
-// 폰트 선언
-
-@mixin ff ($fontname,$url){
-    @font-face {
-        font-family: '#($fontname)';
-        src: url('./fonts/#($url)') format('truetype');
-    }
-}
-
-// @include ff(notoL,'NotoSansKR-Light.otf');
-// @include ff(notoM,'NotoSansKR-Medium.otf');
-// @include ff(notoR,'NotoSansKR-Regular.otf');
-@include ff(noto,'NotoSansKR-Bold.otf');
-
-
 // 메인
 
 .mainWrap{
@@ -57,7 +69,7 @@ $plh : #{'min(0.5rem, 20px)'};
     width: 100%;
     top : 0;
     main{
-        @include Grid;
+        @include Grid('pc');
         position: relative;
         .texts{
          text-align: center;
@@ -69,8 +81,10 @@ $plh : #{'min(0.5rem, 20px)'};
          margin: auto;
          color: #fff;
          text-shadow: 3px 1px 5px rgba(0,0,0,0.5);
+         line-height: #{'min(11rem,44px)'};
          h3{
              font-size: #{'min(2.4em,24px)'};
+             font-weight: 300;
          }
          h2{
              font-size: #{'min(3.8em,36px)'};
@@ -108,13 +122,40 @@ $plh : #{'min(0.5rem, 20px)'};
                 }
             }
         }
+        @include tab{
+            @include Grid('tab');
+            .texts{
+                text-align: center;
+                position: absolute;
+                z-index: 1;
+                left: 0;
+                right: 0;
+                top: #{'min(6.5rem,260px)'};
+                .btns{
+                    display: none;
+                }
+            }
+            .slideVeiw{
+                height: #{'min(25rem,640px)'};
+                width: 100vw;
+                margin-left: #{'min(calc((100vw - 700px) / -2 ),calc((100vw - 90vw) / -2 ))'};
+                .slideGroup{
+                    .image{
+                        height: #{'min(25rem,640px)'};
+                        margin-left: #{'min(calc((100vw - 700px) / -2 ),calc((100vw - 90vw) / -2 ))'};
+                    }
+                }
+            }
+        }
     }
 }
+
+// 컨텐츠
 
 .cntWrap{
     margin-top: #{'min(3rem,120px)'};
     .content{
-        @include Grid;
+        @include Grid('pc');
         header{
             height: #{'min(3rem,120px)'};
             position: relative;
@@ -152,9 +193,21 @@ $plh : #{'min(0.5rem, 20px)'};
                     height: #{'min(1.5rem,67px)'};
                 }
             }
+            @include tab{
+                margin-left: #{'min(3.5rem,140px)'};
+                .shape{
+                    width: calc(100% / 7);
+                    .sh2{
+                        width: 80%;
+                    }
+                }
+            }
         }
         section{
             margin-top: #{'min(2rem,80px)'};
+            @include tab{
+                margin-top: $lh;
+            }
         }
         &.cnt01{
             section{
@@ -169,7 +222,6 @@ $plh : #{'min(0.5rem, 20px)'};
                             height: #{'min(9rem,360px)'};
                             background-image: url(./image/main/cnt01_pic01.jpg);
                             opacity: 0;
-                            transform: translateX(60px);
                             transition: all 0.7s;
                         }    
                     }
@@ -180,7 +232,6 @@ $plh : #{'min(0.5rem, 20px)'};
                             width: calc(100% / 12 * 6);
                             height: #{'min(9rem,360px)'};
                             background-image: url(./image/main/cnt01_pic02.jpg);
-                            transform: translateX(-60px);
                             opacity: 0;
                             transition: all 0.7s;
                         }
@@ -213,8 +264,7 @@ $plh : #{'min(0.5rem, 20px)'};
                             width: calc(100% / 4);
                             text-align: center;
                             font-size: #{'min(1.4em,14px)'};
-                            color: #0077b6;
-                            height: $lh;     
+                            color: #0077b6; 
                             line-height: $lh;
                             text-transform: uppercase;
                             border-radius: #{'min(0.25rem,10px)'};
@@ -230,8 +280,57 @@ $plh : #{'min(0.5rem, 20px)'};
                     }
                 }
             }
+            @include tab{
+                @include Grid('tab');
+                article{
+                    &.a1{
+                        .image{
+                            width: calc(100% / 8 * 4);
+                            transform: none;
+                            opacity: 1;
+                            transition: all 0.5s;
+                        }
+                        .texts{
+                            padding: $lh #{'min(0.25rem,10px)'} 0;
+                            h3{
+                                font-size: #{'min(3.0em,30px)'};
+                                line-height: #{'min(0.875rem,35px)'};
+                            }
+                            p{
+                                br{
+                                    display: none;
+                                }
+                            }
+                            .btn{
+                                width: calc(100% / 4 * 1.2);
+                            }
+                        }
+                    }
+                    &.a2{
+                        margin-top: $lh;
+                        .texts{
+                            padding: $lh #{'min(0.25rem,10px)'} 0;
+                            h3{
+                                font-size: #{'min(3.0em,30px)'};
+                                line-height: #{'min(0.875rem,35px)'};
+                            }
+                            .btn{
+                                width: calc(100% / 4 * 1.2);
+                            }
+                        }
+                    }
+                }
+
+            }
         }
         &.cnt02{
+            header{
+                h2{
+                    br{
+                        display: none;
+                    }
+                }
+            }
             section{
                 .artTop{
                     display: flex;
@@ -317,6 +416,12 @@ $plh : #{'min(0.5rem, 20px)'};
                                 border-radius: #{'min(0.25rem,10px)'};
                                 border: 1px #0077b6 solid;
                                 cursor: pointer;
+                                transition: all 0.2s;
+                                &:hover{
+                                    background-color: #0077b6;
+                                    color: #fff;
+                                    opacity: 1;
+                                }
                             }
                         }
                         .imgView{
@@ -468,6 +573,12 @@ $plh : #{'min(0.5rem, 20px)'};
                             border-radius: #{'min(0.25rem,10px)'};
                             border: 1px #0077b6 solid;
                             cursor: pointer;
+                            transition: all 0.2s;
+                            &:hover{
+                                background-color: #0077b6;
+                                color: #fff;
+                                opacity: 1;
+                            }
                         }
                     }
                     .artView{
@@ -524,9 +635,103 @@ $plh : #{'min(0.5rem, 20px)'};
                     }
                 }
             }
+            @include tab{
+                @include Grid('tab');
+                header{
+                    h2{
+                        line-height: $lh;
+                        br{
+                            display: block;
+                        }
+                    }
+                }
+                section{
+                    margin-top: #{'min(1.75rem,70px)'};
+                    .artTop{
+                        .artLeft{
+                            height: #{'min(7.25rem,290px)'};
+                            width: calc(100% / 8 * 4 - 10px);
+                            .texts{
+                                h3{
+                                    font-size: #{'min()'};
+                                }
+                                height: #{'min(7.25rem,290px)'};
+                                padding: #{'min(3rem,120px)'} $lh #{'min(1.5rem,60px)'};
+                                text-align: center;
+                                .txt{
+                                    width: 90%;
+                                    margin: auto;
+                                    margin-top: #{'min(0.5rem, 20px)'};
+                                    font-size: #{'min(1.6em,16px)'};
+                                }
+                            }
+                            .image{
+                                height: #{'min(7.25rem,290px)'};
+                            }
+                        }
+                        .artRight{
+                            border: none;
+                            width: calc(100% / 8 * 4 - 10px);
+                            height: #{'min(7.25rem,290px)'};
+                            .text{
+                                display: none;
+                            }
+                            .imgView{
+                                width: 100%;
+                                .txtGroup{
+                                    height: #{'min(2.25rem,90px)'};
+                                    .txt{
+                                        margin-top: #{'min(0.125rem,5px)'};
+                                        h3{
+                                            font-size: #{'min(2.0em,20px)'};
+                                        }
+                                        &:nth-child(1){
+                                            .txtTop{
+                                                h5{
+                                                    span{display: none;}
+                                                }  
+                                            }
+                                        }
+                                    }
+                                }
+                                .imgGroup{
+                                    height: #{'min(7.25rem,290px)'};
+                                    .image{
+                                        height: #{'min(7.25rem,290px)'};
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .artBtm{
+                        outline: none;
+                        .artView{      
+                            article{
+                                .image{
+                                    height: #{'min(7.5rem,300px)'};
+                                }
+                            }                    
+                        }
+                        .texts{
+                            display: none;
+                        }
+                        .artView{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
         }
         &.cnt03{
+            header{
+                h2{
+                    br{
+                        display: none;
+                    }
+                }
+            }
             section{
+                margin-top: #{'min(1.75rem,70px)'};
                 .artTop{
                     position: relative;
                     .artGroup{
@@ -562,7 +767,7 @@ $plh : #{'min(0.5rem, 20px)'};
                         justify-content: space-between;
                             i{
                                 display: none;
-                                width: calc(100% / 12 * 0.7);
+                                width: calc(100% / 8 * 0.7);
                                 height: #{'min(1.5rem,60px)'};
                                 background-color: rgba(83,83,83,0.7);
                                 font-size: #{'min(3.4em, 34px)'};
@@ -581,7 +786,7 @@ $plh : #{'min(0.5rem, 20px)'};
                     padding: #{'min(1.5rem,60px)' 0 #{'min(3rem,120px)'}};
                     overflow: hidden;
                     .inner{
-                        @include Grid;
+                        @include Grid('pc');
                         display: flex;
                         border: 1px #e5e5e5 solid;
                         article{
@@ -633,7 +838,7 @@ $plh : #{'min(0.5rem, 20px)'};
                                             margin-top: #{'min(0.25rem,10px)'};
                                             font-size: #{'min(1.2em,12px)'};
                                             font-weight: normal;
-                                            line-height: #{'min(0.35rem, 14px)'};
+                                            line-height: #{'min(0.4rem, 16px)'};
                                         }
                                     }
                                     .txtBtm{
@@ -670,6 +875,7 @@ $plh : #{'min(0.5rem, 20px)'};
                         .artGroup{
                             width: calc(100% / 4);
                             background-color: #fff;
+                            height: #{'min(7rem,280px)'};
                             article{
                                 border-bottom: 1px #e5e5e5 solid;
                                 border-left: 1px #e5e5e5 solid;
@@ -710,7 +916,7 @@ $plh : #{'min(0.5rem, 20px)'};
                                     p{
                                         font-size: #{'min(1.2em,12px)'};
                                         font-weight: normal;
-                                        line-height: #{'min(0.35rem, 14px)'};
+                                        line-height: #{'min(0.4rem, 16px)'};
                                         margin-top: #{'min(0.25rem, 10px)'};
                                     }
                                 }
@@ -722,12 +928,97 @@ $plh : #{'min(0.5rem, 20px)'};
                     }
                 }
             }
+            @include tab{
+                @include Grid('tab');
+                header{
+                    h2{
+                        line-height: $lh;
+                        br{
+                            display: block;
+                        }
+                    }
+                }
+                section{
+                    .artTop{
+                        overflow: hidden;
+                        .artGroup{
+                            width: 134%;
+                            transition: all 0.5s;
+                            article{
+                                width: calc(100% / 4 - 20px);
+                                margin: 0 10px;
+                                height: #{'min(5rem,200px)'};
+                                cursor: pointer;
+                                .image{
+                                    height: #{'min(5rem,200px)'};
+                                }
+                            }
+                        }
+                        .btns{
+                            i{
+                                display: block;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                    .artBtm{
+                        margin-left: #{'min(calc((100vw - 700px) / -2 ),calc((100vw - 90vw) / -2 ))'};
+                        .inner{
+                            border-top: none;
+                            display: block;
+                            @include Grid('tab');
+                            article{
+                                &.a1{
+                                    width: calc(100% / 2);
+                                    float: left;
+                                    .texts{
+                                        left: #{'min(3.25rem,130px)'};
+                                    }
+                                }
+                                &.a2{
+                                    width: calc(100% / 2);
+                                    float: left;
+                                    border-bottom: #eee 1px solid;
+                                    .texts{
+                                        padding: #{'min(0.75rem,30px)'} #{'min(2.25rem,90px)'} #{'min(0.75rem,30px)'} #{'min(1.75rem,70px)'};
+                                    }
+                                }
+                                &.a3{
+                                    width: calc(100% / 2);
+                                    float: right;
+                                }
+                            }
+                            .artGroup{
+                                width: calc(100% / 2);
+                                float: left;
+                                height: #{'min(7rem,280px)'};
+                                background-color: #fff;
+                                article{
+                                    border-left : none;
+                                    justify-content: space-between;
+                                    .icon{
+                                        width: calc(100% / 5);
+                                    }
+                                    .texts{
+                                        width: 100%;
+                                        margin-top: #{'min(0.25rem,10px)'};
+                                        h3{
+                                            font-size: #{'min(1.8em,18px)'};
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
         }
         &.cnt01{
             margin-top: 0;
         }
-}
+    }
+
 
 // 배너
 
@@ -738,7 +1029,7 @@ $plh : #{'min(0.5rem, 20px)'};
     position: relative;
     overflow: hidden;
     .banner{
-        @include Grid;
+        @include Grid('pc');
         display: flex;
         .texts{
             width: calc(100% / 2);
@@ -772,6 +1063,13 @@ $plh : #{'min(0.5rem, 20px)'};
                 width: calc(100% / 6.5);
                 margin-top: $lh;
                 cursor: pointer;
+                transition: all 0.2s;
+                &:hover{
+                    border: 1px solid #0077b6;
+                    background-color: #0077b6;
+                    color: #fff;
+                    opacity: 1;
+                }
                 h4{
                     width: calc(100% / 3.3);
                     font-size: #{'min(1.4em,14px)'};
@@ -801,7 +1099,7 @@ $plh : #{'min(0.5rem, 20px)'};
                     height: #{'min(3rem,120px)'};
                     background-image: url(./image/main/bnr_pic05.png);
                     transform: translateY(-60px);
-                    opacity: 0;
+                    opacity: 1;
                 }
                 &.i2{
                     top: #{'min(4.5rem,180px)'};
@@ -839,6 +1137,58 @@ $plh : #{'min(0.5rem, 20px)'};
             transform: translateY(-60px);
             opacity: 0;
             transition: all 0.6s;
+        }
+    }
+    @include tab{
+        height: #{'min(8rem,320px)'};
+        .banner{
+            @include Grid('tab');
+            display: block;
+            .texts{
+                position: relative;
+                width: calc(100% / 8 * 6);
+                height: #{'min(8rem,320px)'};
+                padding: 0;
+                margin: 0 auto;
+                text-align: center;
+                padding: $lh 0;
+                z-index: 2;
+                h5{
+                    line-height: $lh2;
+                }
+                h2{
+                    margin-top: 0;
+                }
+                .btn{
+                    width: calc(100% / 6);
+                    margin: auto;
+                    margin-top: #{'min(0.75rem,30px)'};
+                }
+            }
+            .imgGroup{
+                .image{
+                    &.i1{
+                        top: #{'min(-2rem,-80px)'};
+                        left: #{'min(11rem,440px)'};
+                    }
+                    &.i2{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .ovrGrid{
+            &.g2{
+                height: #{'min(10rem,400px)'};
+                background-image: url(./image/main/bnr_pic02_tab.png);
+                transform: translateY(30px);
+            }
+            &.g1{
+                display: none;
+            }
+            &.g3{
+                display: none;
+            }
         }
     }
 }

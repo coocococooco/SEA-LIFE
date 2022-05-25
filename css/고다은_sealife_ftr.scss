@@ -1,25 +1,32 @@
-// 푸터
+// 변수 선언
 
-// 기초셋팅
+@mixin Grid($dev){
+    @if($dev == 'pc'){
+        width: 80%;
+        max-width: 1080px;
+    }
+    @else if($dev == 'tab'){
+        width: 90%;
+        max-width: 700px;
+    }
+    @else{
+        width: 90%;
+    }
+    margin: 0 auto;
+}
 
-html{
-    font-size: 3vw;
-    body{
-        font-size: 0.7vw;
-        overflow-x: hidden;
-        font-family: 'Noto Sans KR', sans-serif;
-        position: relative;
-        z-index: 1;
+@mixin tab {
+    @media (max-width : 1024px) and (min-width : 0px) {
+        @content;
     }
 }
 
-// 변수 선언
-
-@mixin Grid {
-    width: 80%;
-    max-width: 1080px;
-    margin: 0 auto;
+@mixin mob {
+    @media (max-width : 420px) and (min-width : 0px) {
+        @content;
+    }
 }
+
 @mixin bg {
     background-position: right;
     background-size: contain;
@@ -40,41 +47,61 @@ $plh : #{'min(0.5rem, 20px)'};
 .ftrWrap{
     background-color: #1b1b1b;
     footer{
-        @include Grid;
+        @include Grid('pc');
         color: #fff;
-        display: flex;
-        justify-content: space-between;
         padding: $lh 0;
-        h1{
-            font-size: #{'min(4.0em,40px)'};
-            text-transform: uppercase;
-            font-weight: bold;
-            line-height: #{'min(6rem,240px)'};
-        }
-        .ftrRight{
-            width: calc(100% / 12 * 8);
-            .nav{
-                width: calc(100% / 8 * 5);
-                display: flex;
-                justify-content: space-between;
-                li{
-                    font-size: #{'min(1.8em,18px)'};
+        .ftrTop{
+            width: calc(100% / 12 * 4);
+            display: flex;
+            height: $lh2;
+            justify-content: space-between;
+            margin: 0 auto;
+            h4{
+                font-size: #{'min(1.8em,18px)'};
+                font-weight: lighter;
+                cursor: pointer;
+            }
+            }
+        .ftrBtm{
+            display: flex;
+            justify-content: space-between;
+            h1{
+                font-size: #{'min(4.0em,40px)'};
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+            .ftrRight{
+                width: calc(100% / 12 * 8);
+                p{
+                    color: #ccc;
+                    font-size: #{'min(1.4em,14px)'};
                     font-weight: lighter;
-                    cursor: pointer;
+                    line-height: $plh;
+                }
+                .sns{
+                    margin-top: $lh;
+                    i{
+                     font-size: #{'min(4.0em,40px)'};
+                     cursor: pointer;
+                    }
                 }
             }
-            p{
-                margin-top: #{'min(1.5rem,60px)'};
-                color: #ccc;
-                font-size: #{'min(1.4em,14px)'};
-                font-weight: lighter;
-                line-height: $plh;
+        }
+    }
+    @include tab{
+        footer{
+            @include Grid('tab');
+            .ftrTop{
+                width: calc(100% / 8 * 5);
             }
-            .sns{
-                margin-top: $lh;
-                i{
-                 font-size: #{'min(4.0em,40px)'};
-                 cursor: pointer;
+            .ftrBtm{
+                .ftrRight{
+                    width: 70%;
+                    .sns{
+                        width: calc(100% / 8 * 6);
+                        margin: 0 auto;
+                        margin-top: $lh2;
+                    }
                 }
             }
         }

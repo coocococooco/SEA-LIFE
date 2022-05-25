@@ -1,16 +1,3 @@
-// 기초셋팅
-
-html{
-    font-size: 3vw;
-    body{
-        font-size: 0.7vw;
-        overflow-x: hidden;
-        font-family: 'Noto Sans KR', sans-serif;
-        position: relative;
-        z-index: 1;
-    }
-}
-
 // 변수 선언
 
 $lh : #{'min(1rem, 40px)'};
@@ -23,13 +10,10 @@ $plh : #{'min(0.5rem, 20px)'};
     position: fixed;
     z-index: 10;
     right: 40px;
-    top: 0px;
+    top: 300px;
     width: #{'min(2.75rem,110px)'};
     height: #{'min(11rem,440px)'};
     text-align: center;
-    display: none;
-    opacity: 0;
-    transition: all 0.4s;
     .top{
         background-color: #0077b6;
         height: #{'min(1.25rem,50px)'};
