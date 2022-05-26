@@ -982,7 +982,7 @@ $plh : #{'min(0.5rem, 20px)'};
                                 height: #{'min(6rem,240px)'};
                                 @for $i from 1 through 4{
                                     &.i#{$i}{
-                                        background-image: url('./image/main/cnt03_artTop_slide_pic0#{$i}.png');
+                                        background-image: url('./image/main/cnt03_artTop_slide_pic0#{$i}.jpg');
                                     }
                                 }
                             }

@@ -10,13 +10,11 @@ $(function(){
         });
     };
     var auto = setInterval(left,3000);
-
     // 컨텐츠 01
     var loc = [];
     for( var i = 0; i < $('body>div').length; i++){
         loc[i] = $('body>div').eq(i).offset().top;
     };
-
     // 컨텐츠 02
     var pagingLi = $('.content.cnt02 .imgView>.paging>li');
     var imgGroup = $('.content.cnt02 .imgView>.imgGroup');
@@ -24,8 +22,6 @@ $(function(){
     var cnt02RightBtn = $('.content.cnt02 .imgView>.btns>i');
     var imgGroupLen = imgGroup.children().length;
     var i = 0;
-
-    // 컨텐츠 02 artTop
     function cnt02Left(){
         i++;
         i = i%imgGroupLen;
@@ -40,33 +36,25 @@ $(function(){
             marginLeft : i * -100+'%'
         });
     };
-
     function pag(){
         var ind = $(this).index();
         pagingLi.removeClass('pag');
         $(this).addClass('pag');
-
         imgGroup.css({
             marginLeft : ind *-100+'%'
         });
-
         i=ind;
-
         txtGroup.css({
             marginLeft : i * -100+'%'
         });
-   
         clearInterval(pagAuto);
     };
-
     // 컨텐츠 03
     var cnt03TopArtGroup = $('.content.cnt03>section>.artTop>.artGroup');
     var cnt03TopBtn = $('.content.cnt03>section>.artTop>.btns>i');
-
     // 배너
     var ovrGrid = $('.bnrWrap>.ovrGrid');
     var bnrImg = $('.bnrWrap>.banner>.imgGroup>.image');
-
     if(wd >= 1024){
         // 메인
         mainbtn.eq(1).click(function(){
@@ -75,12 +63,9 @@ $(function(){
         mainbtn.eq(0).click(function(){
             auto = setInterval(left,3000);
         });
-
         // 컨텐츠 01
-
         $(window).scroll(function(){
             var scl = $(this).scrollTop();
-    
             if(scl >= 580){
                 $('.content.cnt01>section>article>.image').css({
                     opacity : 1,
@@ -100,20 +85,12 @@ $(function(){
                 });
             }
         });
-    
-        // 컨텐츠 02
-    
-        // artTop
-
-        var pagAuto = setInterval(cnt02Left,3000);
-       
-        pagingLi.click(pag);
-    
-        // 배너
-    
+        // 컨텐츠 02 
+        var pagAuto = setInterval(cnt02Left,3000);      
+        pagingLi.click(pag);  
+        // 배너 
             $(window).scroll(function(){
             var scl = $(this).scrollTop();
-    
             if(scl >= 2500){
                 ovrGrid.eq(1).css({
                     opacity : 1,
@@ -149,16 +126,11 @@ $(function(){
                     transform : 'translateY(60px)'
                 });
             }
-        });
-    
-    }else if(wd >= 420 && wd < 1024){
-         
+        }); 
+    }else if(wd >= 420 && wd < 1024){      
         // 메인
-
-        clearInterval(auto);
-        
+        clearInterval(auto);       
         // 컨텐츠 01
-    
           $(window).scroll(function(){
               var scl = $(this).scrollTop();
       
@@ -181,22 +153,14 @@ $(function(){
                   });
               }
           });
-
-         // 컨텐츠 02
-    
-             // artTop    
-             var pagAuto = setInterval(cnt02Left,3000);
-         
+         // 컨텐츠 02  
+             var pagAuto = setInterval(cnt02Left,3000);    
              pagingLi.click(pag);
-
          // 컨텐츠 03
-
-            // artTop
             cnt03TopBtn.eq(1).css({
                 opacity : 0,
                 cursor : 'auto'
             });
-
             cnt03TopBtn.eq(0).click(function(){
                 i++;
                 if(i>=1){
@@ -214,7 +178,6 @@ $(function(){
                     marginLeft : i*-(100 / 3)+'%'
                 });
             });
-
             cnt03TopBtn.eq(1).click(function(){
                 i--;
                 if(i<=0){
@@ -232,18 +195,11 @@ $(function(){
                     marginLeft : i*-(100 / 3)+'%'
                 });
             });
-
     }else{
          // 메인
-
          clearInterval(auto);
-
-        //  컨텐츠 02 
-        
-        // artTopRight
-        
+        //  컨텐츠 02      
         imgGroup.find('.image:first').appendTo(imgGroup);
-
         cnt02RightBtn.eq(0).click(function(){
             i++;
             i = i%imgGroupLen;
@@ -260,15 +216,11 @@ $(function(){
                 marginLeft : i * -100+'%'
             });
         });
-
     // 컨텐츠 03
-
-       // artTop
             cnt03TopBtn.eq(1).css({
                 opacity : 0,
                 cursor : 'auto'
             });
-
             cnt03TopBtn.eq(0).click(function(){
                 i++;
                 if(i>=2){
@@ -286,7 +238,6 @@ $(function(){
                     marginLeft : i*-(100 / 2)+'%'
                 });
             });
-
             cnt03TopBtn.eq(1).click(function(){
                 i--;
                 if(i<=0){
@@ -305,5 +256,4 @@ $(function(){
                 });
             });
     }
-
 });
