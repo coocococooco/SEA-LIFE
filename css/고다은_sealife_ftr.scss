@@ -38,6 +38,22 @@
     background-repeat: no-repeat;
 }
 
+@mixin txt($fontname,$url){
+    @font-face {
+        font-family: '#{$fontname}';
+        src: url('./fonts/#{$url}') format('truetype');
+    }
+}
+
+// 폰트페이스 선언
+
+@include txt(sanReular,'NotoSansKR-Regular.otf');
+@include txt(sanLight,'NotoSansKR-Light.otf');
+@include txt(sanMedium,'NotoSansKR-Medium.otf');
+@include txt(sanBold,'NotoSansKR-Bold.otf');
+@include txt(sanBlack,'NotoSansKR-Black.otf');
+
+
 $lh : #{'min(1rem, 40px)'};
 $lh2 : #{'min(2rem, 80px)'};
 $plh : #{'min(0.5rem, 20px)'};
@@ -68,14 +84,14 @@ $plh : #{'min(0.5rem, 20px)'};
             h1{
                 font-size: #{'min(4.0em,40px)'};
                 text-transform: uppercase;
-                font-weight: bold;
+                font-family: 'sanBlack';
             }
             .ftrRight{
                 width: calc(100% / 12 * 8);
                 p{
                     color: #ccc;
                     font-size: #{'min(1.4em,14px)'};
-                    font-weight: lighter;
+                    font-family: 'sanLight';
                     line-height: $plh;
                 }
                 .sns{
@@ -127,10 +143,8 @@ $plh : #{'min(0.5rem, 20px)'};
                         span{
                             display: none;
                         }
-                        br{
-                            &:nth-child(1){
-                                display: none;
-                            }
+                        br:nth-child(2){
+                            display: none;
                         }
                     }
                     .sns{

@@ -1,5 +1,21 @@
 // 변수 선언
 
+@mixin txt($fontname,$url){
+    @font-face {
+        font-family: '#{$fontname}';
+        src: url('./fonts/#{$url}') format('truetype');
+    }
+}
+
+// 폰트페이스 선언
+
+@include txt(sanReular,'NotoSansKR-Regular.otf');
+@include txt(sanLight,'NotoSansKR-Light.otf');
+@include txt(sanMedium,'NotoSansKR-Medium.otf');
+@include txt(sanBold,'NotoSansKR-Bold.otf');
+@include txt(sanBlack,'NotoSansKR-Black.otf');
+
+
 $lh : #{'min(1rem, 40px)'};
 $lh2 : #{'min(2rem, 80px)'};
 $plh : #{'min(0.5rem, 20px)'};
@@ -20,7 +36,7 @@ $plh : #{'min(0.5rem, 20px)'};
         border-radius: #{'min(0.25rem,10px)'} #{'min(0.25rem,10px)'} 0 0;
         font-size: #{'min(1.4em,14px)'};
         text-transform: uppercase;
-        font-weight: normal;
+        font-family: 'sanReular';
         color: #fff;
         padding: #{'min(0.25rem,10px)'} 0 $plh;
     }
@@ -43,7 +59,7 @@ $plh : #{'min(0.5rem, 20px)'};
             }
             h3{
                 font-size: #{'min(1.8em,18px)'};
-                font-weight: 500;
+                font-family: 'sanMedium';
             }
         }
     }
@@ -59,6 +75,7 @@ $plh : #{'min(0.5rem, 20px)'};
             font-weight: 300;
         }
         h5{
+            font-family: 'sanReular';
             font-size: #{'min(1.4em,14px)'};
             text-transform: uppercase;
             margin-top: #{'min(0.125rem,5px)'};

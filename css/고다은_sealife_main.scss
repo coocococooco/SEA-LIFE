@@ -27,6 +27,22 @@
     }
 }
 
+@mixin txt($fontname,$url){
+    @font-face {
+        font-family: '#{$fontname}';
+        src: url('./fonts/#{$url}') format('truetype');
+    }
+}
+
+// 폰트페이스 선언
+
+@include txt(sanReular,'NotoSansKR-Regular.otf');
+@include txt(sanLight,'NotoSansKR-Light.otf');
+@include txt(sanMedium,'NotoSansKR-Medium.otf');
+@include txt(sanBold,'NotoSansKR-Bold.otf');
+@include txt(sanBlack,'NotoSansKR-Black.otf');
+
+
 // 기초세팅
 
 html{
@@ -34,7 +50,6 @@ html{
     body{
         font-size: 0.7vw;
         overflow-x: hidden;
-        font-family: 'Noto Sans KR', sans-serif;
         position: relative;
         z-index: 1;
     }
@@ -93,17 +108,18 @@ $plh : #{'min(0.5rem, 20px)'};
          line-height: #{'min(11rem,44px)'};
          h3{
              font-size: #{'min(2.4em,24px)'};
-             font-weight: 300;
+             font-family: 'sanLight';
          }
          h2{
              font-size: #{'min(3.8em,36px)'};
+             font-family: 'sanMedium';
              br{
                  display: none;
              }
              b{
              font-size: #{'min(4.8em,48px)'};
              text-transform: uppercase;
-             font-weight: bolder;
+             font-family: 'sanBlack';
              }
          }
          .btns{
@@ -218,7 +234,7 @@ $plh : #{'min(0.5rem, 20px)'};
             margin-left: #{'min(1.75rem,70px)'};
             h2{
                 font-size: #{'min(3.0em,30px)'};
-                font-weight: 700;
+                font-family: 'sanBold';
                 color: #0077b6;
                 position: absolute;
                 z-index: 1;
@@ -284,7 +300,14 @@ $plh : #{'min(0.5rem, 20px)'};
                             background-image: url(./image/main/cnt01_pic01.jpg);
                             opacity: 0;
                             transition: all 0.7s;
-                        }    
+                        } 
+                        .texts{
+                            h3{
+                                b{
+                                    font-family: 'sanBlack';
+                                }
+                            }
+                        }
                     }
                     &.a2{
                         margin-top: $lh;
@@ -305,6 +328,7 @@ $plh : #{'min(0.5rem, 20px)'};
                         opacity: 0;
                         h3{
                             b{
+                                font-family: 'sanBold';
                                 span{
                                     color: #f5cc28;
                                 }
@@ -318,7 +342,7 @@ $plh : #{'min(0.5rem, 20px)'};
                             margin-top: $lh;
                             font-size: #{'min(1.4em,14px)'};
                             line-height: $plh;
-                            font-weight: 400;
+                            font-family: 'sanReular';
                         }
                         .btn{
                             margin-top: $lh;
@@ -330,6 +354,7 @@ $plh : #{'min(0.5rem, 20px)'};
                             text-transform: uppercase;
                             border-radius: #{'min(0.25rem,10px)'};
                             border: 1px #0077b6 solid;
+                            font-family: 'sanReular';
                             cursor: pointer;
                             transition: all 0.2s;
                             &:hover{
@@ -460,7 +485,7 @@ $plh : #{'min(0.5rem, 20px)'};
                             h3{
                                 font-size: #{'min(2.5em,25px)'};
                                 text-transform: uppercase;
-                                font-weight: 700;
+                                font-family: 'sanBold';
                                 line-height: $lh;
                             }
                             .txt{
@@ -471,6 +496,7 @@ $plh : #{'min(0.5rem, 20px)'};
                                 p{
                                     font-size: #{'min(1.6em,16px)'};
                                     line-height: $plh;
+                                    font-family: 'sanReular';
                                 }
                                 i{
                                     font-size: #{'min(4.0em,40px)'};
@@ -489,7 +515,7 @@ $plh : #{'min(0.5rem, 20px)'};
                             padding: $lh $lh;
                             h3{
                                 font-size: #{'min(2.5em,25px)'};
-                                font-weight: 700;
+                                font-family: 'sanBold';
                                 line-height: $lh;
                             }
                             p{
@@ -499,6 +525,7 @@ $plh : #{'min(0.5rem, 20px)'};
                                 height: #{'min(1.5rem,60px)'};
                                 overflow: hidden;
                                 color: #2c2c2c;
+                                font-family: 'sanReular';
                             }
                             .btn{
                                 margin-top: #{'min(1.5rem,60px)'};
@@ -511,6 +538,7 @@ $plh : #{'min(0.5rem, 20px)'};
                                 text-transform: uppercase;
                                 border-radius: #{'min(0.25rem,10px)'};
                                 border: 1px #0077b6 solid;
+                                font-family: 'sanReular';
                                 cursor: pointer;
                                 transition: all 0.2s;
                                 &:hover{
@@ -539,32 +567,32 @@ $plh : #{'min(0.5rem, 20px)'};
                                     padding: 0 $plh #{'min(0.37rem,15px)'};
                                     h3{
                                         font-size: #{'min(1.8em,18px)'};
-                                        font-weight: 700;
+                                        font-family: 'sanBold';
                                         line-height: $lh;
                                     }
                                     .texts{
                                         .txtTop{
                                             display: flex;
-                                            line-height: #{'min(0.35rem,16px)'};
+                                            line-height: #{'min(0.4rem,16px)'};
                                             h5{
                                                 font-size: #{'min(1.2em,12px)'};
                                                 margin-left: #{'min(0.25rem,10px)'};
-                                                font-weight: 500;
+                                                font-family: 'sanReular';
                                             }
                                             i{
-                                                line-height: #{'min(0.35rem,16px)'};
+                                                line-height: #{'min(0.4rem,16px)'};
                                             }
                                         }
                                         .txtBtm{
                                             display: flex;
-                                            line-height: #{'min(0.35rem,16px)'};
+                                            line-height: #{'min(0.4rem,16px)'};
                                             h5{
                                                 font-size: #{'min(1.2em,12px)'};
                                                 margin-left: #{'min(0.25rem,10px)'};
-                                                font-weight: 500;
+                                                font-family: 'sanReular';
                                             }
                                             i{
-                                                line-height: #{'min(0.35rem,16px)'};
+                                                line-height: #{'min(0.4rem,16px)'};
                                             }
                                         }
                                     }
@@ -612,7 +640,7 @@ $plh : #{'min(0.5rem, 20px)'};
                                     }
                             }
                             .paging{
-                                width: calc(100% / 4 * 1.5);
+                                width: calc(100% / 4 * 1.4);
                                 height: #{'min(0.5rem,20px)'};
                                 position: absolute;
                                 top: #{'min(0.25rem,10px)'};
@@ -646,8 +674,8 @@ $plh : #{'min(0.5rem, 20px)'};
                         height: #{'min(7.5rem,300px)'};
                         h3{
                             font-size: #{'min(2.5em,25px)'};
-                            font-weight: 700;
                             line-height: #{'min( 0.89rem,30px)'};
+                            font-family: 'sanBold';
                         }
                         p{
                             margin-top: $lh;
@@ -656,6 +684,7 @@ $plh : #{'min(0.5rem, 20px)'};
                             height: $lh;
                             overflow: hidden;
                             color: #2c2c2c;
+                            font-family: 'sanReular';
                         }
                         .btn{
                             margin-top: $lh;
@@ -668,6 +697,7 @@ $plh : #{'min(0.5rem, 20px)'};
                             text-transform: uppercase;
                             border-radius: #{'min(0.25rem,10px)'};
                             border: 1px #0077b6 solid;
+                            font-family: 'sanReular';
                             cursor: pointer;
                             transition: all 0.2s;
                             &:hover{
@@ -704,7 +734,7 @@ $plh : #{'min(0.5rem, 20px)'};
                                     font-size: #{'min(1.8em,18px)'};
                                     line-height: #{'min(1.5rem,60px)'};
                                     text-align: center;
-                                    font-weight: 400;
+                                    font-family: 'sanMedium';
                                 }
                                 i{
                                     display: none;
@@ -778,7 +808,9 @@ $plh : #{'min(0.5rem, 20px)'};
                                         &:nth-child(1){
                                             .txtTop{
                                                 h5{
-                                                    span{display: none;}
+                                                    span{
+                                                        display: none;
+                                                    }
                                                 }  
                                             }
                                         }
@@ -1040,17 +1072,17 @@ $plh : #{'min(0.5rem, 20px)'};
                                     .txtTop{
                                         h3{
                                             font-size: #{'min(1.8em,18px)'};
-                                            font-weight: bold;
+                                            font-family: 'sanBold';
                                             line-height: $plh;
                                             span{
                                                 text-transform: uppercase;
-                                                font-weight: normal;
+                                                font-family: 'sanReular';
                                             }
                                         }
                                         p{
                                             margin-top: #{'min(0.25rem,10px)'};
                                             font-size: #{'min(1.2em,12px)'};
-                                            font-weight: normal;
+                                            font-family: 'sanReular';
                                             line-height: #{'min(0.4rem, 16px)'};
                                         }
                                     }
@@ -1065,7 +1097,7 @@ $plh : #{'min(0.5rem, 20px)'};
                                             }
                                             h5{
                                                 font-size: #{'min(1.2em,12px)'};
-                                                font-weight: normal;
+                                                font-family: 'sanReular';
                                                 margin-left: #{'min(0.25rem,10px)'};
                                             }
                                             &:hover{
@@ -1123,12 +1155,12 @@ $plh : #{'min(0.5rem, 20px)'};
                                     width: calc(100% / 3 * 2);
                                     h3{
                                         font-size: #{'min(1.6em,16px)'};
-                                        font-weight: bold;
+                                        font-family: 'sanBold';
                                         
                                     }
                                     p{
                                         font-size: #{'min(1.2em,12px)'};
-                                        font-weight: normal;
+                                        font-family: 'sanLight';
                                         line-height: #{'min(0.4rem, 16px)'};
                                         margin-top: #{'min(0.25rem, 10px)'};
                                     }
@@ -1354,16 +1386,16 @@ $plh : #{'min(0.5rem, 20px)'};
             height: #{'min(10rem,400px)'};
             h5{
                 font-size: #{'min(1.6em,16px)'};
-                font-weight: 500;
+                font-family: 'sanMedium';
             }
             h2{
                 margin-top: $lh;
                 font-size: #{'min(3.0em,30px)'};
-                font-weight: bold;
+                font-family: 'sanBold';
                 line-height: $lh;
                 span{
                 font-size: #{'min(3.5em,35px)'};
-                font-weight: 300;
+                font-family: 'sanLight';
                 }
                 b{
                 font-size: #{'min(4.0em,40px)'};
@@ -1380,6 +1412,7 @@ $plh : #{'min(0.5rem, 20px)'};
                 margin-top: $lh;
                 cursor: pointer;
                 transition: all 0.2s;
+                font-family: 'sanReular';
                 &:hover{
                     border: 1px solid #0077b6;
                     background-color: #0077b6;
