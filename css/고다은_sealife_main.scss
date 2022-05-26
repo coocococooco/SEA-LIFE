@@ -35,8 +35,10 @@
     }
 }
 @include txt(sanReular,'NotoSansKR-Regular.otf');
+@include txt(sanLight,'NotoSansKR-Light.otf');
 @include txt(sanMedium,'NotoSansKR-Medium.otf');
 @include txt(sanBold,'NotoSansKR-Bold.otf');
+@include txt(sanBlack,'NotoSansKR-Black.otf');
 
 // 기초세팅
 
@@ -49,15 +51,15 @@ html{
         z-index: 1;
     }
     @include tab{
-        font-size: 5vw;
+        font-size: 5.1vw;
         body{
-            font-size: 1.3vw;
+            font-size: 1.2vw;
         }
     }
     @include mob{
         font-size: 9vw;
         body{
-            font-size: 2vw;
+            font-size: 2.2vw;
         }
     }
 }
