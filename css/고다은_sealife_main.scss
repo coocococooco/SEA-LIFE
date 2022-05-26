@@ -172,6 +172,12 @@ $plh : #{'min(0.5rem, 20px)'};
                     .image{
                         height: #{'min(25rem,640px)'};
                         margin-left: #{'min(calc((100vw - 700px) / -2 ),calc((100vw - 90vw) / -2 ))'};
+                        &.i2{
+                            display: none;
+                        }
+                        &.i3{
+                            display: none;
+                        }
                     }
                 }
             }
