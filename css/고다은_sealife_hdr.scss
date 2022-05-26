@@ -20,21 +20,18 @@
         @content;
     }
 }
-
 @mixin mob {
     @media (max-width : 420px) and (min-width : 0px) {
         @content;
     }
 }
-
 @mixin txt($fontname,$url){
     @font-face {
         font-family: '#{$fontname}';
         src: url('./fonts/#{$url}') format('truetype');
+        font-display: swap;
     }
 }
-
-// 폰트페이스 선언
 
 @include txt(sanReular,'NotoSansKR-Regular.otf');
 @include txt(sanLight,'NotoSansKR-Light.otf');
