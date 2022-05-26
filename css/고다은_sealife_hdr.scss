@@ -600,3 +600,105 @@ input#sub:checked+.lightBox{
         }
     }
 }
+
+// 푸터
+.ftrWrap{
+    background-color: #1b1b1b;
+    footer{
+        @include Grid('pc');
+        color: #fff;
+        padding: $lh 0;
+        .ftrTop{
+            width: calc(100% / 12 * 4);
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            h4{
+                font-size: #{'min(1.8em,18px)'};
+                font-weight: lighter;
+                cursor: pointer;
+            }
+            }
+        .ftrBtm{
+            display: flex;
+            justify-content: space-between;
+            margin-top: #{'min(1.5rem,60px)'};
+            h1{
+                font-size: #{'min(4.0em,40px)'};
+                text-transform: uppercase;
+                font-family: 'sanBlack';
+            }
+            .ftrRight{
+                width: calc(100% / 12 * 8);
+                p{
+                    color: #ccc;
+                    font-size: #{'min(1.4em,14px)'};
+                    font-family: 'sanLight';
+                    line-height: $plh;
+                }
+                .sns{
+                    margin-top: $lh;
+                    i{
+                     font-size: #{'min(4.0em,40px)'};
+                     cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    @include tab{
+        footer{
+            @include Grid('tab');
+            .ftrTop{
+                width: calc(100% / 8 * 5);
+            }
+            .ftrBtm{
+                margin-top: #{'min(1.75rem,70px)'};
+                .ftrRight{
+                    width: 70%;
+                    .sns{
+                        width: calc(100% / 8 * 6);
+                        margin: 0 auto;
+                        margin-top: $lh2;
+                    }
+                }
+            }
+        }
+    }
+    @include mob{
+        footer{
+            @include Grid('mob');
+            .ftrTop{
+                width: calc(100% / 8 * 7);
+            }
+            .ftrBtm{
+                margin-top: #{'min(0.75rem,30px)'};
+                a{
+                    display: none;
+                }
+                .ftrRight{
+                    width: 100%;
+                    p{
+                        width: 90%;
+                        margin: 0 auto;
+                        font-size: #{'min(1.0em,10px)'};
+                        span{
+                            display: none;
+                        }
+                        br:nth-child(2){
+                            display: none;
+                        }
+                    }
+                    .sns{
+                        display: flex;
+                        width: calc(100% / 4 * 1.1);
+                        margin-top: $lh;
+                        a{
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
