@@ -13,9 +13,7 @@ $(function(){
          if(wd >= 1024){
             hdrWrap.hover(function(){
                 mnTopWrap.addClass('bg');
-                mnTop.addClass('on');
                 hdrWrap.addClass('bg');
-                hdrh1.addClass('on');
                 hdrLi.addClass('tgle');
                 navWrap.addClass('show');
             });
@@ -36,9 +34,7 @@ $(function(){
             });
             navWrap.mouseleave(function(){
                mnTopWrap.removeClass('bg');
-               mnTop.removeClass('on');
                hdrWrap.removeClass('bg');
-               hdrh1.removeClass('on');
                hdrLi.removeClass('tgle');
                navWrap.removeClass('show');
             });       
@@ -69,7 +65,7 @@ $(function(){
                 }
              });
              // 라이트박스   
-             lightBoxAco.even().click(function(a){
+             lightBoxAco.even().click(function(){
                  lightBoxAco.removeClass('acoShow');
                  $(this).addClass('acoShow');
              });
@@ -88,7 +84,7 @@ $(function(){
                 }
              });
              // 라이트박스  
-             lightBoxAco.even().click(function(a){
+             lightBoxAco.even().click(function(){
                  lightBoxAco.removeClass('acoShow');
                  $(this).addClass('acoShow');
              });

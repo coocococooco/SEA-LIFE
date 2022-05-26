@@ -58,6 +58,9 @@ $plh : #{'min(0.5rem, 20px)'};
 
 .mnTopWrap.bg{
     background-color: #fff;
+    .mnTop{
+        color: #0077b6;
+    }
 }
 .mnTopWrap{
     position: relative;
@@ -92,9 +95,6 @@ $plh : #{'min(0.5rem, 20px)'};
                     cursor: pointer;
                 }
         }
-        &.on{
-            color: #0077b6;
-        }
         @include mob{
             @include Grid('mob');
         }
@@ -121,6 +121,13 @@ $plh : #{'min(0.5rem, 20px)'};
 
 .hdrWrap.bg{
     background-color: #fff;
+    header{
+        a{
+            h1{
+              color: #0077b6;
+            }
+        }
+    }
 }
 .hdrWrap{
     position: relative;
@@ -141,9 +148,6 @@ $plh : #{'min(0.5rem, 20px)'};
                 font-size: #{'min(4.0em, 40px)'};
                 font-family: 'sanBlack';
                 cursor: pointer;
-                &.on{
-                    color: #0077b6;
-                }
             }
         }
         .nav{

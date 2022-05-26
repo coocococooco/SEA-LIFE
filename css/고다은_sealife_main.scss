@@ -1037,6 +1037,7 @@ $plh : #{'min(0.5rem, 20px)'};
                             &.a1{
                                 position: relative;
                                 cursor: pointer;
+                                background-color: rgba(0,0,0,0.7);
                                 .image{
                                     width: 100%;
                                     transition: all 0.3s;
