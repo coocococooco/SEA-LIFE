@@ -3,31 +3,29 @@ $(function(){
     $('.hdr').load('./inc/header.html',function(){
          // 변수 선언
          var mnTopWrap = $('.mnTopWrap');
-         var mnTop = $('.mnTop');
          var hdrWrap = $('.hdrWrap');
          var hdrLi = $('.hdrWrap>header>.nav>li>h4');
-         var hdrh1 = $('.hdrWrap>header>a>h1');
          var navWrap =$('.navWrap');
          var nav = $('.navGroup>.nav');
          var lightBoxAco = $('.lightBox>.inner>.aco>li');          
          if(wd >= 1024){
-            hdrWrap.hover(function(){
+            hdrWrap.mousemove(function(){
                 mnTopWrap.addClass('bg');
                 hdrWrap.addClass('bg');
                 hdrLi.addClass('tgle');
                 navWrap.addClass('show');
             });
-            hdrLi.eq(0).hover(function(){
+            hdrLi.eq(0).mousemove(function(){
                 nav.eq(0).css('display','flex');
                 nav.eq(1).css('display','none');
                 nav.eq(2).css('display','none');
             });
-            hdrLi.eq(1).hover(function(){
+            hdrLi.eq(1).mousemove(function(){
                 nav.eq(1).css('display','flex');
                 nav.eq(0).css('display','none');
                 nav.eq(2).css('display','none');
             });
-            hdrLi.eq(2).hover(function(){
+            hdrLi.eq(2).mousemove(function(){
                 nav.eq(2).css('display','flex');
                 nav.eq(0).css('display','none');
                 nav.eq(1).css('display','none');
