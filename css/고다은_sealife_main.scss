@@ -757,7 +757,6 @@ $plh : #{'min(0.5rem, 20px)'};
                                                  background-image: url('./image/main/cnt02_artBtm_pic0#{$i}.jpg');
                                              }
                                          }
-                                        opacity: 1;
                                     }
                                 }
                             }
@@ -1065,7 +1064,6 @@ $plh : #{'min(0.5rem, 20px)'};
                                 &:hover{
                                     .image{
                                         background-image: url(./image/main/cnt03_artBtm_youtube_pic01.jpg);
-                                        opacity: 1;
                                     }
                                     .texts{
                                         opacity: 0;
