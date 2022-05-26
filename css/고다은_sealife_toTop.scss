@@ -4,6 +4,7 @@
     @font-face {
         font-family: '#{$fontname}';
         src: url('./fonts/#{$url}') format('truetype');
+        font-display: swap;
     }
 }
 
