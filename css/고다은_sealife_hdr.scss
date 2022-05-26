@@ -32,13 +32,6 @@
         font-display: swap;
     }
 }
-
-@include txt(sanReular,'NotoSansKR-Regular.otf');
-@include txt(sanLight,'NotoSansKR-Light.otf');
-@include txt(sanMedium,'NotoSansKR-Medium.otf');
-@include txt(sanBold,'NotoSansKR-Bold.otf');
-@include txt(sanBlack,'NotoSansKR-Black.otf');
-
 @mixin bg {
     background-position: right;
     background-size: contain;

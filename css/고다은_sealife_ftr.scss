@@ -38,20 +38,6 @@
     background-repeat: no-repeat;
 }
 
-@mixin txt($fontname,$url){
-    @font-face {
-        font-family: '#{$fontname}';
-        src: url('./fonts/#{$url}') format('truetype');
-        font-display: swap;
-    }
-}
-
-@include txt(sanReular,'NotoSansKR-Regular.otf');
-@include txt(sanLight,'NotoSansKR-Light.otf');
-@include txt(sanMedium,'NotoSansKR-Medium.otf');
-@include txt(sanBold,'NotoSansKR-Bold.otf');
-@include txt(sanBlack,'NotoSansKR-Black.otf');
-
 $lh : #{'min(1rem, 40px)'};
 $lh2 : #{'min(2rem, 80px)'};
 $plh : #{'min(0.5rem, 20px)'};

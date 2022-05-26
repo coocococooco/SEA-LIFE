@@ -7,13 +7,9 @@
         font-display: swap;
     }
 }
-
 @include txt(sanReular,'NotoSansKR-Regular.otf');
-@include txt(sanLight,'NotoSansKR-Light.otf');
 @include txt(sanMedium,'NotoSansKR-Medium.otf');
 @include txt(sanBold,'NotoSansKR-Bold.otf');
-@include txt(sanBlack,'NotoSansKR-Black.otf');
-
 
 $lh : #{'min(1rem, 40px)'};
 $lh2 : #{'min(2rem, 80px)'};
