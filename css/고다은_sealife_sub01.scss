@@ -1,0 +1,329 @@
+// 변수 선언
+
+@mixin Grid($dev){
+    @if($dev == 'pc'){
+        width: 80%;
+        max-width: 1080px;
+    }
+    @else if($dev == 'tab'){
+        width: 90%;
+        max-width: 700px;
+    }
+    @else{
+        width: 90%;
+    }
+    margin: 0 auto;
+}
+
+@mixin tab {
+    @media (max-width : 1024px) and (min-width : 0px) {
+        @content;
+    }
+}
+
+@mixin mob {
+    @media (max-width : 420px) and (min-width : 0px) {
+        @content;
+    }
+}
+
+@mixin txt($fontname,$url){
+    @font-face {
+        font-family: '#{$fontname}';
+        src: url('./fonts/#{$url}') format('truetype');
+        font-display: swap;
+    }
+}
+@include txt(sanReular,'NotoSansKR-Regular.otf');
+@include txt(sanLight,'NotoSansKR-Light.otf');
+@include txt(sanMedium,'NotoSansKR-Medium.otf');
+@include txt(sanBold,'NotoSansKR-Bold.otf');
+@include txt(sanBlack,'NotoSansKR-Black.otf');
+
+// 기초세팅
+
+html{
+    font-size: 3vw;
+    body{
+        font-size: 0.7vw;
+        position: relative;
+        overflow-x: hidden;
+        z-index: 1;
+    }
+    @include tab{
+        font-size: #{'min(9vw,5.1vw)'};
+        body{
+            font-size: #{'min(2.2vw,1.2vw)'};
+        }
+    }
+    @include mob{
+        font-size: 9vw;
+        body{
+            font-size: 2.2vw;
+        }
+    }
+}
+
+@mixin bg {
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+@mixin img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+$lh : #{'min(1rem, 40px)'};
+$lh2 : #{'min(2rem, 80px)'};
+$plh : #{'min(0.5rem, 20px)'};
+
+// 메인
+.mainWrap{
+    z-index: -1;
+    position: relative;
+    width: 100%;
+    top : 0;
+    height: #{'min(12rem,480px)'};
+    @include img;
+    background-image: url('./image/sub01/main.jpg');
+    background-attachment: fixed;
+}
+
+// 컨텐츠
+.cntWrap{
+    margin-top: #{'min(3rem,120px)'};
+    .content{
+        @include Grid('pc');
+        header{
+            height: #{'min(3rem,120px)'};
+            position: relative;
+            margin-left: #{'min(1.75rem,70px)'};
+            h2{
+                font-size: #{'min(3.0em,30px)'};
+                font-family: 'sanBold';
+                color: #0077b6;
+                position: absolute;
+                z-index: 1;
+                top: #{'min(1rem,40px)'};
+                line-height: $lh2;
+            }
+            .shape{
+                width: calc(100% / 12);
+                height: #{'min(2.5rem,100px)'};
+                top: 0;
+                z-index: 0;
+                position: relative;
+                .sh1{
+                    position: absolute;
+                    top: 0;
+                    right: #{'min(1.5rem,60px)'};
+                    width: 100%;
+                    background-color: #caf0f8;
+                    height: #{'min(2rem,80px)'};
+                    z-index: 1;
+                }
+                .sh2{
+                    position: absolute;
+                    top: #{'min(0.97rem,30px)'};
+                    right: #{'min(2.5rem,100px)'};
+                    width: 90%;
+                    background-color: #f0ff59;
+                    height: #{'min(1.5rem,67px)'};
+                }
+            }
+            @include tab{
+                margin-left: #{'min(3.5rem,140px)'};
+                .shape{
+                    width: calc(100% / 7);
+                    .sh2{
+                        width: 80%;
+                    }
+                }
+            }
+        }
+        section{
+            margin-top: $lh;
+        }
+        &.cnt01{
+            section{
+                position: relative;
+                .topImg{
+                    position: absolute;
+                    height: #{'min(6rem,240px)'};
+                    width: calc(100% / 12 * 4);
+                    top:  #{'min(-2rem,-160px)'};
+                    right: 0;
+                    .img{
+                        position: absolute;
+                        top: 0;
+                        @include img;
+                        background-image: url(./image/sub01/cnt01_artTopPic.jpg);
+                        &.i1{
+                            left: 0;
+                            width: 100%;
+                            height: #{'min(3rem,120px)'};
+                            margin-top: #{'min(3rem,120px)'};
+                            box-shadow: 2px 8px 20px rgba(0,0,0,0.3);
+                            z-index: 2;
+                        }
+                        &.i2{
+                            width: 100vw;
+                            left: $lh2;
+                            .ovrGrid{
+                                opacity: 70%;
+                                background-color: #98d0f7;
+                                height: #{'min(5rem,200px)'};
+                            }
+                        }
+                    }
+                }
+                article{
+                    &.a1{
+                        display: flex;
+                        justify-content: space-between;
+                        .texts{
+                            margin-top: #{'min(4rem,160px)'};
+                            width: calc(100% / 12 * 6);
+                            height: #{'min(6rem,240px)'};
+                            h5{
+                                font-size: #{'min(6.0em,60px)'};
+                                font-family: 'sanBold';
+                                color: #d2d2d2;
+                                height: #{'min(0.75rem,30px)'};
+                                line-height: $lh;
+                            }
+                            h3{
+                                span{
+                                    font-family: 'sanBold';
+                                    color: #0077b6; 
+                                }
+                                font-family: 'sanMedium';
+                                font-size: #{'min(2.4em,24px)'};
+                                line-height: #{'min(0.75rem,30px)'};
+                            }
+                            p{
+                                margin-top: $lh;
+                                font-size: #{'min(1.4em,14px)'};
+                                text-transform: uppercase;
+                            }
+                        }
+                        .image{
+                            width: calc(100% / 12 * 5);
+                            height: #{'min(11.5rem, 460px)'};
+                            @include img;
+                            background-image: url('./image/sub01/cnt01_pic01.jpg');
+                            box-shadow: 2px 8px 20px #9e9e9e;
+                        }
+                    }
+                    &.a2{
+                        margin-top: #{'min(1.5rem,60px)'};
+                        display: flex;
+                        justify-content: space-between;
+                        .texts{
+                            width: calc(100% / 12 * 6);
+                            height: #{'min(6rem,240px)'};
+                            text-align: right;
+                            h5{
+                                font-size: #{'min(6.0em,60px)'};
+                                font-family: 'sanBold';
+                                color: #d2d2d2;
+                                height: #{'min(0.75rem,30px)'};
+                                line-height: $lh;
+                            }
+                            h3{
+                                span{
+                                    font-family: 'sanBold';
+                                    color: #0077b6; 
+                                }
+                                font-family: 'sanMedium';
+                                font-size: #{'min(2.4em,24px)'};
+                                line-height: #{'min(0.75rem,30px)'};
+                            }
+                            p{
+                                margin-top: $lh;
+                                font-size: #{'min(1.4em,14px)'};
+                                text-transform: uppercase;
+                            }
+                            h4{
+                                margin-top: #{'min(2.5rem,100px)'};
+                                text-transform: uppercase;
+                                font-size: #{'min(1.6em,16px)'};
+                                font-family: 'sanReular';
+                                span{
+                                    font-family: 'sanMedium';
+                                }
+                            }
+                        }
+                        .image{
+                            width: calc(100% / 12 * 5);
+                            height: #{'min(9rem, 360px)'};
+                            @include img;
+                            background-image: url('./image/sub01/cnt01_pic02.jpg');
+                            box-shadow: 2px 8px 20px #9e9e9e;
+                        }
+                    }
+                }
+            }
+            @include tab{
+                @include Grid('tab');
+                section{
+                    margin-top: $lh;
+                    .topImg{
+                        width: calc(100% / 8 * 4);
+                        top: #{'min(-1.5rem,-60px)'};
+                        right: #{'min(-0.5rem,-20px)'};
+                        height: #{'min(3rem,120px)'};
+                        .img{
+                            &.i1{
+                               margin-top: 0;
+                            }
+                            &.i2{
+                                display: none;
+                            }
+                        }
+                    }
+                    article{
+                        &.a1{
+                            display: block;
+                            .image{
+                                width: 100%;
+                                height: #{'min(10rem,400px)'};
+                            }
+                            .texts{
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.cnt01{
+        margin-top: $lh2;
+        overflow: hidden;
+    }
+}
+// 배너
+.bnrWrap{
+    @include img;
+    background-image: url('./image/sub01/banner.jpg');
+    padding: #{'min(2.5rem,100px)'} 0;
+    margin-top: #{'min(3rem,120px)'};
+    .banner{
+        @include Grid('pc');
+        p{
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            font-size: #{'min(1.8em,18px)'};
+            line-height: #{'min(0.6rem, 24px)'};
+            font-family: 'sanLight';
+            font-weight: 300;
+            span{
+                font-family: 'sanBold';
+            }
+        }
+    }
+}

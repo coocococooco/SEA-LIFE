@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-width:3.1241;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:#0E70AB;stroke:#000000;stroke-width:3.1241;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#0E70AB;stroke-width:3.1241;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+<g>
+	<path class="st0" d="M73.37,48.4c0-11.53-9.9-20.87-22.11-20.87S29.15,36.87,29.15,48.4c0,4.21,1.32,8.12,3.59,11.4
+		c0.58,0.84,1.24,1.64,1.94,2.39h-0.01c7.99,9.43,8.9,18.04,8.9,18.04h7.69h7.69c0,0,0.91-8.61,8.9-18.04h0
+		C71.28,58.51,73.37,53.69,73.37,48.4z"/>
+	<path class="st0" d="M56.05,34.88c-1.66-0.62-3.47-0.97-5.36-0.97c-8.02,0-14.52,6.13-14.52,13.7c0,0.38,0.02,0.76,0.05,1.13"/>
+	<g>
+		<g>
+			<polyline class="st0" points="43.34,62.49 45.67,64.89 47.48,66.75 48.83,77.96 			"/>
+			<line class="st0" x1="51.62" y1="66.38" x2="47.41" y2="66.44"/>
+			<polyline class="st0" points="43.34,62.49 45.67,64.89 47.48,66.75 48.83,77.96 			"/>
+			<line class="st0" x1="51.62" y1="66.38" x2="47.41" y2="66.44"/>
+		</g>
+		<g>
+			<polyline class="st0" points="59.18,62.24 56.96,64.71 55.23,66.63 54.34,77.87 			"/>
+			<line class="st0" x1="51.07" y1="66.38" x2="55.28" y2="66.32"/>
+			<polyline class="st0" points="59.18,62.24 56.96,64.71 55.23,66.63 54.34,77.87 			"/>
+			<line class="st0" x1="51.07" y1="66.38" x2="55.28" y2="66.32"/>
+		</g>
+	</g>
+	<rect x="43.64" y="84.26" class="st1" width="15.24" height="5.2"/>
+	<path class="st1" d="M55.76,98h-8.99c-1.37,0-2.49-1.02-2.49-2.27v-1.04c0-1.25,1.12-1.22,2.49-1.22h8.99
+		c1.37,0,2.49-0.02,2.49,1.22v1.04C58.25,96.98,57.13,98,55.76,98z"/>
+	<line class="st2" x1="51.21" y1="2.12" x2="51.21" y2="16.75"/>
+	<g>
+		<line class="st2" x1="28.28" y1="6.58" x2="37.47" y2="20.23"/>
+		<line class="st2" x1="14.97" y1="23.27" x2="27.71" y2="31.78"/>
+	</g>
+	<g>
+		<line class="st2" x1="73.92" y1="6.58" x2="64.74" y2="20.23"/>
+		<line class="st2" x1="87.23" y1="23.27" x2="74.5" y2="31.78"/>
+	</g>
+</g>
+</svg>

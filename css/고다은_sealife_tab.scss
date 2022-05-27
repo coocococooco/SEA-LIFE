@@ -1,0 +1,78 @@
+// 변수 선언
+
+@mixin Grid($dev){
+    @if($dev == 'pc'){
+        width: 80%;
+        max-width: 1080px;
+    }
+    @else if($dev == 'tab'){
+        width: 90%;
+        max-width: 700px;
+    }
+    @else{
+        width: 90%;
+    }
+    margin: 0 auto;
+}
+
+@mixin tab {
+    @media (max-width : 1024px) and (min-width : 0px) {
+        @content;
+    }
+}
+
+@mixin mob {
+    @media (max-width : 420px) and (min-width : 0px) {
+        @content;
+    }
+}
+
+@mixin txt($fontname,$url){
+    @font-face {
+        font-family: '#{$fontname}';
+        src: url('./fonts/#{$url}') format('truetype');
+        font-display: swap;
+    }
+}
+@include txt(sanReular,'NotoSansKR-Regular.otf');
+@include txt(sanLight,'NotoSansKR-Light.otf');
+@include txt(sanMedium,'NotoSansKR-Medium.otf');
+@include txt(sanBold,'NotoSansKR-Bold.otf');
+@include txt(sanBlack,'NotoSansKR-Black.otf');
+
+$lh : #{'min(1rem, 40px)'};
+$lh2 : #{'min(2rem, 80px)'};
+$plh : #{'min(0.5rem, 20px)'};
+
+.tabWrap{
+    .tab{
+        @include Grid('pc');
+        .tabBtns{
+            width: calc(100% / 12 * 6);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            line-height: $lh2;
+            .tabBtn{
+                text-transform: uppercase;
+                font-family: 'sanMedium';
+                font-size: #{'min(1.8em,18px)'};
+                color: #8d8d8d;
+                cursor: pointer;
+                &:hover{
+                    color: #000;
+                }
+                &.on{
+                    color: #000;
+                }
+            }
+        }
+        @include tab{
+            @include Grid('tab');
+            .tabBtns{
+                width: calc(100% / 8 * 6);
+            }
+        }
+    }
+    border-bottom: 1px #bfbfbf solid;
+}
