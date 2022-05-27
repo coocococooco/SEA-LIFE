@@ -216,9 +216,6 @@ $plh : #{'min(0.5rem, 20px)'};
                 margin-left: #{'min(calc((100vw - 380px) / -2 ),calc((100vw - 90vw) / -2 ))'};
                 .slideGroup{
                     .image{
-                        &.i1{
-                            background-image: url('./image/main/main_mob.png');
-                        }
                         height: #{'min(10rem,400px)'};
                         margin-left: #{'min(calc((100vw - 380px) / -2 ),calc((100vw - 90vw) / -2 ))'};
                     }
