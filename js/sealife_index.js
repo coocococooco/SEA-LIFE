@@ -22,6 +22,7 @@ $(function(){
     var cnt02RightBtn = $('.content.cnt02 .imgView>.btns>i');
     var imgGroupLen = imgGroup.children().length;
     var i = 0;
+    var j = 0;
     function cnt02Left(){
         i++;
         i = i%imgGroupLen;
@@ -162,9 +163,9 @@ $(function(){
                 cursor : 'auto'
             });
             cnt03TopBtn.eq(0).click(function(){
-                i++;
-                if(i>=1){
-                    i=1
+                j++;
+                if(j>=1){
+                    j=1
                     cnt03TopBtn.eq(0).css({
                         opacity : 0,
                         cursor : 'auto'
@@ -175,13 +176,13 @@ $(function(){
                     });
                 }
                 cnt03TopArtGroup.css({
-                    marginLeft : i*-(100 / 3)+'%'
+                    marginLeft : j*-(100 / 3)+'%'
                 });
             });
             cnt03TopBtn.eq(1).click(function(){
-                i--;
-                if(i<=0){
-                    i=0
+                j--;
+                if(j<=0){
+                    j=0
                     cnt03TopBtn.eq(1).css({
                         opacity : 0,
                         cursor : 'auto'
@@ -192,7 +193,7 @@ $(function(){
                     });
                 }
                 cnt03TopArtGroup.css({
-                    marginLeft : i*-(100 / 3)+'%'
+                    marginLeft : j*-(100 / 3)+'%'
                 });
             });
     }else{
@@ -222,9 +223,9 @@ $(function(){
                 cursor : 'auto'
             });
             cnt03TopBtn.eq(0).click(function(){
-                i++;
-                if(i>=2){
-                    i=2
+                j++;
+                if(j>=2){
+                    j=2
                     cnt03TopBtn.eq(0).css({
                         opacity : 0,
                         cursor : 'auto'
@@ -235,13 +236,13 @@ $(function(){
                     });
                 }
                 cnt03TopArtGroup.css({
-                    marginLeft : i*-(100 / 2)+'%'
+                    marginLeft : j*-(100 / 2)+'%'
                 });
             });
             cnt03TopBtn.eq(1).click(function(){
-                i--;
-                if(i<=0){
-                    i=0
+                j--;
+                if(j<=0){
+                    j=0
                     cnt03TopBtn.eq(1).css({
                         opacity : 0,
                         cursor : 'auto'
@@ -252,7 +253,7 @@ $(function(){
                     });
                 }
                 cnt03TopArtGroup.css({
-                    marginLeft : i*-(100 / 2)+'%'
+                    marginLeft : j*-(100 / 2)+'%'
                 });
             });
     }

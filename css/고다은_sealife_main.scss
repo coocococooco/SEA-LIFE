@@ -722,15 +722,25 @@ $plh : #{'min(0.5rem, 20px)'};
                                 width: calc(100% / 3);
                                 position: relative;
                                 cursor: pointer;
+                                &.a1{
+                                    background-color: #0077b6;
+                                }
+                                &.a2{
+                                    background-color: #439fbc;
+                                }
+                                &.a3{
+                                    background-color: #436984;
+                                }
                                 .image{
                                     transition: all 0.5s;
                                     @include img;
                                     height: #{'min(7.5rem,300px)'};
                                     @for $i from 1 through 3{
                                         &.i#{$i}{
-                                            background-image: url('./image/main/cnt02_artBtm_pic0#{$i}_close.jpg');
+                                            background-image: url('./image/main/cnt02_artBtm_pic0#{$i}.jpg');
                                         }
                                     }
+                                    opacity: 20%;
                                 }
                                 h3{
                                     position: absolute;
@@ -751,11 +761,7 @@ $plh : #{'min(0.5rem, 20px)'};
                                 &:hover{
                                     width: 150%;
                                     .image{
-                                         @for $i from 1 through 3{
-                                             &.i#{$i}{
-                                                 background-image: url('./image/main/cnt02_artBtm_pic0#{$i}.jpg');
-                                             }
-                                         }
+                                        opacity: 100%;
                                     }
                                 }
                             }
@@ -1036,13 +1042,15 @@ $plh : #{'min(0.5rem, 20px)'};
                             &.a1{
                                 position: relative;
                                 cursor: pointer;
+                                background-color: #2c2c2c;
                                 .image{
                                     width: 100%;
                                     transition: all 0.3s;
                                     @include img;
                                     background-position: right;
                                     height: #{'min(7rem,280px)'};
-                                    background-image: url(./image/main/cnt03_artBtm_youtube_pic02.jpg);
+                                    background-image: url('./image/main/cnt03_artBtm_youtube_pic01.jpg');
+                                    opacity: 50%;
                                 }
                                 .texts{
                                     position: absolute;
@@ -1062,7 +1070,7 @@ $plh : #{'min(0.5rem, 20px)'};
                                 }
                                 &:hover{
                                     .image{
-                                        background-image: url(./image/main/cnt03_artBtm_youtube_pic01.jpg);
+                                       opacity: 100%;
                                     }
                                     .texts{
                                         opacity: 0;
