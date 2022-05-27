@@ -4,7 +4,7 @@ $(function(){
          // 변수 선언
          var mnTopWrap = $('.mnTopWrap');
          var hdrWrap = $('.hdrWrap');
-         var hdrLi = $('.hdrWrap>header>.nav>li>h4');
+         var hdrLi = $('.hdrWrap>header>.nav>li>a>h4');
          var navWrap =$('.navWrap');
          var nav = $('.navGroup>.nav');
          var lightBoxAco = $('.lightBox>.inner>.aco>li');          
