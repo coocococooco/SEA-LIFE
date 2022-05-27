@@ -51,9 +51,9 @@ html{
         z-index: 1;
     }
     @include tab{
-        font-size: 5.1vw;
+        font-size: #{'min(9vw,5.1vw)'};
         body{
-            font-size: 1.2vw;
+            font-size: #{'min(2.2vw,1.2vw)'};
         }
     }
     @include mob{
@@ -109,7 +109,6 @@ $plh : #{'min(0.5rem, 20px)'};
          }
          h2{
              font-size: #{'min(3.8em,36px)'};
-             font-family: 'sanMedium';
              br{
                  display: none;
              }
@@ -128,7 +127,7 @@ $plh : #{'min(0.5rem, 20px)'};
          }
         }
         .slideVeiw{
-            height: #{'min(25rem,1000px)'};
+            height: #{'min(20rem,1000px)'};
             width: 100vw;
             margin-left: #{'min(calc((100vw - 1080px) / -2 ),calc((100vw - 80vw) / -2 ))'};
             .slideGroup{
@@ -137,7 +136,7 @@ $plh : #{'min(0.5rem, 20px)'};
                     top: 0;
                     left: 0;
                     width: 100vw;
-                    height: #{'min(25rem,1000px)'};
+                    height: #{'min(23rem,1000px)'};
                     margin-left: #{'min(calc((100vw - 1080px) / -2 ),calc((100vw - 80vw) / -2 ))'};
                     @include img;    
                     @for $i from 1 through 3{
@@ -159,9 +158,18 @@ $plh : #{'min(0.5rem, 20px)'};
                 top: 0;
                 bottom: 0;
                 width: calc(100% / 8 * 6);
-                height: #{'min(3.5rem,140px)'};
+                height: #{'min(5.5rem,140px)'};
                 .btns{
                     display: none;
+                }
+                h3{
+                    font-size: #{'min(2.0em,20px)'};
+                }
+                h2{
+                    br{
+                        display: block;
+                    }
+                    line-height: #{'min(1.25rem, 45px)'};
                 }
             }
             .slideVeiw{
@@ -498,11 +506,11 @@ $plh : #{'min(0.5rem, 20px)'};
                                 text-shadow: 3px 1px 5px rgba(0,0,0,0.5);
                                 p{
                                     font-size: #{'min(1.6em,16px)'};
-                                    line-height: $plh;
+                                    line-height: #{'min(0.6rem,20px)'};
                                     font-family: 'sanReular';
                                 }
                                 i{
-                                    font-size: #{'min(4.0em,40px)'};
+                                    font-size: #{'min(3.0em,40px)'};
                                 }
                             }
                         }
@@ -643,7 +651,7 @@ $plh : #{'min(0.5rem, 20px)'};
                                     }
                             }
                             .paging{
-                                width: calc(100% / 4 * 1.4);
+                                width: calc(100% / 3 * 1.2);
                                 height: #{'min(0.5rem,20px)'};
                                 position: absolute;
                                 top: #{'min(0.25rem,10px)'};
@@ -653,7 +661,7 @@ $plh : #{'min(0.5rem, 20px)'};
                                 li{
                                     width: calc(100% / 6);
                                     height: #{'min(0.3rem,14px)'};
-                                    margin: 0 4px;
+                                    margin: 0 #{'min(0.125rem, 5px)'};
                                     justify-content: space-between;
                                     background-color: #fff;
                                     border-radius: 50%;
@@ -829,6 +837,9 @@ $plh : #{'min(0.5rem, 20px)'};
                                     .image{
                                         height: #{'min(7.25rem,290px)'};
                                     }
+                                }
+                                .paging{
+                                    @if(){}
                                 }
                             }
                         }
@@ -1230,9 +1241,6 @@ $plh : #{'min(0.5rem, 20px)'};
                                     width: calc(100% / 2);
                                     float: left;
                                     border-bottom: #eee 1px solid;
-                                    .texts{
-                                        padding: #{'min(0.75rem,30px)'} #{'min(2.25rem,90px)'} #{'min(0.75rem,30px)'} #{'min(1.75rem,70px)'};
-                                    }
                                 }
                                 &.a3{
                                     width: calc(100% / 2);
@@ -1258,6 +1266,11 @@ $plh : #{'min(0.5rem, 20px)'};
                                         margin-top: #{'min(0.25rem,10px)'};
                                         h3{
                                             font-size: #{'min(1.8em,18px)'};
+                                        }
+                                        h2{
+                                            b{
+                                                font-size: #{'min(3.6em,36px)'};
+                                            }
                                         }
                                     }
                                 }
@@ -1504,18 +1517,24 @@ $plh : #{'min(0.5rem, 20px)'};
             display: block;
             .texts{
                 position: relative;
-                width: calc(100% / 8 * 6);
+                width: 100%;
                 height: #{'min(8rem,320px)'};
-                padding: 0;
                 margin: 0 auto;
                 text-align: center;
-                padding: $lh 0;
+                padding: #{'min(0.5rem,40px)'} 0;
                 z-index: 2;
                 h5{
                     line-height: $lh2;
                 }
                 h2{
                     margin-top: 0;
+                    line-height: #{'min(1.25rem,40px)'};
+                    span{
+                        font-size: #{'min(3.0em,30px)'};
+                    }
+                    b{
+                        font-size: #{'min(3.6em,36px)'};
+                    }
                 }
                 .btn{
                     width: calc(100% / 6);
@@ -1529,6 +1548,7 @@ $plh : #{'min(0.5rem, 20px)'};
                         opacity: 1;
                         top: #{'min(-1rem,-40px)'};
                         left: #{'min(11rem,440px)'};
+                        z-index: 0;
                     }
                     &.i2{
                         display: none;
