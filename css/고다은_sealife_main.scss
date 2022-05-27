@@ -142,7 +142,7 @@ $plh : #{'min(0.5rem, 20px)'};
                     @include img;    
                     @for $i from 1 through 3{
                         &.i#{$i}{
-                            background-image: url('./image/main/main_pic0#{$i}.jpg');
+                            background-image: url('./image/main/main_pic0#{$i}.png');
                         }
                     }
                 }
@@ -217,7 +217,7 @@ $plh : #{'min(0.5rem, 20px)'};
                 .slideGroup{
                     .image{
                         &.i1{
-                            background-image: url(./image/main/main_pic01_mob.jpg);
+                            background-image: url('./image/main/main_mob.png');
                         }
                         height: #{'min(10rem,400px)'};
                         margin-left: #{'min(calc((100vw - 380px) / -2 ),calc((100vw - 90vw) / -2 ))'};
