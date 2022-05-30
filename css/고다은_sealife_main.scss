@@ -90,6 +90,9 @@ $plh : #{'min(0.5rem, 20px)'};
     @include tab{
         height: #{'min(25rem,640px)'};
     }
+    @include mob{
+        height: #{'min(10rem,400px)'};
+    }
     main{
         @include Grid('pc');
         position: relative;

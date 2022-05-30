@@ -89,6 +89,12 @@ $plh : #{'min(0.5rem, 20px)'};
     @include img;
     background-image: url('./image/sub01/main.jpg');
     background-attachment: fixed;
+    @include tab{
+        height: #{'min(10rem,400px)'};
+    }
+    @include mob{
+        height: #{'min(7rem,280px)'};
+    }
 }
 
 // 컨텐츠
@@ -142,6 +148,9 @@ $plh : #{'min(0.5rem, 20px)'};
                     }
                 }
             }
+            @include mob{
+                display: none;  
+            }
         }
         section{
             margin-top: $lh;
@@ -186,7 +195,6 @@ $plh : #{'min(0.5rem, 20px)'};
                         .texts{
                             margin-top: #{'min(4rem,160px)'};
                             width: calc(100% / 12 * 6);
-                            height: #{'min(6rem,240px)'};
                             h5{
                                 font-size: #{'min(6.0em,60px)'};
                                 font-family: 'sanBold';
@@ -220,10 +228,10 @@ $plh : #{'min(0.5rem, 20px)'};
                     &.a2{
                         margin-top: #{'min(1.5rem,60px)'};
                         display: flex;
+                        flex-direction: row-reverse;
                         justify-content: space-between;
                         .texts{
                             width: calc(100% / 12 * 6);
-                            height: #{'min(6rem,240px)'};
                             text-align: right;
                             h5{
                                 font-size: #{'min(6.0em,60px)'};
@@ -292,7 +300,417 @@ $plh : #{'min(0.5rem, 20px)'};
                                 height: #{'min(10rem,400px)'};
                             }
                             .texts{
+                                width: calc(100% / 8 * 7);
+                                margin-top: $lh;
+                                padding-left: #{'min(1.75rem,70px)'};
+                                p{
+                                    margin-top: #{'min(0.75rem,30px)'};
+                                }
+                            }
+                        }
+                        &.a2{
+                            display: block;
+                            .image{
+                                width: 100%;
+                                height: #{'min(10rem,400px)'};
+                            }
+                            .texts{
+                                width: calc(100% / 8 * 7);
+                                text-align: left;
+                                margin-top: $lh;
+                                padding-left: #{'min(1.75rem,70px)'};
+                                p{
+                                    margin-top: #{'min(0.75rem,30px)'};
+                                }
+                                h4{
+                                    margin-top: #{'min(0.75rem,30px)'};
+                                    text-align: right;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            @include mob{
+                width: 100%;
+                section{
+                    margin-top: $lh;
+                    .topImg{
+                       display: none;
+                    }
+                    article{
+                        &.a1{
+                            display: block;
+                            .image{
+                                width: 95%;
+                                height: #{'min(7rem,280px)'};
+                            }
+                            .texts{
+                                @include Grid('mob');
+                                margin-top: $lh;
+                                padding: 0;
+                                text-align: center;
+                                h5{
+                                    text-align: left;
+                                }
+                                h3{
+                                    font-size: #{'min(2.2em, 22px)'};
+                                    line-height: #{'min(0.6rem,24px)'};
+                                    br{
+                                        display: none;
+                                    }
+                                }
+                                p{
+                                    margin-top: $lh;
+                                    font-size: #{'min(1.6em, 16px)'};
+                                    br{
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                        &.a2{
+                            display: block;
+                            margin-top: $lh;
+                            .image{
+                                width: 95%;
+                                height: #{'min(7rem,280px)'};
+                                margin-left: 5%;
+                            }
+                            .texts{
+                                @include Grid('mob');
+                                margin-top: $lh;
+                                padding: 0;
+                                text-align: center;
+                                h5{
+                                    text-align: left;
+                                }
+                                h3{
+                                    width: 90%;
+                                    margin: 0 auto;
+                                    font-size: #{'min(2.2em, 22px)'};
+                                    line-height: #{'min(0.6rem,24px)'};
+                                    br{
+                                        display: none;
+                                    }
+                                }
+                                p{
+                                    margin-top: $lh;
+                                    font-size: #{'min(1.6em, 16px)'};
+                                    br{
+                                        display: none;
+                                    }
+                                }
+                                h4{
+                                    margin-top: #{'min(0.5rem,20px)'};
+                                    text-align: center;
+                                    line-height: $lh2;
+                                    font-size: #{'min(1.8em,18px)'};
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.cnt02{
+            .artTop{
+                height: #{'min(12.5rem,500px)'};
+                .texts{
+                    width: calc(100% / 12 * 6);
+                    margin: 0 auto;
+                    text-align: center;
+                    h3{
+                        font-size: #{'min(2.4em,24px)'};
+                        font-family: 'sanBold';
+                    }
+                    p{
+                        margin-top: #{'min(0.75rem,30px)'};
+                        font-size: #{'min(1.4em,14px)'};
+                    }
+                }
+                .artGroup{
+                    display: flex;
+                    width: calc(100% / 12 * 9.3);
+                    margin: 0 auto;
+                    margin-top: #{'min(1.5rem,60px)'};
+                    justify-content: center;
+                    article{
+                        width: calc(100% / 3 - 20px);
+                        text-align: center;
+                        border-right: #9e9e9e 1px solid;
+                        padding: 0 #{'min(0.75rem, 30px)'};
+                        height: #{'min(4.75rem,200px)'};
+                        .inner{
+                            height: #{'min(4.75rem,200px)'};
+                            border-radius: 50%;
+                            padding-top: #{'min(1rem, 30px)'};
+                            border: #0077b6 5px solid;
+                            .image{
+                                @include img;
+                                @for $i from 1 through 3{
+                                    &.i#{$i}{
+                                        background-image: url('./image/sub01/cnt02_artTop_Pic0#{$i}.svg');
+                                    }
+                                }
+                                width:#{'min(2rem,80px)'};
+                                height: #{'min(2rem,80px)'};
+                                margin: 0 auto;
+                            }
+                            .text{
+                                margin-top: #{'min(0.25rem, 20px)'};
+                                h3{
+                                    font-family: 'sanBold';
+                                    font-size: #{'min(1.8em,18px)'};
+                                    color: #0077b6;
+                                    line-height: $lh;
+                                }
+                                p{
+                                    margin-top: #{'min(1rem, 50px)'};
+                                    font-size: #{'min(1.4em,14px)'};
+                                }
+                            }
+                        }
+                        &:nth-last-child(1){
+                            border-right: none;
+                        }
+                    }
+                }
+            }
+            .artBtm{
+                padding-top: #{'min(1.5rem,60px)'};
+                width: 100vw;
+                margin-left: #{'min(calc((100vw - 1080px) / -2 ),calc((100vw - 80vw) / -2 ))'};
+                padding-bottom: #{'min(3rem,120px)'};
+                @include img;
+                background-image: url('./image/sub01/cnt02_artBtm_bg.jpg');
+                .texts{
+                    width: calc(100% / 12 * 4.5);
+                    margin: 0 auto;
+                    text-align: center;
+                    h3{
+                        font-size: #{'min(2.4em,24px)'};
+                        font-family: 'sanBold';
+                    }
+                    p{
+                        margin-top: #{'min(0.75rem,30px)'};
+                        font-size: #{'min(1.4em,14px)'};
+                    }
+                }
+                .inner{
+                    @include Grid('pc');
+                    .artGroup{
+                        width: calc(100% / 12 * 10);
+                        margin: 0 auto;
+                        margin-top: $lh;
+                        height:  #{'min(11rem,440px)'};
+                        article{
+                            width: calc(100% / 4);
+                            float: left;
+                            background-color: #000;
+                            position: relative;
+                            &.a1{
+                                width: calc(100% / 2);
+                                float: left;
+                                background-color: #666;
+                                .text{
+                                    width: calc(100% / 5 * 4);
+                                    p{
+                                        font-size: #{'min(1.8em, 18px)'};
+                                        font-family: 'sanLight';
+                                    }
+                                }
+                            }
+                            &.a2{
+                                width: calc(100% / 2);
+                                float: left;
+                                .text{
+                                    width: calc(100% / 5 * 4);
+                                }
+                            }
+                            &.a5{
+                                background-color: #666;
+                                .text{
+                                    text-align: center;
+                                    height: $lh;
+                                    h3{
+                                        font-size:#{'min(3.6em,36px)'};
+                                        font-family: 'sanBlack';
+                                    }
+                                }
+                            }
+                            .image{
+                                @include img;
+                                @for $i from 1 through 6{
+                                    &.i#{$i}{
+                                        background-image: url('./image/sub01/cnt02_artBtm_pic0#{$i}.jpg');
+                                    }
+                                }
+                                height: #{'min(5.5rem,220px)'};
+                                opacity: 40%;
+                            }
+                            .text{
+                                position: absolute;
+                                color: #fff;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                margin: auto;
+                                width: calc(100% / 4 * 3.5);
+                                height: #{'min(2rem,80px)'};
+                                h5{
+                                    font-size: #{'min(1.8em, 18px)'};
+                                    font-family: 'sanReular';
+                                    &:nth-last-child(1){
+                                        font-size: #{'min(1.4em, 14px)'};
+                                        font-family: 'sanLight';
+                                    }
+                                }
+                                h3{
+                                    font-size: #{'min(2.4em, 24px)'};
+                                    font-family: 'sanBold';
+                                    text-transform: uppercase
+                                }
+                            }
+                        }
+                    }
 
+                }
+            }
+            @include tab{
+                @include Grid('tab');
+                section{
+                    .artTop{
+                        height: #{'min(12rem,480px)'};
+                        .texts{
+                            p{
+                                display: none;
+                            }
+                        }
+                        .artGroup{
+                            width: 100%;
+                            margin: 0;
+                            margin-top: $lh2;
+                            article{
+                                width: calc(100% / 3);
+                                padding: 0 #{'min(0.625rem, 25px)'};
+                                .inner{
+                                    padding-top: #{'min(0.75rem,30px)'};
+                                    height: #{'min(4.55rem,180px)'};
+                                }
+                            }
+                        }
+                    }
+                    .artBtm{
+                        padding-top: $lh2;
+                        margin-left: #{'min(calc((100vw - 700px) / -2 ),calc((100vw - 90vw) / -2 ))'};
+                        .texts{
+                            p{
+                                display: none;
+                            }
+                        }
+                        .artGroup{
+                            margin-top: $lh2;
+                            height: #{'min(14rem,560px)'};
+                            article{
+                                &.a1{
+                                    display: none;
+                                }
+                                &.a2{
+                                    width: calc(100% / 2);
+                                    .text{
+                                    width: calc(100% / 4 * 2.1);
+                                }
+                                }
+                                &.a3{
+                                    width: calc(100% / 2);
+                                }
+                                &.a4{
+                                    width: calc(100% / 2);
+                                }
+                                &.a5{
+                                    display: none;
+                                }
+                                &.a6{
+                                    width: calc(100% / 2);
+                                }
+                                .text{
+                                    width: calc(100% / 4 * 2.3);
+                                      height: #{'min(2rem,80px)'};
+                                }
+                                .image{
+                                    height: #{'min(7rem,280px)'};
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            @include mob{
+                @include Grid('mob');
+                section{
+                    .artTop{
+                        height: #{'min(22rem,880px)'};
+                        .texts{
+                            h3{
+                                line-height: $lh2;
+                            }
+                            p{
+                                display: none;
+                            }
+                        }
+                        .artGroup{
+                            width: 100%;
+                            margin-top: $lh;
+                            display: block;
+                            article{
+                                width: calc(100%/ 4 * 2.3);
+                                padding: 0 #{'min(0.625rem, 25px)'};
+                                margin: 0 auto;
+                                border-right: none;
+                                .inner{
+                                    padding-top: #{'min(0.75rem, 20px)'};
+                                    height: #{'min(4.55rem,180px)'};
+                                    .text{
+                                        p{
+                                            display: none;
+                                        }
+                                    }
+                                }
+                                &:nth-child(1)~article{
+                                    margin-top: $lh;
+                                }
+                            }
+                        }
+                    }
+                    .artBtm{
+                        margin-left: #{'min(calc((100vw - 380px) / -2 ),calc((100vw - 90vw) / -2 ))'};
+                        padding-bottom: $lh;
+                        .texts{}
+                        .inner{
+                            width: 100%;
+                            .artGroup{
+                                width: 100%;
+                                article{
+                                    height: #{'min(5rem,200px)'};
+                                    .image{
+                                        height: #{'min(5rem,200px)'};
+                                    }
+                                    .text{
+                                        width: calc(100% / 2 * 1.7);
+                                    }
+                                    &.a2{
+                                        .text{
+                                            width: calc(100% / 2 * 1.6);
+                                        } 
+                                    }
+                                    &.a3{
+                                        .text{
+                                            width: calc(100% / 2 * 1.6);
+                                        } 
+                                    }
+                                }
                             }
                         }
                     }
@@ -303,6 +721,12 @@ $plh : #{'min(0.5rem, 20px)'};
     &.cnt01{
         margin-top: $lh2;
         overflow: hidden;
+        @include mob{
+            margin-top: 0;   
+        }
+    }
+    @include mob{
+        margin-top: $lh
     }
 }
 // 배너
@@ -311,6 +735,7 @@ $plh : #{'min(0.5rem, 20px)'};
     background-image: url('./image/sub01/banner.jpg');
     padding: #{'min(2.5rem,100px)'} 0;
     margin-top: #{'min(3rem,120px)'};
+    background-attachment: fixed;
     .banner{
         @include Grid('pc');
         p{
@@ -323,6 +748,28 @@ $plh : #{'min(0.5rem, 20px)'};
             font-weight: 300;
             span{
                 font-family: 'sanBold';
+            }
+        }
+    }
+    @include tab{
+        padding: #{'min(1.5rem,60px)'};
+        .banner{
+            @include Grid('tab');
+        }
+    }
+    @include mob{
+        margin-top: $lh;
+        padding: $lh 0;
+        background-attachment: local;
+        .banner{
+            p{
+                &:nth-child(1){
+                    display: none;
+                }
+                &:nth-child(2){
+                    width: calc(100% / 4 * 2.5);
+                    margin: 0 auto;
+                }
             }
         }
     }
