@@ -4,7 +4,8 @@ $(function(){
          // 변수 선언
          var mnTopWrap = $('.mnTopWrap');
          var hdrWrap = $('.hdrWrap');
-         var hdrLi = $('.hdrWrap>header>.nav>li>a>h4');
+         var hdrLi = $('.hdrWrap>header>.nav>li>h4>a');
+         var hdrh1 = $('.hdrWrap>header>h1>a');
          var navWrap =$('.navWrap');
          var nav = $('.navGroup>.nav');
          var lightBoxAco = $('.lightBox>.inner>.aco>li');          
@@ -13,6 +14,7 @@ $(function(){
                 mnTopWrap.addClass('bg');
                 hdrWrap.addClass('bg');
                 hdrLi.addClass('tgle');
+                hdrh1.addClass('on');
                 navWrap.addClass('show');
             });
             hdrLi.eq(0).mousemove(function(){
@@ -34,6 +36,7 @@ $(function(){
                mnTopWrap.removeClass('bg');
                hdrWrap.removeClass('bg');
                hdrLi.removeClass('tgle');
+               hdrh1.removeClass('on');
                navWrap.removeClass('show');
             });       
             $(window).scroll(function(){
