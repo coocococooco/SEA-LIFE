@@ -2,7 +2,6 @@ $(function(){
     var wd = $(window).width();
     $('.hdr').load('./inc/header.html',function(){
          // 변수 선언
-         var mnTopWrap = $('.mnTopWrap');
          var hdrWrap = $('.hdrWrap');
          var hdrLi = $('.hdrWrap>header>.nav>li>h4>a');
          var hdrh1 = $('.hdrWrap>header>h1>a');
@@ -11,7 +10,6 @@ $(function(){
          var lightBoxAco = $('.lightBox>.inner>.aco>li');          
          if(wd >= 1024){
             hdrWrap.mousemove(function(){
-                mnTopWrap.addClass('bg');
                 hdrWrap.addClass('bg');
                 hdrLi.addClass('tgle');
                 hdrh1.addClass('on');
@@ -33,7 +31,6 @@ $(function(){
                 nav.eq(1).css('display','none');
             });
             navWrap.mouseleave(function(){
-               mnTopWrap.removeClass('bg');
                hdrWrap.removeClass('bg');
                hdrLi.removeClass('tgle');
                hdrh1.removeClass('on');
@@ -42,11 +39,9 @@ $(function(){
             $(window).scroll(function(){
                 var scl = $(this).scrollTop();
                 if(scl >= 1){
-                    mnTopWrap.addClass('fix');
                     hdrWrap.addClass('fix');
                     navWrap.addClass('fix');
                 }else{
-                    mnTopWrap.removeClass('fix');
                     hdrWrap.removeClass('fix');
                     navWrap.removeClass('fix');
                 }
@@ -56,11 +51,9 @@ $(function(){
             $(window).scroll(function(){
                 var scl = $(this).scrollTop();
                 if(scl >= 1){
-                    mnTopWrap.addClass('fix');
                     hdrWrap.addClass('fix');
                     navWrap.addClass('fix');
                 }else{
-                    mnTopWrap.removeClass('fix');
                     hdrWrap.removeClass('fix');
                     navWrap.removeClass('fix');
                 }
@@ -75,11 +68,9 @@ $(function(){
             $(window).scroll(function(){
                 var scl = $(this).scrollTop();
                 if(scl >= 1){
-                    mnTopWrap.addClass('fix');
                     hdrWrap.addClass('fix');
                     navWrap.addClass('fix');
                 }else{
-                    mnTopWrap.removeClass('fix');
                     hdrWrap.removeClass('fix');
                     navWrap.removeClass('fix');
                 }

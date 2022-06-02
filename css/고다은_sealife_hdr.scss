@@ -41,28 +41,32 @@ $lh : #{'min(1rem, 40px)'};
 $lh2 : #{'min(2rem, 80px)'};
 $plh : #{'min(0.5rem, 20px)'};
 
-// 메뉴탑
+// 메뉴탑,헤더
 
-.mnTopWrap.bg{
+.hdrWrap.bg{
     background-color: #fff;
     .mnTop{
         color: #0077b6;
     }
+    header{
+        a{
+            h1{
+              color: #0077b6;
+            }
+        }
+    }
 }
-.mnTopWrap{
+.hdrWrap{
     position: relative;
-    width: 100%;
-    top: 0;
-    left: 0;
-    height: #{'min(1rem,40px)'};
     z-index: 5;
-    transition: position 0.3s;
-    font-family: 'sanReular';
+    height: #{'min(3rem,120px)'};
+    transition: all 0.3s;
     .mnTop{
         @include Grid('pc');
         color: #fff;
         display: flex;
         justify-content: space-between;
+        font-family: 'sanReular';
         .time{
             display: flex;
             line-height: $lh;
@@ -86,41 +90,6 @@ $plh : #{'min(0.5rem, 20px)'};
             @include Grid('mob');
         }
     }
-    &.fix{
-        background-color: #fff;
-        position: fixed;
-        width: 100%;
-        height: #{'min(1rem,40px)'};
-        transition: position 0.3s;
-        top: 0;
-        left: 0;
-        .mnTop{
-            color: #0077b6;
-        }
-    }
-    @include tab{
-        @include Grid('tab');
-        display: none;
-    }
-}
-
-// 헤더
-
-.hdrWrap.bg{
-    background-color: #fff;
-    header{
-        a{
-            h1{
-              color: #0077b6;
-            }
-        }
-    }
-}
-.hdrWrap{
-    position: relative;
-    z-index: 5;
-    height: #{'min(2rem,80px)'};
-    transition: position 0.3s;
     header{
         @include Grid('pc');
         text-transform: uppercase;
@@ -177,6 +146,9 @@ $plh : #{'min(0.5rem, 20px)'};
     @include tab{
          background-color: #fff;
          height: #{'min(3rem,80px)'};
+         .mnTop{
+            display: none;
+        }
          header{
                 @include Grid('tab');
                  h1{
@@ -227,11 +199,13 @@ $plh : #{'min(0.5rem, 20px)'};
         background-color: #fff;
         position: fixed;
         width: 100%;
-        top: #{'min(1rem,40px)'};
+        top: 0;
         left: 0;
         z-index: 5;
-        transition: position 0.3s;
         box-shadow: 0px 14px 14px rgba(0,0,0,0.1);
+        .mnTop{
+            color: #0077b6;
+        }
         header{
             h1{
                 color: #0077b6;
@@ -242,6 +216,9 @@ $plh : #{'min(0.5rem, 20px)'};
         }
         @include tab{
             top: 0;
+            .mnTop{
+                display: none;
+            }
         }
         @include mob{
             top: 0;

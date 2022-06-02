@@ -845,9 +845,6 @@ $plh : #{'min(0.5rem, 20px)'};
                                         height: #{'min(7.25rem,290px)'};
                                     }
                                 }
-                                .paging{
-                                    @if(){}
-                                }
                             }
                         }
                     }
@@ -1027,6 +1024,7 @@ $plh : #{'min(0.5rem, 20px)'};
                         margin: auto;
                         display: flex;
                         justify-content: space-between;
+                        display: none;
                             i{
                                 display: none;
                                 width: calc(100% / 8 * 0.7);
@@ -1227,6 +1225,7 @@ $plh : #{'min(0.5rem, 20px)'};
                             }
                         }
                         .btns{
+                            display: block;
                             i{
                                 display: block;
                                 cursor: pointer;
@@ -1432,32 +1431,34 @@ $plh : #{'min(0.5rem, 20px)'};
                 }
             }
             .btn{
-                display: flex;
-                justify-content: space-around;
-                line-height: $lh;
-                border: 1px solid #000;
-                border-radius: #{'min(0.25rem,10px)'};
-                width: calc(100% / 6.5);
-                margin-top: $lh;
-                cursor: pointer;
-                transition: all 0.2s;
-                font-family: 'sanReular';
-                &:hover{
-                    border: 1px solid #0077b6;
-                    background-color: #0077b6;
-                    color: #fff;
-                    opacity: 1;
-                }
-                h4{
-                    width: calc(100% / 3.3);
-                    font-size: #{'min(1.4em,14px)'};
-                    text-transform: uppercase;
-                    text-align: center;
-                }
-                i{
+                a{
+                    display: flex;
+                    justify-content: space-around;
                     line-height: $lh;
-                    text-align: left;
-                    font-size: #{'min(1.8em,18px)'};
+                    border: 1px solid #000;
+                    border-radius: #{'min(0.25rem,10px)'};
+                    width: calc(100% / 6.5);
+                    margin-top: $lh;
+                    cursor: pointer;
+                    transition: all 0.2s;
+                    font-family: 'sanReular';
+                    &:hover{
+                        border: 1px solid #0077b6;
+                        background-color: #0077b6;
+                        color: #fff;
+                        opacity: 1;
+                    }
+                    h4{
+                        width: calc(100% / 3.3);
+                        font-size: #{'min(1.4em,14px)'};
+                        text-transform: uppercase;
+                        text-align: center;
+                    }
+                    i{
+                        line-height: $lh;
+                        text-align: left;
+                        font-size: #{'min(1.8em,18px)'};
+                    }
                 }
             }
         }
