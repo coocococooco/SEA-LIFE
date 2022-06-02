@@ -185,7 +185,7 @@ $plh : #{'min(0.5rem, 20px)'};
                             .txt{
                                 display: flex;
                                 h4{
-                                    padding: 0 $plh;
+                                    padding-left: $plh;
                                     font-size: #{'min(1.4em,14px)'};
                                     font-family: 'sanReular';
                                     line-height: $lh;
@@ -211,9 +211,10 @@ $plh : #{'min(0.5rem, 20px)'};
                 .artBtm{
                     margin-top: #{'min(1.5rem,60px)'};
                     position: relative;
+                    padding-bottom: #{'min(4rem, 80px)'};
                     .artView{
                         overflow: hidden;
-                        padding-bottom: $lh2;
+                        height: #{'min(19rem, 760px)'};
                         .artGroup{
                             width: 167%;
                             display: flex;
@@ -323,18 +324,19 @@ $plh : #{'min(0.5rem, 20px)'};
                         }
                     }
                     .btns{
-                        width: 100%;
+                        width: 120%;
                         height: #{'min(1.5rem,60px)'};
                         position: absolute;
                         z-index: 2;
                         top: 0;
                         bottom: 0;
+                        left: #{'min(2.5rem,-100px)'};
                         margin: auto;
                         display: flex;
                         justify-content: space-between;
                             i{
                                 display: block;
-                                width: calc(100% / 12 * 0.7);
+                                width: calc(100% / 12 * 0.6);
                                 height: #{'min(1.5rem,60px)'};
                                 background-color: rgba(83,83,83,0.7);
                                 font-size: #{'min(3.4em, 34px)'};
@@ -342,6 +344,7 @@ $plh : #{'min(0.5rem, 20px)'};
                                 line-height: #{'min(1.5rem,60px)'};
                                 text-align: center;
                                 border-radius: 50%;
+                                cursor: pointer;
                             }
                     }
                     .ovrGrid{
@@ -356,7 +359,6 @@ $plh : #{'min(0.5rem, 20px)'};
                 }
             }
             @include tab{
-                &.cnt01{
                     @include Grid('tab');
                     section{
                         .artTop{
@@ -366,17 +368,16 @@ $plh : #{'min(0.5rem, 20px)'};
                             }
                         }
                         .artBtm{
-                            padding-bottom: $lh;
                             .artView{
                                 overflow: visible;
                                 .artGroup{
-                                    width: 300%;
+                                    width: 280%;
                                     display: block;
                                     height: #{'min(17rem, 680px)'};
                                     article{
                                         width: calc(100% / 6);
                                         float: left;
-                                        margin: 0 #{'min(0.25rem,10px)'};
+                                        margin: 0 #{'min(0.5rem,20px)'};
                                     }
                                 }
                             }
@@ -390,6 +391,7 @@ $plh : #{'min(0.5rem, 20px)'};
                                 z-index: 2;
                                 top: 0;
                                 bottom: 0;
+                                left: 0;
                                 margin: auto;
                                 display: flex;
                                 justify-content: space-between;
@@ -406,6 +408,70 @@ $plh : #{'min(0.5rem, 20px)'};
                                     }
                             }
                         }
+                    }
+            }
+            @include mob{
+                @include Grid('mob');
+                header{
+                    display: block;
+                    margin-left: 0;
+                    h2{
+                        width: calc(100% / 4 * 2.5);
+                        left: 0;
+                        right: 0;
+                        top: $lh2;
+                        margin: auto;
+                        text-align: center;
+                        span{
+                            color: #000;
+                        }
+                    }
+                    p{
+                        display: none;
+                    }
+                    .shape{
+                        display: none;
+                    }
+                }
+                section{
+                    .artTop{
+                        display: block;
+                        article{
+                            width: 100%;
+                            margin: 0;
+                            &.a2{
+                                margin-top: $lh;
+                            }
+                            .texts{
+                                h3{
+                                    text-align: center;
+                                }
+                                .txt{
+                                    .txtLeft{
+                                        text-align: center;
+                                        h4{
+                                            padding-left: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .artBtm{
+                        padding-bottom: #{'min(1rem, 40px)'};
+                        .artView{
+                            overflow: hidden;
+                            height: #{'min(20rem,780px)'};
+                            .artGroup{
+                                width: 540%;
+                            }
+                        }
+                        .btns{
+                            i{
+                                width: calc(100% / 4 * 0.6);
+                            }
+                        }
+                        .ovrGrid{}
                     }
                 }
             }
@@ -494,7 +560,228 @@ $plh : #{'min(0.5rem, 20px)'};
                         }
                     }
                 }
-                .artBtm{}
+                .artBtm{
+                    margin-top: $lh;
+                    .text{
+                        width: calc(100% / 12 * 4.5);
+                        margin: 0 auto;
+                        h3{
+                            text-align: center;
+                            span{
+                                font-family: 'sanBold';
+                                color: #0077b6; 
+                            }
+                            font-family: 'sanMedium';
+                            font-size: #{'min(2.4em,24px)'};
+                            line-height: $lh2;
+                        }
+                        p{
+                            width: calc(100% / 4.5 * 4.3);
+                            font-size: #{'min(1.4em,14px)'};
+                            text-transform: uppercase;
+                            font-family: 'sanLight';
+                            margin: 0 auto;
+                        }
+                    }
+                    .inner{
+                        width: 100vw;
+                        margin-left: #{'min(calc((100vw - 1080px) / -2),calc((100vw - 80vw) / -2))'};
+                        margin-top: $lh;
+                        padding: 0 0 #{'min(3rem,120px)'} 0;
+                        background-color: #eeeeee;
+                        .artGroup{
+                            @include Grid('pc');
+                            display: flex;
+                            flex-wrap: wrap;
+                            align-items: flex-start;
+                            article{
+                                width: calc(100% / 3 - 20px);
+                                margin: 0 #{'min(0.25rem,10px)'};
+                                margin-top: $lh;
+                                padding: $plh #{'min(0.25rem,10px)'};
+                                background-color: #fff;
+                                box-shadow: 5px 8px 20px rgba(0,0,0,0.2);
+                                border-radius: #{'min(0.25rem,10px)'};
+                                cursor: pointer;
+                                &::after{
+                                    content: '';
+                                    display: block;
+                                    clear: both;
+                                }
+                                .image{
+                                    width: calc(100% / 2 - 10px);
+                                    height: #{'min(1.5rem,60px)'};
+                                    @for $i from 1 through 6{
+                                        &.i#{$i}{
+                                            background-image: url('./image/sub02/cnt02_artBtm_pic0#{$i}.jpg');
+                                        }
+                                    }
+                                    @include img;
+                                    float: left;
+                                }
+                                h3{
+                                    width: calc(100% / 2);
+                                    line-height: #{'min(1.5rem,60px)'};
+                                    display: flex;
+                                    justify-content: space-around;
+                                    font-size: #{'min(1.6em,16px)'};
+                                    font-family: 'sanMedium';
+                                    span{
+                                       width: calc(100% / 12) ;
+                                       text-align: center;
+                                       line-height: #{'min(1.5rem,60px)'};
+                                       &:nth-child(2){
+                                           display: none;
+                                       }
+                                    }
+                                }
+                                .texts{
+                                    width: calc(100% / 4 * 3);
+                                    line-height: $plh;
+                                    height: 0;
+                                    margin: 0 auto;
+                                    overflow: hidden;
+                                    transition: height 0.3s;
+                                    h5{
+                                        font-size: #{'min(1.2em,12px)'};
+                                        line-height: $plh;
+                                        &:nth-child(1){
+                                            margin-top: $plh;
+                                        }
+                                        span{
+                                            color: #f9661e;
+                                            font-size: #{'min(1.8em,18px)'};
+                                            line-height: $plh;
+                                        }
+                                    }
+                                }
+                                &.show{
+                                    h3{
+                                        span{
+                                            &:nth-child(2){
+                                                display: block;
+                                            }
+                                            &:nth-child(1){
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                    .texts{
+                                        width: calc(100% / 4 * 3);
+                                        line-height: $plh;
+                                        height: #{'min(4rem,90px)'};
+                                        margin: 0 auto;
+                                        h5{
+                                            font-size: #{'min(1.2em,12px)'};
+                                            &:nth-child(1){
+                                                margin-top: $plh;
+                                            }
+                                            span{
+                                                color: #f9661e;
+                                                font-size: #{'min(1.8em,18px)'};
+                                                line-height: $plh;
+                                            }
+                                        }
+                                    }
+                                }
+                                &:nth-last-child(3){
+                                    h3{
+                                        justify-content: left;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            @include tab{
+                @include Grid('tab');
+                section{
+                    .artTop{
+                        article{
+                            display: block;
+                            .image{
+                                width: 100%;
+                            }
+                            .texts{
+                                width: 100%;
+                                margin-top: $lh;
+                            }
+                        }
+                    }
+                    .artBtm{
+                        .text{
+                            width: calc(100% / 8 * 5);
+                            p{
+                                width: calc(100% / 5 * 4.5);
+                            }
+                        }
+                        .inner{
+                            margin-left: #{'min(calc((100vw - 700px) / -2),calc((100vw - 90vw) / -2))'};
+                            .artGroup{
+                                article{
+                                    width: calc(100% / 2 - 20px);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            @include mob{
+                @include Grid('mob');
+                section{
+                    .artTop{
+                        display: none;
+                    }
+                    .artBtm{
+                        .text{
+                            p{
+                                display: none;
+                            }
+                        }
+                        .inner{
+                            padding-top: $plh;
+                            .artGroup{
+                                display: block;
+                                article{
+                                    width: 100%;
+                                    .texts{
+                                        width: calc(100% / 4 * 2.5);
+                                    }
+                                    &.show{
+                                        h3{
+                                            span{
+                                                &:nth-child(2){
+                                                    display: block;
+                                                }
+                                                &:nth-child(1){
+                                                    display: none;
+                                                }
+                                            }
+                                        }
+                                        .texts{
+                                            width: calc(100% / 4 * 2.5);
+                                            line-height: $plh;
+                                            height: #{'min(4rem,110px)'};
+                                            margin: 0 auto;
+                                            h5{
+                                                font-size: #{'min(1.2em,12px)'};
+                                                &:nth-child(1){
+                                                    margin-top: $plh;
+                                                }
+                                                span{
+                                                    color: #f9661e;
+                                                    font-size: #{'min(1.8em,18px)'};
+                                                    line-height: $plh;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

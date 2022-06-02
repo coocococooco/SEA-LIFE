@@ -100,7 +100,7 @@ $(function(){
          if(wd >= 1024){
              $(window).scroll(function(){
                  var scl = $(this).scrollTop();
-                 if(scl >= 500){
+                 if(scl >= 450){
                      toTop.fadeIn(300);
                  }else{
                      toTop.fadeOut(300);
