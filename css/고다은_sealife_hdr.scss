@@ -533,7 +533,7 @@ input#sub:checked+.lightBox{
                         }
                     }
                     &.acoShow+li{
-                        height: #{'min(15rem,600px)'};
+                        height: #{'min(12.5rem,500px)'};
                     }
                 }
                 li:nth-child(even){
@@ -544,12 +544,13 @@ input#sub:checked+.lightBox{
                     transition: all 0.5s;
                     .menu{
                         color: #666666;
-                        margin-top: #{'min(0.25rem,10px)'};
+                        margin-top: 0;
                         h4{
                             margin-left: #{'min(0.75rem,30px)'};
                             color: #000;
                             text-transform: uppercase;
                             cursor: pointer;
+                            line-height: #{'min(0.75rem,30px)'};
                             &:nth-child(1){
                                 margin-left: 0;
                                 font-size: #{'min(1.8em,18px)'};
@@ -557,8 +558,6 @@ input#sub:checked+.lightBox{
                                 cursor: auto;
                             }
                             font-size: #{'min(1.8em,18px)'};
-
-                            line-height: #{'min(0.9rem,36px)'};
                             &:nth-child(1)~h4:hover{
                                 color: #0077b6;
                             }

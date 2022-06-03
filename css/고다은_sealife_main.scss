@@ -104,7 +104,7 @@ $plh : #{'min(0.5rem, 20px)'};
          right: 0;
          top: 0;
          bottom: 0;
-         width: calc(100% / 12 * 6);
+         width: calc(100% / 12 * 7);
          height: #{'min(4rem,160px)'};
          margin: auto;
          color: #fff;
@@ -825,6 +825,8 @@ $plh : #{'min(0.5rem, 20px)'};
                                     height: #{'min(2.25rem,90px)'};
                                     .txt{
                                         margin-top: #{'min(0.125rem,5px)'};
+                                        margin-left: $plh;
+                                        padding: 0;
                                         h3{
                                             font-size: #{'min(2.0em,20px)'};
                                         }
@@ -1193,6 +1195,14 @@ $plh : #{'min(0.5rem, 20px)'};
                                 &.ina3{
                                     border-bottom: none;
                                 }
+                                &:hover{
+                                    h3{
+                                        color: #0077b6;
+                                    }
+                                    p{
+                                        color: #0077b6;
+                                    }
+                                }
                             }
                         }
                     }
@@ -1225,7 +1235,7 @@ $plh : #{'min(0.5rem, 20px)'};
                             }
                         }
                         .btns{
-                            display: block;
+                            display: flex;
                             i{
                                 display: block;
                                 cursor: pointer;
@@ -1548,6 +1558,9 @@ $plh : #{'min(0.5rem, 20px)'};
                     width: calc(100% / 6);
                     margin: auto;
                     margin-top: #{'min(0.75rem,30px)'};
+                    a{
+                        width: 70%;
+                    }
                 }
             }
             .imgGroup{

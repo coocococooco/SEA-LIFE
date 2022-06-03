@@ -1,0 +1,401 @@
+// 변수 선언
+
+@mixin Grid($dev){
+    @if($dev == 'pc'){
+        width: 80%;
+        max-width: 1080px;
+    }
+    @else if($dev == 'tab'){
+        width: 90%;
+        max-width: 700px;
+    }
+    @else{
+        width: 90%;
+    }
+    margin: 0 auto;
+}
+
+@mixin tab {
+    @media (max-width : 1024px) and (min-width : 0px) {
+        @content;
+    }
+}
+
+@mixin mob {
+    @media (max-width : 420px) and (min-width : 0px) {
+        @content;
+    }
+}
+
+@mixin txt($fontname,$url){
+    @font-face {
+        font-family: '#{$fontname}';
+        src: url('./fonts/#{$url}') format('truetype');
+        font-display: swap;
+    }
+}
+@include txt(sanReular,'NotoSansKR-Regular.otf');
+@include txt(sanLight,'NotoSansKR-Light.otf');
+@include txt(sanMedium,'NotoSansKR-Medium.otf');
+@include txt(sanBold,'NotoSansKR-Bold.otf');
+@include txt(sanBlack,'NotoSansKR-Black.otf');
+
+// 기초세팅
+
+html{
+    font-size: 3vw;
+    body{
+        font-size: 0.7vw;
+        position: relative;
+        overflow-x: hidden;
+        z-index: 1;
+    }
+    @include tab{
+        font-size: #{'min(9vw,5.1vw)'};
+        body{
+            font-size: #{'min(2.2vw,1.2vw)'};
+        }
+    }
+    @include mob{
+        font-size: 9vw;
+        body{
+            font-size: 2.2vw;
+        }
+    }
+}
+
+@mixin bg {
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+@mixin img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+$lh : #{'min(1rem, 40px)'};
+$lh2 : #{'min(2rem, 80px)'};
+$plh : #{'min(0.5rem, 20px)'};
+
+// 메인
+.mainWrap{
+    z-index: -1;
+    position: relative;
+    width: 100%;
+    top : 0;
+    height: #{'min(12rem,480px)'};
+    @include img;
+    background-image: url('./image/sub03/main.jpg');
+    background-attachment: fixed;
+    @include tab{
+        height: #{'min(10rem,400px)'};
+    }
+    @include mob{
+        height: #{'min(7rem,280px)'};
+    }
+}
+
+// 컨텐츠
+.cntWrap{
+    margin-top: #{'min(3rem,120px)'};
+    .content{
+        @include Grid('pc');
+        &.cnt01{
+            header{
+                height: #{'min(3rem,120px)'};
+                position: relative;
+                margin-left: #{'min(1.75rem,70px)'};
+                h2{
+                    font-size: #{'min(3.0em,30px)'};
+                    font-family: 'sanBold';
+                    color: #0077b6;
+                    position: absolute;
+                    z-index: 1;
+                    top: #{'min(1rem,40px)'};
+                    text-transform: uppercase;
+                    line-height: $lh2;
+                    span{
+                        font-family: 'sanBlack';
+                    }
+                }
+                .shape{
+                    width: calc(100% / 12);
+                    height: #{'min(2.5rem,100px)'};
+                    top: 0;
+                    z-index: 0;
+                    position: relative;
+                    .sh1{
+                        position: absolute;
+                        top: 0;
+                        right: #{'min(1.5rem,60px)'};
+                        width: 100%;
+                        background-color: #caf0f8;
+                        height: #{'min(2rem,80px)'};
+                        z-index: 1;
+                    }
+                    .sh2{
+                        position: absolute;
+                        top: #{'min(0.97rem,30px)'};
+                        right: #{'min(2.5rem,100px)'};
+                        width: 90%;
+                        background-color: #f0ff59;
+                        height: #{'min(1.5rem,67px)'};
+                    }
+                }
+                @include tab{
+                    margin-left: #{'min(3.5rem,140px)'};
+                    .shape{
+                        width: calc(100% / 7);
+                        .sh2{
+                            width: 80%;
+                        }
+                    }
+                }
+                @include mob{
+                    display: none;  
+                }
+            }
+            section{
+                margin-top: $lh;
+                article{
+                    display: flex;
+                    .imgGroup{
+                        position: relative;
+                        width: calc(100% / 12 * 6);
+                        .image{
+                            position: absolute;
+                            z-index: 2;
+                            @for $i from 2 through 3{
+                                &.i#{$i}{
+                                    background-image: url('./image/sub03/cnt01_artTop_pic0#{$i}.jpg');
+                                }
+                            }
+                            @include img;
+                            &.i1{
+                                width: calc(100% / 6 * 4);
+                                top: 0;
+                                height: #{'min(11rem, 440px)'};
+                                right: #{'min(1.25rem,50px)'};
+                                background-image: url('./image/sub03/cnt01_artTop_pic01.png');
+                            }
+                            &.i2{
+                                width: calc(100% / 6 * 2.6);
+                                height: #{'min(7rem, 280px)'};
+                                left: #{'min(1.25rem,50px)'};
+                                bottom: $lh2;
+                                z-index: 4;
+                            }
+                            &.i3{
+                                width: calc(100% / 6 * 2.57);
+                                height: #{'min(3.5rem, 140px)'};
+                                bottom: $lh;
+                                right: #{'min(0.25rem,10px)'};
+                            }
+                        }
+                        .imgBack{
+                            position: absolute;
+                            &.b1{
+                                width: calc(100% / 6 * 2);
+                                height: #{'min(4rem, 160px)'};
+                                background-color: #0077b6;
+                                z-index: 3;
+                                left: 0;
+                                bottom: #{'min(6rem,240px)'};
+                            }
+                            &.b2{
+                                width: calc(100% / 6 * 1.7);
+                                height: #{'min(3rem, 120px)'};
+                                background-color: #0077b6;
+                                z-index: 1;
+                                bottom: 0;
+                                right: 0;
+                            }
+                        }
+                    }
+                    .texts{
+                        border-top: 2px solid #bfbfbf;
+                        width: calc(100% / 12 * 6.5);
+                        margin-left: #{'min(-1.25rem,-50px)'};
+                        margin-top: $lh;
+                        height: #{'min(15rem,600px)'};
+                        .inner{
+                            padding-left: #{'min(3.5rem,140px)'};
+                            padding-top: $lh2;
+                            h5{
+                                font-size: #{'min(6.0em,60px)'};
+                                font-family: 'sanBold';
+                                color: #d2d2d2;
+                                height: #{'min(0.75rem,30px)'};
+                                line-height: $lh;
+                            }
+                            h3{
+                                span{
+                                    font-family: 'sanBold';
+                                    color: #0077b6; 
+                                }
+                                font-family: 'sanMedium';
+                                font-size: #{'min(2.4em,24px)'};
+                                line-height: #{'min(0.75rem,30px)'};
+                            }
+                            p{
+                                margin-top: $lh;
+                                font-size: #{'min(1.4em,14px)'};
+                                text-transform: uppercase;
+                                &.p2{
+                                    margin-top: $plh;
+                                }
+                                &.p3{
+                                    margin-top: $plh;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            @include tab{
+                width: 100%;
+                section{
+                    article{
+                        justify-content: space-between;
+                        .imgGroup{
+                            width: calc(100% / 8 * 5);
+                            .image{
+                                &.i1{
+                                    width: calc(100% / 5 * 3.2);
+                                    height: #{'min(9.5rem,380px)'};
+                                    right: #{'min(1.9rem,100px)'};
+                                }
+                                &.i2{
+                                    width: calc(100% / 5 * 2.1);
+                                    height: #{'min(6.125rem,245px)'};
+                                    left: $plh;
+                                    bottom: #{'min(3.7rem, 148px)'};
+                                }
+                                &.i3{
+                                    width: calc(100% / 5 * 1.8);
+                                    bottom: #{'min(2.7rem, 100px)'};
+                                    right: #{'min(1.6rem,80px)'};
+                                }
+                            }
+                            .imgBack{
+                                &.b1{
+                                    height: #{'min(3.5rem,140px)'};
+                                    bottom: #{'min(7.5rem,300px)'};
+                                }
+                                &.b2{
+                                    height: #{'min(2.5rem,100px)'};
+                                    bottom: #{'min(2rem,80px)'};
+                                    right: #{'min(1.25rem,60px)'};
+                                }
+                            }
+                        }
+                        .texts{
+                            width: 50%;
+                            margin-left: #{'min(-2.75rem, -110px)'};
+                            .inner{
+                                padding-left: #{'min(2.5rem,100px)'};
+                                padding-top: #{'min(1.5rem,60px)'};
+                                p{
+                                    &.p1{
+                                        display: none;
+                                    }
+                                    &.p2{
+                                        display: none;
+                                    }
+                                    &.p3{
+                                        width: calc(100% / 4 * 3);
+                                        margin-top: $lh;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            @include mob{
+                // @include Grid('mob');
+                header{
+                    display: block;
+                    margin-left: 0;
+                    height: $lh2;
+                    h2{
+                        width: calc(100% / 4 * 2.5);
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        margin: auto;
+                        text-align: center;
+                    }
+                    p{
+                        display: none;
+                    }
+                    .shape{
+                        display: none;
+                    }
+                }
+                section{
+                    article{
+                        display: block;
+                        .imgGroup{
+                            width: 100%;
+                            height: #{'min(12rem,480px)'};
+                            .image{
+                                &.i1{
+                                    width: calc(100% / 4 * 2.8);
+                                    height: #{'min(8.25rem,330px)'};
+                                    right: 0;
+                                    left: 0;
+                                    margin: auto;
+                                }
+                                &.i2{
+                                    width: calc(100% / 4 * 1.65);
+                                    height: #{'min(5.25rem,210px)'};
+                                    bottom: #{'min(1.5rem,60px)'};
+                                }
+                                &.i3{
+                                    width: calc(100% / 4 * 1.8);
+                                    height: #{'min(2.625rem,105px)'};
+                                    bottom: #{'min(0.75rem,30px)'};
+                                    right: #{'min(0.75rem,30px)'};
+                                }
+                            }
+                            .imgBack{
+                                &.b1{
+                                    width: calc(100% / 4 * 1);
+                                    height: #{'min(3rem,120px)'};
+                                    bottom: #{'min(4.5rem,180px)'};
+                                }
+                                &.b2{
+                                    bottom: 0;
+                                    right: #{'min(0.25rem,10px)'};
+                                }
+                            }
+                        }
+                        .texts{
+                            border-top: none;
+                            width: 100%;
+                            margin-left: 0;
+                            margin-top: #{'min(-0.5rem,-20px)'};
+                            height: #{'min(6.5rem,260px)'};
+                            .inner{
+                                @include Grid('mob');
+                                padding: 0;
+                                p{
+                                    margin-left: #{'min(2.5rem,100px)'};
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.cnt02{
+
+        }
+    }
+    @include mob{
+        margin-top: $lh;
+    }
+}

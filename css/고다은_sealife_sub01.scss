@@ -651,7 +651,7 @@ $plh : #{'min(0.5rem, 20px)'};
                 @include Grid('mob');
                 section{
                     .artTop{
-                        height: #{'min(22rem,880px)'};
+                        height: #{'min(21.5rem,860px)'};
                         .texts{
                             h3{
                                 line-height: $lh2;

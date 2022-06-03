@@ -620,7 +620,6 @@ $plh : #{'min(0.5rem, 20px)'};
                                     float: left;
                                 }
                                 h3{
-                                    width: calc(100% / 2);
                                     line-height: #{'min(1.5rem,60px)'};
                                     display: flex;
                                     justify-content: space-around;
@@ -716,6 +715,10 @@ $plh : #{'min(0.5rem, 20px)'};
                             .artGroup{
                                 article{
                                     width: calc(100% / 2 - 20px);
+                                    padding: $plh 0;
+                                    .image{
+                                        width: calc(100% / 2 - 20px);
+                                    }
                                 }
                             }
                         }
