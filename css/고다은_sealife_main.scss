@@ -1610,14 +1610,14 @@ $plh : #{'min(0.5rem, 20px)'};
                 }
                 h2{
                     margin-top: #{'min(0.25rem,10px)'};
-                    font-size: #{'min(1.8em,18px)'};
+                    font-size: #{'min(1.6em,18px)'};
                     line-height: $plh;
                     text-align: left;
                     span{
-                        font-size: #{'min(1.4em,14px)'};
+                        font-size: #{'min(1.2em,14px)'};
                     }
                     b{
-                        font-size: #{'min(1.8em,18px)'};
+                        font-size: #{'min(1.6em,18px)'};
                     }
                 }
                 .btn{
