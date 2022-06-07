@@ -796,6 +796,7 @@ $plh : #{'min(0.5rem, 20px)'};
                                 margin: 0 auto;
                                 p{
                                     margin-top: $plh;
+                                    text-transform: capitalize;
                                 }
                             }
                         }
