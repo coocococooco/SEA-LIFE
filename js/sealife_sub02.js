@@ -46,7 +46,7 @@ $(function(){
     
         cnt01Btn.eq(1).click(function(){
             cnt01artGroup.stop().animate({
-                marginLeft : -(100 / 3.5)+'%'
+                marginLeft : -(100 / 3.4)+'%'
             },500,function(){
                 cnt01artGroup.find('article:eq(4)').prependTo(cnt01artGroup);
                 cnt01artGroup.css({
