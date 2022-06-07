@@ -153,13 +153,15 @@ $plh : #{'min(0.5rem, 20px)'};
                 @include Grid('tab');
                  h1{
                      color: #0077b6;
+                     font-size: #{'min()'};
                      line-height: #{'min(3rem,80px)'};
-                     font-size: #{'min(4.0em, 40px)'};
+                     font-size: 40px;
                  }
                 .nav{
                     width: calc(100% / 8);
                     flex-direction: row-reverse;
                     li{
+                        width: 80%;
                         &:nth-child(1){
                             display: none;
                         }
@@ -176,7 +178,7 @@ $plh : #{'min(0.5rem, 20px)'};
                             label{
                                 i{
                                     line-height: #{'min(3rem,80px)'};
-                                    font-size: #{'min(4.0em, 40px)'};
+                                    font-size: 40px;
                                     cursor: pointer;
                                 }
                             }
@@ -188,9 +190,19 @@ $plh : #{'min(0.5rem, 20px)'};
     @include mob{
         header{
             @include Grid('mob');
+            h1{
+                font-size: #{'min(4.0em, 40px)'};
+            }
             .nav{
                 li{
                     width: 100%;
+                    &:nth-last-child(1){
+                        label{
+                            i{
+                                font-size: #{'min(4.0em, 40px)'};
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -373,7 +385,7 @@ input#sub:checked+.lightBox{
                 display: flex;
                 justify-content: space-between;
                 i{
-                    font-size: #{'min(0.75rem,30px)'};
+                    font-size: #{'min(1rem,30px)'};
                     line-height: $lh2;
                     cursor: pointer;
                 }
@@ -405,12 +417,12 @@ input#sub:checked+.lightBox{
         .aco{
             li:nth-child(odd){
                 border-bottom: 1px solid #aaa;
-                line-height: $lh;
+                line-height: 40px;
                 display: flex;
                 justify-content: space-between;
                 padding: 0 #{'min(0.75rem,30px)'};
                 h4{
-                    font-size: #{'min(1.6em,16px)'};
+                    font-size: 16px;
                     font-family: 'sanMedium';
                     b{
                         text-transform: uppercase;
@@ -424,7 +436,7 @@ input#sub:checked+.lightBox{
                     position: relative;
                     width: calc(100% / 12);
                     span{
-                        font-size: #{'min(2.0em,20px)'};
+                        font-size: 20px;
                         color: #666666;
                         cursor: pointer;
                         position: absolute;
@@ -465,15 +477,15 @@ input#sub:checked+.lightBox{
                         cursor: pointer;
                         &:nth-child(1){
                             margin-left: 0;
-                            font-size: #{'min(1.6em,16px)'};
+                            font-size: 16px;
                             font-family: 'sanMedium';
                             color: #666666;
                             line-height: $lh;
                             cursor: auto;
                         }
-                        font-size: #{'min(1.4em,14px)'};
+                        font-size: #{'min(2.1em,14px)'};
                         font-family: 'sanLight';
-                        line-height: #{'min(0.75rem,30px)'};
+                        line-height: #{'min(0.8rem,30px)'};
                         &:nth-child(1)~h4:hover{
                             color: #0077b6;
                         }

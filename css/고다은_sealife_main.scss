@@ -170,7 +170,7 @@ $plh : #{'min(0.5rem, 20px)'};
                     display: none;
                 }
                 h3{
-                    font-size: #{'min(2.0em,20px)'};
+                    font-size: 18px;
                 }
                 h2{
                     br{
@@ -285,6 +285,9 @@ $plh : #{'min(0.5rem, 20px)'};
             }
             @include tab{
                 margin-left: #{'min(3.5rem,140px)'};
+                h2{
+                    font-size: #{'min(3.6em,30px)'};
+                }
                 .shape{
                     width: calc(100% / 7);
                     .sh2{
@@ -901,7 +904,6 @@ $plh : #{'min(0.5rem, 20px)'};
                                 .txtGroup{
                                     .txt{
                                         padding: 0 #{'min(0.75rem,30px)'} #{'min(0.37rem,15px)'};
-                                        h3{}
                                         .texts{
                                             .txtTop{
                                                 i{
@@ -952,7 +954,6 @@ $plh : #{'min(0.5rem, 20px)'};
                         .artView{
                             .artGroup{
                                 article{
-                                    .image{}
                                     h3{
                                         opacity: 0;
                                     }
@@ -1442,13 +1443,13 @@ $plh : #{'min(0.5rem, 20px)'};
             }
             .btn{
                 a{
+                    margin-top: $lh;
                     display: flex;
                     justify-content: space-around;
                     line-height: $lh;
                     border: 1px solid #000;
                     border-radius: #{'min(0.25rem,10px)'};
                     width: calc(100% / 6.5);
-                    margin-top: $lh;
                     cursor: pointer;
                     transition: all 0.2s;
                     font-family: 'sanReular';
@@ -1555,11 +1556,11 @@ $plh : #{'min(0.5rem, 20px)'};
                     }
                 }
                 .btn{
-                    width: calc(100% / 6);
+                    width: calc(100% / 8);
                     margin: auto;
-                    margin-top: #{'min(0.75rem,30px)'};
                     a{
-                        width: 70%;
+                        margin-top: #{'min(0.75rem,50px)'};
+                        width: 100%;
                     }
                 }
             }
@@ -1623,7 +1624,9 @@ $plh : #{'min(0.5rem, 20px)'};
                     width: calc(100% / 4 );
                     margin: 0;
                     height: $lh;
-                    margin-top: #{'min(0.25rem,10px)'};
+                    a{
+                        margin-top: #{'min(0.25rem,10px)'};
+                    }
                 }
             }
         }

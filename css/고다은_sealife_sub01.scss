@@ -141,6 +141,9 @@ $plh : #{'min(0.5rem, 20px)'};
             }
             @include tab{
                 margin-left: #{'min(3.5rem,140px)'};
+                h2{
+                    font-size: #{'min(3.6em,30px)'};
+                }
                 .shape{
                     width: calc(100% / 7);
                     .sh2{
@@ -215,6 +218,7 @@ $plh : #{'min(0.5rem, 20px)'};
                                 margin-top: $lh;
                                 font-size: #{'min(1.4em,14px)'};
                                 text-transform: uppercase;
+                                font-family: 'sanLight';
                             }
                         }
                         .image{
@@ -253,6 +257,7 @@ $plh : #{'min(0.5rem, 20px)'};
                                 margin-top: $lh;
                                 font-size: #{'min(1.4em,14px)'};
                                 text-transform: uppercase;
+                                font-family: 'sanLight';
                             }
                             h4{
                                 margin-top: #{'min(2.5rem,100px)'};
@@ -427,6 +432,7 @@ $plh : #{'min(0.5rem, 20px)'};
                     p{
                         margin-top: #{'min(0.75rem,30px)'};
                         font-size: #{'min(1.4em,14px)'};
+                        font-family: 'sanLight';
                     }
                 }
                 .artGroup{
@@ -495,6 +501,7 @@ $plh : #{'min(0.5rem, 20px)'};
                     p{
                         margin-top: #{'min(0.75rem,30px)'};
                         font-size: #{'min(1.4em,14px)'};
+                        font-family: 'sanLight';
                     }
                 }
                 .inner{
@@ -687,7 +694,6 @@ $plh : #{'min(0.5rem, 20px)'};
                     .artBtm{
                         margin-left: #{'min(calc((100vw - 380px) / -2 ),calc((100vw - 90vw) / -2 ))'};
                         padding-bottom: $lh;
-                        .texts{}
                         .inner{
                             width: 100%;
                             .artGroup{

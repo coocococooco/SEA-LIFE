@@ -141,6 +141,9 @@ $plh : #{'min(0.5rem, 20px)'};
             }
             @include tab{
                 margin-left: #{'min(3.5rem,140px)'};
+                h2{
+                    font-size: #{'min(3.6em,30px)'};
+                }
                 .shape{
                     width: calc(100% / 7);
                     .sh2{
@@ -668,7 +671,7 @@ $plh : #{'min(0.5rem, 20px)'};
                                     .texts{
                                         width: calc(100% / 4 * 3);
                                         line-height: $plh;
-                                        height: #{'min(4rem,90px)'};
+                                        height: #{'min(4rem,100px)'};
                                         margin: 0 auto;
                                         h5{
                                             font-size: #{'min(1.2em,12px)'};
