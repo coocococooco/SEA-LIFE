@@ -906,6 +906,11 @@ $plh : #{'min(0.5rem, 20px)'};
                     .artGroup{
                         width: 600%;
                         height: #{'min(11rem,440px)'};
+                        article{
+                            .info{
+                                width: 65%;
+                            }
+                        }
                     }
                     .btns{
                         width: 100%;
