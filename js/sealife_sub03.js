@@ -139,7 +139,41 @@ $(function(){
                 marginLeft : i*-(100 / 1)+'%'
             });
         });
+        cnt02artGroup.swipeleft(function(){
+            i++;
+            if(i>=5){
+                i = 5
+                cnt02SildeBtn.eq(0).css({
+                    opacity : 0,
+                    cursor : 'auto'
+                });
+                cnt02SildeBtn.eq(1).css({
+                    opacity : 1,
+                    cursor : 'pointer'
+                });
+            }
+            cnt02artGroup.css({
+                marginLeft : i*-(100 / 1)+'%'
+            });
+        });
         cnt02SildeBtn.eq(1).click(function(){
+            i--;
+            if(i<=0){
+                i = 0
+                cnt02SildeBtn.eq(1).css({
+                    opacity : 0,
+                    cursor : 'auto'
+                });
+                cnt02SildeBtn.eq(0).css({
+                    opacity : 1,
+                    cursor : 'pointer'
+                });
+            }
+            cnt02artGroup.css({
+                marginLeft : i*-(100 / 1)+'%'
+            });
+        });
+        cnt02artGroup.swiperight(function(){
             i--;
             if(i<=0){
                 i = 0
@@ -178,7 +212,41 @@ $(function(){
                 marginLeft : j*-(100 / 1)+'%'
             });
         });
+        cnt03artGroup.swipeleft(function(){
+            j++;
+            if(j>=5){
+                j = 5
+                cnt03SildeBtn.eq(0).css({
+                    opacity : 0,
+                    cursor : 'auto'
+                });
+                cnt03SildeBtn.eq(1).css({
+                    opacity : 1,
+                    cursor : 'pointer'
+                });
+            }
+            cnt03artGroup.css({
+                marginLeft : j*-(100 / 1)+'%'
+            });
+        });
         cnt03SildeBtn.eq(1).click(function(){
+            j--;
+            if(j<=0){
+                j = 0
+                cnt03SildeBtn.eq(1).css({
+                    opacity : 0,
+                    cursor : 'auto'
+                });
+                cnt03SildeBtn.eq(0).css({
+                    opacity : 1,
+                    cursor : 'pointer'
+                });
+            }
+            cnt03artGroup.css({
+                marginLeft : j*-(100 / 1)+'%'
+            });
+        });
+        cnt03artGroup.swiperight(function(){
             j--;
             if(j<=0){
                 j = 0

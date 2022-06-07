@@ -89,6 +89,26 @@ $(function(){
                 });
             });
         });
+        cnt01artGroup.swiperight(function(){
+            cnt01artGroup.stop().animate({
+                marginLeft : -(100 / 1)+'%'
+            },500,function(){
+                cnt01artGroup.find('article:eq(4)').prependTo(cnt01artGroup);
+                cnt01artGroup.css({
+                    marginLeft : -(100 / 0.5)+'%'
+                });
+            });
+        });
+        cnt01artGroup.swipeleft(function(){
+            cnt01artGroup.stop().animate({
+                marginLeft : -(100 / 0.335)+'%'
+            },500,function(){
+                cnt01artGroup.find('article:eq(0)').appendTo(cnt01artGroup);
+                cnt01artGroup.css({
+                    marginLeft : -(100 / 0.5)+'%'
+                });
+            });
+        });
         cnt02Btm.click(cnt02Btmbtn);
     }
 });

@@ -398,17 +398,17 @@ $plh : #{'min(0.5rem, 20px)'};
                                 margin: auto;
                                 display: flex;
                                 justify-content: space-between;
-                                    i{
-                                        display: block;
-                                        width: calc(100% / 8 * 0.7);
-                                        height: #{'min(1.5rem,60px)'};
-                                        background-color: rgba(83,83,83,0.7);
-                                        font-size: #{'min(3.4em, 34px)'};
-                                        color: #fff;
-                                        line-height: #{'min(1.5rem,60px)'};
-                                        text-align: center;
-                                        border-radius: 50%;
-                                    }
+                                i{
+                                    display: block;
+                                    width: calc(100% / 8 * 0.7);
+                                    height: #{'min(1.5rem,60px)'};
+                                    background-color: rgba(83,83,83,0.7);
+                                    font-size: #{'min(3.4em, 34px)'};
+                                    color: #fff;
+                                    line-height: #{'min(1.5rem,60px)'};
+                                    text-align: center;
+                                    border-radius: 50%;
+                                }
                             }
                         }
                     }
@@ -419,7 +419,7 @@ $plh : #{'min(0.5rem, 20px)'};
                     display: block;
                     margin-left: 0;
                     h2{
-                        width: calc(100% / 4 * 2.5);
+                        width: calc(100% / 4 * 3);
                         left: 0;
                         right: 0;
                         top: $lh2;
@@ -474,7 +474,6 @@ $plh : #{'min(0.5rem, 20px)'};
                                 width: calc(100% / 4 * 0.6);
                             }
                         }
-                        .ovrGrid{}
                     }
                 }
             }

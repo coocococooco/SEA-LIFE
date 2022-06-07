@@ -7,7 +7,7 @@ $(function(){
          var hdrh1 = $('.hdrWrap>header>h1>a');
          var navWrap =$('.navWrap');
          var nav = $('.navGroup>.nav');
-         var lightBoxAco = $('.lightBox>.inner>.aco>li');          
+         var lightBoxAco = $('.lightBox>.inner>.aco>li:even');          
          if(wd >= 1024){
             hdrWrap.mousemove(function(){
                 hdrWrap.addClass('bg');
@@ -60,7 +60,7 @@ $(function(){
              });
              // 라이트박스   
              lightBoxAco.removeClass('acoShow');
-             lightBoxAco.even().click(function(){
+             lightBoxAco.click(function(){
                  lightBoxAco.removeClass('acoShow');
                  $(this).addClass('acoShow');
              });
@@ -78,7 +78,7 @@ $(function(){
              });
              // 라이트박스  
              lightBoxAco.removeClass('acoShow');
-             lightBoxAco.even().click(function(){
+             lightBoxAco.click(function(){
                  lightBoxAco.removeClass('acoShow');
                  $(this).addClass('acoShow');
              });

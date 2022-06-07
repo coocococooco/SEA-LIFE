@@ -274,10 +274,20 @@ $plh : #{'min(0.5rem, 20px)'};
                     h4{
                         font-size: #{'min(1.4em, 14px)'};
                         line-height: #{'min(0.825rem, 30px)'};
-                        cursor: pointer;
+                        cursor: no-drop;
                         font-family: 'sanLight';
                         &:hover{
                             color: #ade8f4;
+                        }
+                    }
+                }
+                &.sb2{
+                    .menu{
+                        h4{
+                            cursor: no-drop;
+                            a{
+                                cursor: pointer;
+                            }
                         }
                     }
                 }
@@ -421,6 +431,7 @@ input#sub:checked+.lightBox{
                 display: flex;
                 justify-content: space-between;
                 padding: 0 #{'min(0.75rem,30px)'};
+                cursor: pointer;
                 h4{
                     font-size: 16px;
                     font-family: 'sanMedium';
@@ -474,7 +485,7 @@ input#sub:checked+.lightBox{
                         margin-left: #{'min(0.75rem,30px)'};
                         color: #000;
                         text-transform: uppercase;
-                        cursor: pointer;
+                        cursor: no-drop;
                         &:nth-child(1){
                             margin-left: 0;
                             font-size: 16px;
@@ -488,6 +499,19 @@ input#sub:checked+.lightBox{
                         line-height: #{'min(0.8rem,30px)'};
                         &:nth-child(1)~h4:hover{
                             color: #0077b6;
+                        }
+                        &:nth-child(2){
+                            cursor: pointer;
+                        }
+                    }
+                    &.m2{
+                        h4{
+                            cursor: no-drop;
+                        }
+                    }
+                    &.m3{
+                        h4{
+                            cursor: no-drop;
                         }
                     }
                 }
@@ -537,7 +561,6 @@ input#sub:checked+.lightBox{
                         span{
                             font-size: #{'min(3.0em,30px)'};
                             color: #666666;
-                            cursor: pointer;
                             position: absolute;
                             &:nth-child(2){
                                 display: none;

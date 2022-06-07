@@ -56,7 +56,7 @@ $plh : #{'min(0.5rem, 20px)'};
             h4{
                 font-size: #{'min(1.8em,18px)'};
                 font-weight: lighter;
-                cursor: pointer;
+                cursor: no-drop;
             }
             }
         .ftrBtm{
