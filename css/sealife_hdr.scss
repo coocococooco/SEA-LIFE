@@ -83,7 +83,7 @@ $plh : #{'min(0.5rem, 20px)'};
                 i{
                     line-height: $lh;
                     font-size: #{'min(2.5em,25px)'};
-                    cursor: pointer;
+                    cursor: no-drop;
                 }
         }
         @include mob{
@@ -584,7 +584,6 @@ input#sub:checked+.lightBox{
                             margin-left: #{'min(0.75rem,30px)'};
                             color: #000;
                             text-transform: uppercase;
-                            cursor: pointer;
                             line-height: #{'min(0.75rem,30px)'};
                             &:nth-child(1){
                                 margin-left: 0;

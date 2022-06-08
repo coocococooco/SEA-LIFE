@@ -318,7 +318,7 @@ $plh : #{'min(0.5rem, 20px)'};
                             @include img;
                             width: calc(100% / 12 * 6);
                             height: #{'min(9rem,360px)'};
-                            background-image: url(./image/main/cnt01_pic01.jpg);
+                            background-image: url('./image/main/cnt01_pic01.jpg');
                             opacity: 0;
                             transition: all 0.7s;
                         } 
@@ -336,7 +336,7 @@ $plh : #{'min(0.5rem, 20px)'};
                             @include img;
                             width: calc(100% / 12 * 6);
                             height: #{'min(9rem,360px)'};
-                            background-image: url(./image/main/cnt01_pic02.jpg);
+                            background-image: url('./image/main/cnt01_pic02.jpg');
                             opacity: 0;
                             transition: all 0.7s;
                         }
@@ -491,7 +491,7 @@ $plh : #{'min(0.5rem, 20px)'};
                         }
                         .image{
                             @include img;
-                            background-image: url(./image/main/cnt02_artTop_pic01.jpg);
+                            background-image: url('./image/main/cnt02_artTop_pic01.jpg');
                             height: #{'min(8rem,320px)'};
                             transform: scale(1.0);
                             transition: all 0.3s;
@@ -719,7 +719,7 @@ $plh : #{'min(0.5rem, 20px)'};
                             border-radius: #{'min(0.25rem,10px)'};
                             border: 1px #0077b6 solid;
                             font-family: 'sanReular';
-                            cursor: pointer;
+                            cursor: no-drop;
                             transition: all 0.2s;
                             &:hover{
                                 background-color: #0077b6;
@@ -1141,7 +1141,7 @@ $plh : #{'min(0.5rem, 20px)'};
                                     width: 100%;
                                     @include img;
                                     height: #{'min(7rem,280px)'};
-                                    background-image: url(./image/main/cnt03_artBtm_map_pic01.jpg);
+                                    background-image: url('./image/main/cnt03_artBtm_map_pic01.jpg');
                                 }
                             }
                         }
@@ -1359,7 +1359,7 @@ $plh : #{'min(0.5rem, 20px)'};
                                     border-top: 1px solid #eee;
                                     float: none;
                                     .image{
-                                        background-image: url(./image/main/cnt03_artBtm_map_pic02.jpg);
+                                        background-image: url('./image/main/cnt03_artBtm_map_pic02.jpg');
                                     }
                                 }
                             }
@@ -1487,7 +1487,7 @@ $plh : #{'min(0.5rem, 20px)'};
                     left: #{'min(-5rem,-200px)'};
                     width: calc(100% / 5);
                     height: #{'min(3rem,120px)'};
-                    background-image: url(./image/main/bnr_pic05.png);
+                    background-image: url('./image/main/bnr_pic05.png');
                     transform: translateY(-60px);
                     opacity: 1;
                 }
@@ -1496,7 +1496,7 @@ $plh : #{'min(0.5rem, 20px)'};
                     right: #{'min(-4.5rem,-180px)'};
                     width: calc(100% / 2);
                     height: #{'min(5rem,200px)'};
-                    background-image: url(./image/main/bnr_pic06.png);
+                    background-image: url('./image/main/bnr_pic06.png');
                     opacity: 0;
                     transform: translateY(60px);
                 }
@@ -1582,7 +1582,7 @@ $plh : #{'min(0.5rem, 20px)'};
             &.g2{
                 opacity: 1;
                 height: #{'min(10rem,400px)'};
-                background-image: url(./image/main/bnr_pic02_tab.png);
+                background-image: url('./image/main/bnr_pic02_tab.png');
                 transform: translateY(30px);
             }
             &.g1{
