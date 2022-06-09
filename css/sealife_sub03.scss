@@ -100,6 +100,9 @@ $plh : #{'min(0.5rem, 20px)'};
 // 컨텐츠
 .cntWrap{
     margin-top: #{'min(3rem,120px)'};
+    &.cnt01{
+        margin-top: $lh2
+    }
     .content{
         @include Grid('pc');
         &.cnt01{
@@ -259,6 +262,13 @@ $plh : #{'min(0.5rem, 20px)'};
                 }
             }
             @include tab{
+                header{
+                    @include Grid('tab');
+                    margin-left: #{'min(5.5rem,220px)'};
+                    .shape{
+                        width: calc(100% / 8.5);
+                    }
+                }
                 width: 100%;
                 section{
                     article{
