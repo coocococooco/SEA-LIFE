@@ -843,6 +843,7 @@ $plh : #{'min(0.5rem, 20px)'};
                     justify-content: space-between;
                     display: none;
                         i{
+                            cursor: pointer;
                             display: none;
                             width: calc(100% / 8 * 0.85);
                             height: #{'min(2rem,80px)'};
