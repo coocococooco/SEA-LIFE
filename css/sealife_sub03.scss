@@ -264,7 +264,7 @@ $plh : #{'min(0.5rem, 20px)'};
             @include tab{
                 header{
                     @include Grid('tab');
-                    margin-left: #{'min(5.5rem,220px)'};
+                    margin-left: #{'min(5.25rem,210px)'};
                     .shape{
                         width: calc(100% / 8.5);
                     }
