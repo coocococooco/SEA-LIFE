@@ -378,9 +378,6 @@ $plh : #{'min(0.5rem, 20px)'};
                             font-family: 'sanReular';
                             cursor: pointer;
                             transition: all 0.2s;
-                            a{
-                                line-height: $lh;
-                            }
                             &:hover{
                                 background-color: #0077b6;
                                 color: #fff;
