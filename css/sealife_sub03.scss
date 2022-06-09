@@ -330,6 +330,7 @@ $plh : #{'min(0.5rem, 20px)'};
             }
             @include mob{
                 header{
+                    width: 100%;
                     display: block;
                     margin-left: 0;
                     height: $lh2;
