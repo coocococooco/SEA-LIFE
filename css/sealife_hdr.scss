@@ -194,6 +194,7 @@ $plh : #{'min(0.5rem, 20px)'};
         header{
             @include Grid('mob');
             h1{
+                width: calc(100% / 4 * 3);
                 a{
                     font-size: #{'min(4.0em, 40px)'};
                 }
