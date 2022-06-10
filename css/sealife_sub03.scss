@@ -827,7 +827,7 @@ $plh : #{'min(0.5rem, 20px)'};
                             }
                             .texts{
                                 top: 0;
-                                padding-top: $lh;
+                                padding-top: #{'min(0.2rem,40px)'};
                                 .txtRight{
                                     .sp{
                                         span{
