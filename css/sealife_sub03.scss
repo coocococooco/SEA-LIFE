@@ -103,6 +103,11 @@ $plh : #{'min(0.5rem, 20px)'};
     &.cnt01{
         margin-top: $lh2
     }
+    @include tab{
+        &.cnt02{
+            margin-top: #{'min(1.5rem,60px)'}
+        }
+    }
     .content{
         @include Grid('pc');
         &.cnt01{
