@@ -222,6 +222,8 @@ $plh : #{'min(0.5rem, 20px)'};
                             width: 167%;
                             display: flex;
                             justify-content: space-between;
+                            touch-action: pan-y;
+                            -ms-touch-action: pan-y;
                             article{
                                 width: calc(100% / 3 - 20px);
                                 text-transform: uppercase;

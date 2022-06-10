@@ -98,10 +98,12 @@ $plh : #{'min(0.5rem, 20px)'};
         color: #fff;
         line-height: $lh2;
         h1{
-            line-height: $lh2;
-            font-size: #{'min(4.0em, 40px)'};
-            font-family: 'sanBlack';
-            cursor: pointer;
+            a{
+                line-height: $lh2;
+                font-size: #{'min(4.0em, 40px)'};
+                font-family: 'sanBlack';
+                cursor: pointer;
+            }
             .on{
                 color: #0077b6;
             }
@@ -152,10 +154,11 @@ $plh : #{'min(0.5rem, 20px)'};
          header{
                 @include Grid('tab');
                  h1{
-                     color: #0077b6;
-                     font-size: #{'min()'};
-                     line-height: #{'min(3rem,80px)'};
-                     font-size: 40px;
+                     a{
+                         color: #0077b6;
+                         line-height: #{'min(3rem,80px)'};
+                         font-size: 40px;
+                     }
                  }
                 .nav{
                     width: calc(100% / 8);
@@ -191,7 +194,9 @@ $plh : #{'min(0.5rem, 20px)'};
         header{
             @include Grid('mob');
             h1{
-                font-size: #{'min(4.0em, 40px)'};
+                a{
+                    font-size: #{'min(4.0em, 40px)'};
+                }
             }
             .nav{
                 li{
